@@ -1,7 +1,8 @@
-package com.example.compose
+package com.example.tfg.ui.theme
+
 import androidx.compose.ui.graphics.Color
 
-val primaryLight = Color(0xFF8D4A5D)
+val primaryLight = Color(0xFFFF5290)
 val onPrimaryLight = Color(0xFFFFFFFF)
 val primaryContainerLight = Color(0xFFFFD9E1)
 val onPrimaryContainerLight = Color(0xFF3A071A)
@@ -216,10 +217,3 @@ val surfaceContainerLowDarkHighContrast = Color(0xFF22191B)
 val surfaceContainerDarkHighContrast = Color(0xFF261D1F)
 val surfaceContainerHighDarkHighContrast = Color(0xFF312829)
 val surfaceContainerHighestDarkHighContrast = Color(0xFF3C3234)
-
-
-
-
-
-
-
