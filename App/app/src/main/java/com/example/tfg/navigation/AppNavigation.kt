@@ -5,8 +5,15 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.tfg.screens.EditProductScreen
+import com.example.tfg.screens.EditProfileScreen
+import com.example.tfg.screens.FavsScreen
 import com.example.tfg.screens.LoginScreen
+import com.example.tfg.screens.MainListScreen
+import com.example.tfg.screens.NewProductScreen
 import com.example.tfg.screens.NewUserScreen
+import com.example.tfg.screens.ProductDetailsScreen
+import com.example.tfg.screens.ProfileScreen
 import com.example.tfg.screens.StartScreen
 
 //se encarga de gestionar la navegación entre pantallas.
@@ -24,7 +31,7 @@ fun AppNavigation() {
         composable(route=AppScreens.NewUserScreen.route){
             NewUserScreen(navController)
         }
-        /*
+
         composable(route=AppScreens.FavsScreen.route){
             FavsScreen(navController)
         }
@@ -32,7 +39,7 @@ fun AppNavigation() {
             ProfileScreen(navController)
         }
         composable(route=AppScreens.EditProductScreen.route){
-            //EditProductScreen(navController)
+            EditProductScreen(navController)
         }
         composable(route=AppScreens.MainListScreen.route){
             MainListScreen(navController)
@@ -45,7 +52,7 @@ fun AppNavigation() {
         }
         composable(route=AppScreens.EditProfileScreen.route){
             EditProfileScreen(navController)
-        }*/
+        }
     }
 
 

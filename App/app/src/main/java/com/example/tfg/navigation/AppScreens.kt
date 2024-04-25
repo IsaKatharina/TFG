@@ -8,13 +8,13 @@ sealed class AppScreens (val route:String) {
     object LoginScreen: AppScreens("login_screen")
     object NewUserScreen: AppScreens("newuser_screen")
     object StartScreen: AppScreens("start_screen")
-    /*
-    object EditProductScreen:AppScreens(route:"editproduct_screen")
-    object EditProfileScreen:AppScreens(route:"editprofile_screen")
-    object FavsScreen:AppScreens(route:"favs_screen")
-    object MainListScreen:AppScreens(route:"mainlist_screen")
-    object NewProductScreen:AppScreens(route:"newproduct_screen")
-    object ProductDetailsScreen:AppScreens(route:"productdetails_screen")
-    object ProfileScreen:AppScreens(route:"profile_screen")*/
+
+    object EditProductScreen:AppScreens("editproduct_screen")
+    object EditProfileScreen:AppScreens("editprofile_screen")
+    object FavsScreen:AppScreens("favs_screen")
+    object MainListScreen:AppScreens("mainlist_screen")
+    object NewProductScreen:AppScreens("newproduct_screen")
+    object ProductDetailsScreen:AppScreens("productdetails_screen")
+    object ProfileScreen:AppScreens("profile_screen")
 
 }

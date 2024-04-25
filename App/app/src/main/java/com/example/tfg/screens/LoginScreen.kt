@@ -19,6 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.tfg.navigation.AppScreens
 import com.example.tfg.screens.composables.HeaderImagen
 import com.example.tfg.ui.theme.TFGTheme
 import com.example.tfg.viewmodels.LoginVM
@@ -56,18 +57,18 @@ fun Login( modifier: Modifier, navController: NavController){
             CircularProgressIndicator(Modifier.align(Alignment.Center))
         }
     }else {
-        Column (modifier=modifier){
+        Column(modifier = modifier) {
             //aquí simplemente ponemos los nombre de los composables
             // (sus funciones), no los "pintamos"
             HeaderImagen(Modifier.align(Alignment.CenterHorizontally), navController)
 
             //ponemos un espacio
-            Spacer(modifier=Modifier.padding(16.dp))
-            EmailField (email) {vm.onLoginChanged(it, password)}
+            Spacer(modifier = Modifier.padding(16.dp))
+            EmailField(email) { vm.onLoginChanged(it, password) }
 
             //otro espacio
             Spacer(modifier = Modifier.padding(16.dp))
-            PasswordField(password){vm.onLoginChanged(email, it)}
+            PasswordField(password) { vm.onLoginChanged(email, it) }
 
             //otro espacio
             Spacer(modifier = Modifier.padding(16.dp))
@@ -77,11 +78,10 @@ fun Login( modifier: Modifier, navController: NavController){
             Spacer(modifier = Modifier.padding(16.dp))
 
             //TODO:entender bien
-            LoginButton(loginEnable){
-                coroutineScope.launch {
-                    vm.onLoginSelected()
-                }
-            }
+            LoginButton(/*loginEnable*/navController)
+                /*coroutineScope.launch {
+                    vm.onLoginSelected()*/
+
 
 
         }
@@ -90,8 +90,8 @@ fun Login( modifier: Modifier, navController: NavController){
 }
 
 @Composable
-fun LoginButton(loginEnable: Boolean, onLoginSelected:()-> Unit) {
-    Button(onClick = { onLoginSelected() },
+fun LoginButton(/*loginEnable: Boolean, onLoginSelected:()-> Unit*/ navController: NavController) {
+    Button(onClick = { /*onLoginSelected()*/navController.navigate(AppScreens.MainListScreen.route) },
         modifier= Modifier
             .fillMaxWidth()
             .padding(15.dp,0.dp, 15.dp, 0.dp)
@@ -100,7 +100,7 @@ fun LoginButton(loginEnable: Boolean, onLoginSelected:()-> Unit) {
             containerColor = Color(0xFFFF5290),
             disabledContainerColor = Color.White
         )
-    , enabled = loginEnable) {
+    ,/* enabled = loginEnable*/) {
         Text(text = "Login")
         
     }
