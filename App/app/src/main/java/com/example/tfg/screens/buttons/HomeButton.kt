@@ -40,7 +40,6 @@ fun HomeButton(navController: NavController, modifier: Modifier){
                 contentColor=Color.Black
             )) {
 
-
             Icon(painter = painterResource(id = R.drawable.home_black), contentDescription = "home_black")
             Text(text = "Home", color = Color.Black)
 

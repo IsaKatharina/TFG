@@ -58,7 +58,7 @@ fun MainListScreen(navController: NavController) {
                .padding(innerPadding),
            verticalArrangement = Arrangement.spacedBy(16.dp),
        ) {
-          ProductCard(modifier=Modifier, navController)
+          ProductCard(modifier=Modifier)
        }
    }
 }

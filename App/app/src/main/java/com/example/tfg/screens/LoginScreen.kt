@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.tfg.navigation.AppScreens
+import com.example.tfg.screens.buttons.BackButton
 import com.example.tfg.screens.composables.HeaderImagen
 import com.example.tfg.ui.theme.TFGTheme
 import com.example.tfg.viewmodels.LoginVM
@@ -57,9 +58,12 @@ fun Login( modifier: Modifier, navController: NavController){
             CircularProgressIndicator(Modifier.align(Alignment.Center))
         }
     }else {
-        Column(modifier = modifier) {
+        Column(modifier = modifier.fillMaxSize()) {
             //aquí simplemente ponemos los nombre de los composables
             // (sus funciones), no los "pintamos"
+            BackButton(navController = navController,
+                modifier=Modifier.align(Alignment.Start))
+
             HeaderImagen(Modifier.align(Alignment.CenterHorizontally), navController)
 
             //ponemos un espacio
@@ -94,7 +98,7 @@ fun LoginButton(/*loginEnable: Boolean, onLoginSelected:()-> Unit*/ navControlle
     Button(onClick = { /*onLoginSelected()*/navController.navigate(AppScreens.MainListScreen.route) },
         modifier= Modifier
             .fillMaxWidth()
-            .padding(15.dp,0.dp, 15.dp, 0.dp)
+            .padding(15.dp, 0.dp, 15.dp, 0.dp)
             .height(48.dp),
         colors = ButtonDefaults.buttonColors(
             containerColor = Color(0xFFFF5290),
@@ -123,8 +127,9 @@ fun PasswordField(password: String, onTextFieldChanged: (String) -> Unit) {
     TextField(
         value = password,
         onValueChange = {},
-        modifier = Modifier.fillMaxWidth()
-            .padding(15.dp,0.dp, 15.dp, 0.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(15.dp, 0.dp, 15.dp, 0.dp),
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
         //TODO:Falta el onTextFieldChange()
         singleLine = true,
@@ -138,8 +143,9 @@ fun EmailField(email: String, onTextFieldChanged: (String) -> Unit) {
    TextField(
        value = email,
        onValueChange = {},
-       modifier = Modifier.fillMaxWidth()
-           .padding(15.dp,0.dp, 15.dp, 0.dp),
+       modifier = Modifier
+           .fillMaxWidth()
+           .padding(15.dp, 0.dp, 15.dp, 0.dp),
        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
        //TODO:Falta el onTextFieldChange()
        singleLine = true,

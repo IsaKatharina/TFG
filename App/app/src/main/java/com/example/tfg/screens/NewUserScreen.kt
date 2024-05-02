@@ -40,6 +40,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.tfg.R
 import com.example.tfg.navigation.AppScreens
+import com.example.tfg.screens.buttons.BackButton
 import com.example.tfg.screens.composables.HeaderImagen
 import com.example.tfg.ui.theme.TFGTheme
 import com.example.tfg.viewmodels.LoginVM
@@ -76,8 +77,10 @@ fun NewUser(modifier: Modifier, navController: NavController){
             CircularProgressIndicator(Modifier.align(Alignment.Center))
         }
     }else {
-        Column (){
+        Column (modifier=Modifier.fillMaxSize()){
             //aquí simplemente ponemos los nombre de los composables
+            BackButton(navController = navController,
+                modifier=Modifier.align(Alignment.Start))
             // (sus funciones), no los "pintamos"
             HeaderImagen(Modifier.align(Alignment.CenterHorizontally), navController)
 
@@ -152,9 +155,6 @@ fun NewPic(navController: NavController) {
     }
 
 }
-
-
-
 
 @Composable
 fun NewPassword(navController: NavController) {
