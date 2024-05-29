@@ -15,32 +15,26 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.tfg.navigation.AppScreens
 import com.example.tfg.screens.buttons.BackButton
 import com.example.tfg.screens.composables.HeaderImagen
-import com.example.tfg.ui.theme.TFGTheme
 import com.example.tfg.viewmodels.LoginVM
-import kotlinx.coroutines.launch
 
 @Composable
-fun LoginScreen(modifier: Modifier, navController: NavController) {
+fun LoginScreen(modifier: Modifier, navController: NavController, vm: LoginVM) {
 
     Box(modifier= Modifier.fillMaxSize()
     ) {
-     Login(Modifier.align(Alignment.Center), navController)
+     Login(Modifier.align(Alignment.Center), navController, vm)
     }
 
 }
 
 @Composable
-fun Login( modifier: Modifier, navController: NavController){
-
-    //declaramos el vm
-    val vm= LoginVM()
+fun Login(modifier: Modifier, navController: NavController, vm: LoginVM){
 
     //declaramos las variables que necesita la vista
     val email:String by vm.email.observeAsState(initial="")
@@ -82,20 +76,17 @@ fun Login( modifier: Modifier, navController: NavController){
             Spacer(modifier = Modifier.padding(16.dp))
 
             //TODO:entender bien
-            LoginButton(/*loginEnable*/navController)
+            LoginButton(loginEnable, )
                 /*coroutineScope.launch {
                     vm.onLoginSelected()*/
-
-
-
         }
     }
 
 }
 
 @Composable
-fun LoginButton(/*loginEnable: Boolean, onLoginSelected:()-> Unit*/ navController: NavController) {
-    Button(onClick = { /*onLoginSelected()*/navController.navigate(AppScreens.MainListScreen.route) },
+fun LoginButton(loginEnable: Boolean, onLoginSelected:()-> Unit, navController: NavController) {
+    Button(onClick = { onLoginSelected()/* navController.navigate(AppScreens.MainListScreen.route*/) },
         modifier= Modifier
             .fillMaxWidth()
             .padding(15.dp, 0.dp, 15.dp, 0.dp)
@@ -126,11 +117,11 @@ fun ForgotPassword(modifier: Modifier) {
 fun PasswordField(password: String, onTextFieldChanged: (String) -> Unit) {
     TextField(
         value = password,
-        onValueChange = {},
+        onValueChange = {onTextFieldChanged(it)},
         modifier = Modifier
             .fillMaxWidth()
             .padding(15.dp, 0.dp, 15.dp, 0.dp),
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
         //TODO:Falta el onTextFieldChange()
         singleLine = true,
         maxLines = 1,
@@ -140,19 +131,20 @@ fun PasswordField(password: String, onTextFieldChanged: (String) -> Unit) {
 
 @Composable
 fun EmailField(email: String, onTextFieldChanged: (String) -> Unit) {
-   TextField(
-       value = email,
-       onValueChange = {},
-       modifier = Modifier
-           .fillMaxWidth()
-           .padding(15.dp, 0.dp, 15.dp, 0.dp),
-       keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
-       //TODO:Falta el onTextFieldChange()
-       singleLine = true,
-       maxLines = 1,
-       placeholder = { Text(text = "Email")}
+    TextField(
+        value = email,
+        onValueChange = { onTextFieldChanged(it) },
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(15.dp, 0.dp, 15.dp, 0.dp),
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+        //TODO:Falta el onTextFieldChange()
+        singleLine = true,
+        maxLines = 1,
+        placeholder = { Text(text = "Email") }
 
-       )
-
+    )
 }
+
+
 

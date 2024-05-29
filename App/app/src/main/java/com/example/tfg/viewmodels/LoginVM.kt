@@ -54,7 +54,8 @@ class LoginVM:ViewModel(){
         return validPassword
     }
 
-    //TODO: entender qué es esto
+    //Esto lanza una corrutina que muestra una pantalla de carga entre la pantalla
+    //del login y la mainlist.
     suspend fun onLoginSelected(){
         _isLoading.value=true
         delay(4000)

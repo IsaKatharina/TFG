@@ -1,0 +1,16 @@
+C:\Users\Isa K\Desktop\TFG\BBDD\API\DAL\bin\Debug\net8.0\DAL.deps.json
+C:\Users\Isa K\Desktop\TFG\BBDD\API\DAL\bin\Debug\net8.0\DAL.dll
+C:\Users\Isa K\Desktop\TFG\BBDD\API\DAL\bin\Debug\net8.0\DAL.pdb
+C:\Users\Isa K\Desktop\TFG\BBDD\API\DAL\bin\Debug\net8.0\Entidades.dll
+C:\Users\Isa K\Desktop\TFG\BBDD\API\DAL\bin\Debug\net8.0\Entidades.pdb
+C:\Users\Isa K\Desktop\TFG\BBDD\API\DAL\obj\Debug\net8.0\DAL.csproj.AssemblyReference.cache
+C:\Users\Isa K\Desktop\TFG\BBDD\API\DAL\obj\Debug\net8.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Isa K\Desktop\TFG\BBDD\API\DAL\obj\Debug\net8.0\DAL.AssemblyInfoInputs.cache
+C:\Users\Isa K\Desktop\TFG\BBDD\API\DAL\obj\Debug\net8.0\DAL.AssemblyInfo.cs
+C:\Users\Isa K\Desktop\TFG\BBDD\API\DAL\obj\Debug\net8.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Isa K\Desktop\TFG\BBDD\API\DAL\obj\Debug\net8.0\DAL.sourcelink.json
+C:\Users\Isa K\Desktop\TFG\BBDD\API\DAL\obj\Debug\net8.0\DAL.csproj.Up2Date
+C:\Users\Isa K\Desktop\TFG\BBDD\API\DAL\obj\Debug\net8.0\DAL.dll
+C:\Users\Isa K\Desktop\TFG\BBDD\API\DAL\obj\Debug\net8.0\refint\DAL.dll
+C:\Users\Isa K\Desktop\TFG\BBDD\API\DAL\obj\Debug\net8.0\DAL.pdb
+C:\Users\Isa K\Desktop\TFG\BBDD\API\DAL\obj\Debug\net8.0\ref\DAL.dll

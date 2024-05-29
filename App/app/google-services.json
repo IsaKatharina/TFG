@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "379078912796",
+    "project_id": "bestdupe-a13e8",
+    "storage_bucket": "bestdupe-a13e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:379078912796:android:59127344f9794516a628d9",
+        "android_client_info": {
+          "package_name": "com.example.tfg"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACW0e4E6kjTXESep9DtRQXMdmufLCicCU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
