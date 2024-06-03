@@ -34,7 +34,7 @@ namespace DAL.Handlers
                 //abrimos la conexion y la guardamos en una variable
                 SqlConnection conexionAbierta = conexion.getConnection();
 
-                cmd.CommandText = "DELETE FROM Usuario WHERE idProducto=@id";
+                cmd.CommandText = "DELETE FROM Usuarios WHERE idProducto=@id";
                 cmd.Connection = conexionAbierta;
                 numeroFilasAfectadas = cmd.ExecuteNonQuery();
 
@@ -86,7 +86,7 @@ namespace DAL.Handlers
                 //abrimos la conexion y la guardamos en una variable
                 SqlConnection conexionAbierta = conexion.getConnection();
 
-                cmd.CommandText = "UPDATE Producto SET Nombre=@nombre, marca=@marca, nombreOG=@nombreOG, marcaOG=@marcaOG, original=@original," +
+                cmd.CommandText = "UPDATE Productos SET Nombre=@nombre, marca=@marca, nombreOG=@nombreOG, marcaOG=@marcaOG, original=@original," +
                     "comentario=@comentario, imagen=@imagen WHERE idProducto=@idProducto and idUsuario=@idUsuario";
                 cmd.Connection = conexionAbierta;
                 numeroFilasAfectadas = cmd.ExecuteNonQuery();
@@ -143,7 +143,7 @@ namespace DAL.Handlers
                 //abrimos la conexion y la guardamos en una variable
                 SqlConnection conexionAbierta = conexion.getConnection();
 
-                cmd.CommandText = "INSERT INTO Producto (idUsuario, nombre, marca, nombreOG, marcaOG, original, comentario, imagen)" +
+                cmd.CommandText = "INSERT INTO Productos (idUsuario, nombre, marca, nombreOG, marcaOG, original, comentario, imagen)" +
                     "values (@idUsuario, @nombre, @emarca, @nombreOG, @marcaOG, @original, @comentario, @imagen)";
                 cmd.Connection = conexionAbierta;
                 numeroFilasAfectadas = cmd.ExecuteNonQuery();

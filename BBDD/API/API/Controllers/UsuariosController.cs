@@ -10,7 +10,7 @@ namespace API.Controllers
     [ApiController]
     public class UsuariosController : Controller
     {
-        //GET:UsuarioController
+        //GET:UsuariosController
         [HttpGet]
         public IActionResult Get()
         {
@@ -39,7 +39,7 @@ namespace API.Controllers
 
         }
 
-        // GET api/<PersonasController>/5
+        // GET api/<UsuariosController>/5
         [HttpGet("{idUsuario}")]
         public IActionResult Get(int idUsuario)
         {
@@ -70,7 +70,7 @@ namespace API.Controllers
             return salida;
         }
 
-        // POST api/<PersonasController>
+        // POST api/<UsuariosController>
         [HttpPost]
         public IActionResult Post([FromBody] clsUsuario usuario)
         {
@@ -103,7 +103,7 @@ namespace API.Controllers
 
         }
 
-        // PUT api/<PersonasController>/5
+        // PUT api/<UsuariosController>/5
         [HttpPut("{idUsuario}")]
         public IActionResult Put([FromBody] clsUsuario usuario)
         {
@@ -113,7 +113,7 @@ namespace API.Controllers
 
             try
             {
-                numFilasAfectadas = clsHandlerUsuarioDAL.updatePersonaDAL(usuario);
+                numFilasAfectadas = clsHandlerUsuarioDAL.updateUsuarioDAL(usuario);
 
                 if (numFilasAfectadas == 0)
                 {
@@ -136,7 +136,7 @@ namespace API.Controllers
 
         }
 
-        // DELETE api/<PersonasController>/5
+        // DELETE api/<UsuariosController>/5
         [HttpDelete("{idUsuario}")]
         public IActionResult Delete(int idUsuario)
         {

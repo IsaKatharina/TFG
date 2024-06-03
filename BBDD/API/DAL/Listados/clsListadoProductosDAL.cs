@@ -28,7 +28,7 @@ namespace DAL.Listados
                 //abrimos la conexion y la guardamos en una variable
                 SqlConnection conexionAbierta = conexion.getConnection();
 
-                cmd.CommandText = "Select * from producto";
+                cmd.CommandText = "Select * from productos";
                 cmd.Connection = conexionAbierta;
 
                 reader = cmd.ExecuteReader();
@@ -89,7 +89,7 @@ namespace DAL.Listados
                 //abrimos la conexion y la guardamos en una variable
                 SqlConnection conexionAbierta = conexion.getConnection();
 
-                cmd.CommandText = "Select * from producto WHERE ID=@id";
+                cmd.CommandText = "Select * from productos WHERE ID=@id";
                 cmd.Connection = conexionAbierta;
 
                 reader = cmd.ExecuteReader();

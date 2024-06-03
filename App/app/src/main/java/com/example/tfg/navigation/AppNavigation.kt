@@ -5,28 +5,29 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.tfg.screens.EditProductScreen
-import com.example.tfg.screens.EditProfileScreen
-import com.example.tfg.screens.FavsScreen
+import com.example.tfg.feature_list.presentation.add_edit_product.EditProductScreen
+import com.example.tfg.feature_profile.presentation.EditProfileScreen
+import com.example.tfg.feature_list.presentation.favs.FavsScreen
 import com.example.tfg.screens.LoginScreen
-import com.example.tfg.screens.MainListScreen
-import com.example.tfg.screens.NewProductScreen
+import com.example.tfg.feature_list.presentation.products.MainListScreen
+import com.example.tfg.feature_list.presentation.add_edit_product.NewProductScreen
 import com.example.tfg.screens.NewUserScreen
-import com.example.tfg.screens.ProductDetailsScreen
-import com.example.tfg.screens.ProfileScreen
+import com.example.tfg.feature_list.presentation.products.ProductDetailsScreen
+import com.example.tfg.feature_profile.presentation.ProfileScreen
 import com.example.tfg.screens.StartScreen
+import com.example.tfg.feature_login.viewmodels.LoginVM
 
 //se encarga de gestionar la navegación entre pantallas.
 @Composable
 fun AppNavigation() {
-
+    val vm= LoginVM() //instanciamos el vm del login
     val navController= rememberNavController() //hay que propagarla por todas las pantallas.
     NavHost(navController = navController, startDestination = AppScreens.StartScreen.route ) {
         composable(route=AppScreens.StartScreen.route){
             StartScreen(modifier=Modifier, navController)
         }
         composable (route=AppScreens.LoginScreen.route){
-            LoginScreen(modifier=Modifier, navController)
+            LoginScreen(modifier=Modifier, navController, vm )
         }
         composable(route=AppScreens.NewUserScreen.route){
             NewUserScreen(navController)

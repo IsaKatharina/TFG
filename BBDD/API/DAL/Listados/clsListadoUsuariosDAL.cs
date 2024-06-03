@@ -30,7 +30,7 @@ namespace DAL.Listados
                 //abrimos la conexion y la guardamos en una variable
                 SqlConnection conexionAbierta = conexion.getConnection();
 
-                cmd.CommandText = "Select * from usuario";
+                cmd.CommandText = "Select * from usuarios";
                 cmd.Connection = conexionAbierta;
 
                 reader = cmd.ExecuteReader();
@@ -89,7 +89,7 @@ namespace DAL.Listados
                 //abrimos la conexion y la guardamos en una variable
                 SqlConnection conexionAbierta = conexion.getConnection();
 
-                cmd.CommandText = "Select * from usuario WHERE ID=@id";
+                cmd.CommandText = "Select * from usuarios WHERE ID=@id";
                 cmd.Connection = conexionAbierta;
 
                 reader = cmd.ExecuteReader();

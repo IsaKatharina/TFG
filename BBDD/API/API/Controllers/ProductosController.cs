@@ -9,9 +9,9 @@ namespace API.Controllers
     [Route("api/[controller]")]
     [ApiController]
     
-        public class ProductoController : Controller
+        public class ProductosController : Controller
         {
-            //GET:UsuarioController
+            //GET:ProductosController
             [HttpGet]
             public IActionResult Get()
             {
@@ -40,7 +40,7 @@ namespace API.Controllers
 
             }
 
-            // GET api/<PersonasController>/5
+            // GET api/<ProductosController>/5
             [HttpGet("{idProducto}")]
             public IActionResult Get(int idProducto)
             {
@@ -71,7 +71,7 @@ namespace API.Controllers
                 return salida;
             }
 
-            // POST api/<PersonasController>
+            // POST api/<ProductosController>
             [HttpPost]
             public IActionResult Post([FromBody] clsProducto producto)
             {
@@ -104,7 +104,7 @@ namespace API.Controllers
 
             }
 
-            // PUT api/<PersonasController>/5
+            // PUT api/<ProductosController>/5
             [HttpPut("{idProducto}")]
             public IActionResult Put([FromBody] clsProducto producto)
             {
@@ -137,7 +137,7 @@ namespace API.Controllers
 
             }
 
-            // DELETE api/<PersonasController>/5
+            // DELETE api/<ProductosController>/5
             [HttpDelete("{idProducto}")]
             public IActionResult Delete(int idProducto)
 

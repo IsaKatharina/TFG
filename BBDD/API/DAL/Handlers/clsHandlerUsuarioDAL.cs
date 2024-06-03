@@ -34,7 +34,7 @@ namespace DAL.Handlers
                 //abrimos la conexion y la guardamos en una variable
                 SqlConnection conexionAbierta = conexion.getConnection();
 
-                cmd.CommandText = "DELETE FROM Usuario WHERE idUsuario=@id";
+                cmd.CommandText = "DELETE FROM Usuarios WHERE idUsuario=@id";
                 cmd.Connection = conexionAbierta;
                 numeroFilasAfectadas = cmd.ExecuteNonQuery();
 
@@ -62,7 +62,7 @@ namespace DAL.Handlers
         /// <param name="id"></param>
         /// <param name="idDepartamento"></param>
         /// <returns></returns>
-        public static int updatePersonaDAL(clsUsuario usuario)
+        public static int updateUsuarioDAL(clsUsuario usuario)
         {
             int numeroFilasAfectadas = 0;
 
@@ -84,7 +84,7 @@ namespace DAL.Handlers
                 //abrimos la conexion y la guardamos en una variable
                 SqlConnection conexionAbierta = conexion.getConnection();
 
-                cmd.CommandText = "UPDATE Usuario SET Nombre=@nombre, Apellidos=@apellidos, correo=@correo, password=@password," +
+                cmd.CommandText = "UPDATE Usuarios SET Nombre=@nombre, Apellidos=@apellidos, correo=@correo, password=@password," +
                     "Foto=@foto, FechaNac=@fechaNac WHERE idUsuario=@idUsuario";
                 cmd.Connection = conexionAbierta;
                 numeroFilasAfectadas = cmd.ExecuteNonQuery();
@@ -139,7 +139,7 @@ namespace DAL.Handlers
                 //abrimos la conexion y la guardamos en una variable
                 SqlConnection conexionAbierta = conexion.getConnection();
 
-                cmd.CommandText = "INSERT INTO Usuario (Nombre, Apellidos, Correo, Password, Foto, FechaNac)" +
+                cmd.CommandText = "INSERT INTO Usuarios (Nombre, Apellidos, Correo, Password, Foto, FechaNac)" +
                     "values (@nombre, @apellidos, @correo, @password, @foto, @fechaNac)";
                 cmd.Connection = conexionAbierta;
                 numeroFilasAfectadas = cmd.ExecuteNonQuery();
