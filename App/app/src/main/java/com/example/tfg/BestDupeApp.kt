@@ -4,4 +4,5 @@ import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class BestDupeApp :Application()
+//hay que añdirla al manifest.
+class BestDupeApp : Application()

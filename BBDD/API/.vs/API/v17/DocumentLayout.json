@@ -54,11 +54,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< Updated upstream
           "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+=======
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "clsHandlerUsuarioDAL.cs",
+              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\DAL\\Handlers\\clsHandlerUsuarioDAL.cs",
+              "RelativeDocumentMoniker": "DAL\\Handlers\\clsHandlerUsuarioDAL.cs",
+              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\DAL\\Handlers\\clsHandlerUsuarioDAL.cs",
+              "RelativeToolTip": "DAL\\Handlers\\clsHandlerUsuarioDAL.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAI0AAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T23:25:34.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductosController.cs",
+              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\API\\Controllers\\ProductosController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\ProductosController.cs",
+              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\API\\Controllers\\ProductosController.cs",
+              "RelativeToolTip": "API\\Controllers\\ProductosController.cs",
+              "ViewState": "AQIAAFMAAAAAAAAAAAAgwA8AAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T16:58:10.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+>>>>>>> Stashed changes
               "Title": "clsListadoProductosDAL.cs",
               "DocumentMoniker": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\DAL\\Listados\\clsListadoProductosDAL.cs",
               "RelativeDocumentMoniker": "DAL\\Listados\\clsListadoProductosDAL.cs",
@@ -66,12 +99,27 @@
               "RelativeToolTip": "DAL\\Listados\\clsListadoProductosDAL.cs",
               "ViewState": "AQIAAFoAAAAAAAAAAAAkwD4AAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T23:26:14.032Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-03T23:26:14.032Z"
             },
             {
               "$type": "Document",
+<<<<<<< Updated upstream
               "DocumentIndex": 3,
+=======
+              "DocumentIndex": 4,
+              "Title": "clsListadoUsuariosDAL.cs",
+              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\DAL\\Listados\\clsListadoUsuariosDAL.cs",
+              "RelativeDocumentMoniker": "DAL\\Listados\\clsListadoUsuariosDAL.cs",
+              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\DAL\\Listados\\clsListadoUsuariosDAL.cs",
+              "RelativeToolTip": "DAL\\Listados\\clsListadoUsuariosDAL.cs",
+              "ViewState": "AQIAAGkAAAAAAAAAAAAYwFsAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T23:26:41.746Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+>>>>>>> Stashed changes
               "Title": "clsHandlerProductoDAL.cs",
               "DocumentMoniker": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\DAL\\Handlers\\clsHandlerProductoDAL.cs",
               "RelativeDocumentMoniker": "DAL\\Handlers\\clsHandlerProductoDAL.cs",
@@ -79,6 +127,7 @@
               "RelativeToolTip": "DAL\\Handlers\\clsHandlerProductoDAL.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAAAwJEAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< Updated upstream
               "WhenOpened": "2024-06-03T16:16:36.362Z",
               "EditorCaption": ""
             },
@@ -98,6 +147,49 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
+=======
+              "WhenOpened": "2024-06-03T16:16:36.362Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UsuariosController.cs",
+              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\API\\Controllers\\UsuariosController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\UsuariosController.cs",
+              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\API\\Controllers\\UsuariosController.cs",
+              "RelativeToolTip": "API\\Controllers\\UsuariosController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAE4AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T21:27:21.095Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "clsConnection.cs",
+              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\DAL\\Connection\\clsConnection.cs",
+              "RelativeDocumentMoniker": "DAL\\Connection\\clsConnection.cs",
+              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\DAL\\Connection\\clsConnection.cs",
+              "RelativeToolTip": "DAL\\Connection\\clsConnection.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwDIAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T16:14:42.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "clsUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\Entidades\\clsUsuario.cs",
+              "RelativeDocumentMoniker": "Entidades\\clsUsuario.cs",
+              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\Entidades\\clsUsuario.cs",
+              "RelativeToolTip": "Entidades\\clsUsuario.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-21T17:32:42.362Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+>>>>>>> Stashed changes
               "Title": "clsProducto.cs",
               "DocumentMoniker": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\Entidades\\clsProducto.cs",
               "RelativeDocumentMoniker": "Entidades\\clsProducto.cs",
@@ -105,8 +197,7 @@
               "RelativeToolTip": "Entidades\\clsProducto.cs",
               "ViewState": "AQIAABEAAAAAAAAAAAAAwDIAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T17:47:01.231Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-21T17:47:01.231Z"
             },
             {
               "$type": "Document",

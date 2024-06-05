@@ -22,7 +22,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import androidx.navigation.NavController
 import com.example.tfg.R
-import com.example.tfg.screens.StartScreen
 import com.example.tfg.core.presentation.buttons.HeartButton
 import com.example.tfg.ui.theme.TFGTheme
 
