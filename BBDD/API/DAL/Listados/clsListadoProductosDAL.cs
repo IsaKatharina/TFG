@@ -40,13 +40,27 @@ namespace DAL.Listados
                         oProducto = new clsProducto();
                         oProducto.IdProducto = (int)reader["idProducto"];
                         oProducto.IdUsuario = (int)reader["idUsuario"];
-                        oProducto.Nombre = (string)reader["nombre"];
-                        oProducto.Marca = (string)reader["marca"];
+                        //en caso de que pueda ser null
+                        if (reader["nombre"] != System.DBNull.Value)
+                        {
+                            oProducto.Nombre = (string)reader["nombre"];
+                        }
+                        if (reader["marca"] != System.DBNull.Value)
+                        {
+                            oProducto.Marca = (string)reader["marca"];
+                        }
                         oProducto.NombreOG = (string)reader["nombreOG"];
                         oProducto.MarcaOG = (string)reader["marcaOG"];
                         oProducto.Original = (string)reader["original"];
-                        oProducto.Comentario = (string)reader["comentario"];
-                        oProducto.Imagen = (string)reader["imagen"];
+
+                        if (reader["comentario"] != System.DBNull.Value)
+                        {
+                            oProducto.Comentario = (string)reader["comentario"];
+                        }
+                        if (reader["imagen"] != System.DBNull.Value)
+                        {
+                            oProducto.Imagen = (string)reader["imagen"];
+                        }                       
 
                         listadoProductos.Add(oProducto);
 

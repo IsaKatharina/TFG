@@ -14,3 +14,19 @@ C:\Users\Isa K\Desktop\TFG\BBDD\API\DAL\obj\Release\net8.0\DAL.dll
 C:\Users\Isa K\Desktop\TFG\BBDD\API\DAL\obj\Release\net8.0\refint\DAL.dll
 C:\Users\Isa K\Desktop\TFG\BBDD\API\DAL\obj\Release\net8.0\DAL.pdb
 C:\Users\Isa K\Desktop\TFG\BBDD\API\DAL\obj\Release\net8.0\ref\DAL.dll
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\DAL\bin\Release\net8.0\DAL.deps.json
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\DAL\bin\Release\net8.0\DAL.dll
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\DAL\bin\Release\net8.0\DAL.pdb
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\DAL\bin\Release\net8.0\Entidades.dll
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\DAL\bin\Release\net8.0\Entidades.pdb
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\DAL\obj\Release\net8.0\DAL.csproj.AssemblyReference.cache
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\DAL\obj\Release\net8.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\DAL\obj\Release\net8.0\DAL.AssemblyInfoInputs.cache
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\DAL\obj\Release\net8.0\DAL.AssemblyInfo.cs
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\DAL\obj\Release\net8.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\DAL\obj\Release\net8.0\DAL.sourcelink.json
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\DAL\obj\Release\net8.0\DAL.csproj.Up2Date
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\DAL\obj\Release\net8.0\DAL.dll
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\DAL\obj\Release\net8.0\refint\DAL.dll
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\DAL\obj\Release\net8.0\DAL.pdb
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\DAL\obj\Release\net8.0\ref\DAL.dll
