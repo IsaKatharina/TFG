@@ -1,5 +1,6 @@
 package com.example.tfg.ui.screens.login
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
@@ -8,26 +9,33 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldColors
 import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.tfg.navigation.AppScreens
 import com.example.tfg.core.presentation.buttons.BackButton
 import com.example.tfg.core.presentation.composables.HeaderImagen
+import com.example.tfg.ui.theme.TFGTheme
+import com.example.tfg.ui.theme.backgroundLight
 import com.example.tfg.viewmodels.LoginVM
 
 @Composable
 fun LoginScreen(modifier: Modifier, navController: NavController, vm: LoginVM) {
 
     Box(modifier= Modifier.fillMaxSize()
+        .background(Color.White)
     ) {
      Login(Modifier.align(Alignment.Center), navController, vm)
     }
@@ -47,7 +55,7 @@ fun Login(modifier: Modifier, navController: NavController, vm: LoginVM){
     //en caso de que esté cargando ponemos un circulito para indicar la carga
     if (isLoading){
         Box(Modifier.fillMaxSize()) {
-            CircularProgressIndicator(Modifier.align(Alignment.Center))
+            CircularProgressIndicator(Modifier.align(Alignment.Center), color = Color(0xFFFF5290))
         }
     }else {
 
@@ -56,6 +64,8 @@ fun Login(modifier: Modifier, navController: NavController, vm: LoginVM){
             // (sus funciones), no los "pintamos"
             BackButton(navController = navController,
                 modifier=Modifier.align(Alignment.Start))
+            
+            Spacer(modifier = Modifier.padding(40.dp))
 
             HeaderImagen(Modifier.align(Alignment.CenterHorizontally), navController)
 
@@ -67,12 +77,8 @@ fun Login(modifier: Modifier, navController: NavController, vm: LoginVM){
             Spacer(modifier = Modifier.padding(16.dp))
             PasswordField(password) { vm.onLoginChanged(email, it) }
 
-            //otro espacio
-            Spacer(modifier = Modifier.padding(16.dp))
-            ForgotPassword(Modifier.align(Alignment.End))
+            ForgotPassword(Modifier.align(Alignment.End).padding(0.dp,60.dp,10.dp,16.dp))
 
-            //otro espacio
-            Spacer(modifier = Modifier.padding(16.dp))
             LoginButton(loginEnable, navController, loginTrue )
         }
     }
@@ -90,7 +96,7 @@ fun LoginButton(loginEnable: Boolean, navController: NavController, loginTrue:Bo
             .height(48.dp),
         colors = ButtonDefaults.buttonColors(
             containerColor = Color(0xFFFF5290),
-            disabledContainerColor = Color.White
+            disabledContainerColor = Color(0xFFE2E1E5)
         )
     , enabled = loginEnable) {
         Text(text = "Login")
@@ -138,10 +144,17 @@ fun EmailField(email: String, onTextFieldChanged: (String) -> Unit) {
         //TODO:Falta el onTextFieldChange()
         singleLine = true,
         maxLines = 1,
-        placeholder = { Text(text = "Email") }
+        placeholder = { Text(text = "Email") },
 
     )
 }
 
+@Preview
+@Composable
+fun PCLogin(){
+    TFGTheme {
+        LoginScreen(modifier = Modifier, navController = rememberNavController(), vm = LoginVM())
+    }
+}
 
 

@@ -3,7 +3,7 @@ package com.example.tfg.ui.theme
 import androidx.compose.ui.graphics.Color
 
 val primaryLight = Color(0xFFFF5290)
-val onPrimaryLight = Color(0xFFFFFFFF)
+val onPrimaryLight = Color.White
 val primaryContainerLight = Color(0xFFFFD9E1)
 val onPrimaryContainerLight = Color(0xFF3A071A)
 val secondaryLight = Color(0xFF75565D)

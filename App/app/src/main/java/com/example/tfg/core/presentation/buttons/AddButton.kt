@@ -30,7 +30,7 @@ fun AddButton(navController: NavController, modifier: Modifier){
                 contentColor=Color(0xFFFF5290)
             )) {
 
-            Icon(painter = painterResource(id = R.drawable.add_pink), contentDescription = "home_black")
+            Icon(painter = painterResource(id = R.drawable.add_pink), contentDescription = "add pink", tint = Color(0xFFFF5290))
             Text(text = "Add", color = Color(0xFFFF5290))
 
         }

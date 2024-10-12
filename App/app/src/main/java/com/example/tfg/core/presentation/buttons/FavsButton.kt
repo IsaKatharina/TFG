@@ -5,7 +5,9 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
+import androidx.compose.material3.rememberBottomAppBarState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
@@ -19,13 +21,13 @@ import com.example.tfg.navigation.AppScreens
 fun FavsButton(navController: NavController, modifier: Modifier){
 
     //creamos una variable que recuerde el estado del botón.
-    val botonClickado:Boolean=false
+    val botonClickado:Boolean= false
 
     if (botonClickado) {
 
         Button(onClick = {}, enabled = false) {
 
-            Icon(painter = painterResource(id = R.drawable.favs_pink), contentDescription = "home_black")
+            Icon(painter = painterResource(id = R.drawable.favs_pink), contentDescription = "favs pink", tint = Color(0xFFFF5290))
             Text(text = "Favs", color = Color(0xFFFF5290))
 
         }

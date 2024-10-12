@@ -25,7 +25,7 @@ fun BackButton(navController: NavController, modifier: Modifier){
             painter= painterResource(id = R.drawable.back_pink),
             contentDescription = "Back",
             tint= Color(0xFFFF5290),
-            modifier=Modifier.size(25.dp)
+            modifier=Modifier.size(35.dp)
         )
     }
 }

@@ -4,10 +4,10 @@ import com.example.tfg.core.utils.Resources
 import com.example.tfg.data.remote.api
 import com.example.tfg.data.remote.responses.Product
 import com.example.tfg.data.remote.responses.ProductsList
-import dagger.hilt.android.scopes.ActivityScoped
+//import dagger.hilt.android.scopes.ActivityScoped
 import javax.inject.Inject
 
-@ActivityScoped
+//@ActivityScoped
 class ProductsRepoImp @Inject constructor(
     private val api:api
 ) {

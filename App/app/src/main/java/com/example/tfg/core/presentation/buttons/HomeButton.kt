@@ -26,7 +26,7 @@ fun HomeButton(navController: NavController, modifier: Modifier){
 
         Button(onClick = {}, enabled = false) {
 
-            Icon(painter = painterResource(id = R.drawable.home_pink), contentDescription = "home_black")
+            Icon(painter = painterResource(id = R.drawable.home_pink), contentDescription = "home pink", tint = Color(0xFFFF5290))
             Text(text = "Home", color = Color(0xFFFF5290))
 
         }

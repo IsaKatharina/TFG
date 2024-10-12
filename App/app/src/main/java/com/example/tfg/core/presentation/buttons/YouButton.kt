@@ -24,7 +24,7 @@ fun YouButton(navController: NavController, modifier: Modifier){
 
         Button(onClick = {}, enabled = false) {
 
-            Icon(painter = painterResource(id = R.drawable.person_pink), contentDescription = "home_black")
+            Icon(painter = painterResource(id = R.drawable.person_pink), contentDescription = "person pink", tint = Color(0xFFFF5290))
             Text(text = "You", color = Color(0xFFFF5290))
 
         }

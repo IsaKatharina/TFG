@@ -2,6 +2,7 @@ package com.example.tfg.core.presentation.buttons
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
@@ -20,7 +21,7 @@ import com.example.tfg.R
 import com.example.tfg.navigation.AppScreens
 
 @Composable
-fun HeartButton(modifier: Modifier) {
+fun HeartButton(modifier: Modifier, navController: NavController) {
     // Creamos una variable que recuerde el estado del botón.
     var botonClickado = remember { mutableStateOf(false) }
 
@@ -30,14 +31,14 @@ fun HeartButton(modifier: Modifier) {
                 // Aquí puedes agregar la lógica para agregar el elemento a la lista de favoritos.
                 // Por ahora, simplemente cambiamos el estado del botón.
                 botonClickado.value = false
-            },
-            modifier = Modifier.size(25.dp)
+            }
         ) {
 
             Icon(
                     painter = painterResource(id = R.drawable.favs_pink),
                     contentDescription = "heart_pink",
-                    tint = Color(0xFFFF5290)
+                    tint = Color(0xFFFF5290),
+                    modifier=Modifier.size(35.dp)
                 )
 
         }
@@ -49,17 +50,16 @@ fun HeartButton(modifier: Modifier) {
                 //ha sido clickado
                 botonClickado.value = true
             },
-            modifier = Modifier.fillMaxSize(),
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color.Transparent,
                 contentColor = Color.Black
             )
         ) {
                 Icon(
-                    modifier=Modifier.fillMaxSize(),
                     painter = painterResource(id = R.drawable.favs_black),
                     contentDescription = "heart_black",
-                    tint = Color(0xFFFF5290)
+                    tint = Color(0xFFFF5290),
+                    modifier=Modifier.size(35.dp)
                 )
 
 

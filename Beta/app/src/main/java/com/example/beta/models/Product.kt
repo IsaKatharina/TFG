@@ -1,3 +1,13 @@
 package com.example.beta.models
 
-class Product : ArrayList<ProductItem>()
+data class Product(
+    val comentario: String,
+    val idProducto: Int,
+    val idUsuario: Int,
+    val imagen: String,
+    val marca: String,
+    val marcaOG: String,
+    val nombre: String,
+    val nombreOG: String,
+    val original: String
+)
