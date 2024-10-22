@@ -1,49 +1,65 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\",
+  "WorkspaceRootPath": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\dal\\handlers\\clshandlerusuariodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\handlers\\clshandlerusuariodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|c:\\users\\isa k\\desktop\\tfg\\bbdd\\api\\api\\controllers\\productospruebacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|solutionrelative:api\\controllers\\productospruebacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\dal\\listados\\clslistadoproductosdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\listados\\clslistadoproductosdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\dal\\listados\\clslistadousuariosdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\listados\\clslistadousuariosdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\dal\\handlers\\clshandlerproductodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\handlers\\clshandlerproductodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D363B04-55DB-452D-8C1E-27C61038CA9A}|Entidades\\Entidades.csproj|C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\entidades\\clsproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D363B04-55DB-452D-8C1E-27C61038CA9A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\clsproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D363B04-55DB-452D-8C1E-27C61038CA9A}|Entidades\\Entidades.csproj|C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\entidades\\clsusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D363B04-55DB-452D-8C1E-27C61038CA9A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\clsusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\api\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|c:\\users\\isa k\\desktop\\tfg\\bbdd\\api\\api\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|solutionrelative:api\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|c:\\users\\isabelkatharinaloerz\\onedrive - paradox cat gmbh\\desktop\\api\\tfg\\bbdd\\api\\api\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|solutionrelative:api\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|c:\\users\\isa k\\desktop\\tfg\\bbdd\\api\\dal\\listados\\clslistadoproductoprueba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\listados\\clslistadoproductoprueba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\dal\\connection\\clsconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|c:\\users\\isa k\\desktop\\tfg\\bbdd\\api\\dal\\listados\\clslistadoproductosdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\listados\\clslistadoproductosdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|c:\\users\\isa k\\desktop\\tfg\\bbdd\\api\\dal\\handlers\\clshandlerproductoprueba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\handlers\\clshandlerproductoprueba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|c:\\users\\isa k\\desktop\\tfg\\bbdd\\api\\dal\\handlers\\clshandlerproductodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\handlers\\clshandlerproductodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|c:\\users\\isa k\\desktop\\tfg\\bbdd\\api\\dal\\connection\\clsconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\connection\\clsconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7D363B04-55DB-452D-8C1E-27C61038CA9A}|Entidades\\Entidades.csproj|c:\\users\\isa k\\desktop\\tfg\\bbdd\\api\\entidades\\clsproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D363B04-55DB-452D-8C1E-27C61038CA9A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\clsproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D363B04-55DB-452D-8C1E-27C61038CA9A}|Entidades\\Entidades.csproj|c:\\users\\isa k\\desktop\\tfg\\bbdd\\api\\entidades\\clsproductoprueba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D363B04-55DB-452D-8C1E-27C61038CA9A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\clsproductoprueba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D363B04-55DB-452D-8C1E-27C61038CA9A}|Entidades\\Entidades.csproj|c:\\users\\isa k\\desktop\\tfg\\bbdd\\api\\entidades\\clsusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D363B04-55DB-452D-8C1E-27C61038CA9A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\clsusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|c:\\users\\isa k\\desktop\\tfg\\bbdd\\api\\dal\\handlers\\clshandlerusuariodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\handlers\\clshandlerusuariodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|c:\\users\\isa k\\desktop\\tfg\\bbdd\\api\\dal\\listados\\clslistadousuariosdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\listados\\clslistadousuariosdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|c:\\users\\isa k\\desktop\\tfg\\bbdd\\api\\api\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|solutionrelative:api\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|c:\\users\\isa k\\desktop\\tfg\\bbdd\\api\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\dal\\dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|c:\\users\\isa k\\desktop\\tfg\\bbdd\\api\\dal\\dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
@@ -54,18 +70,98 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< Updated upstream
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductosPruebaController.cs",
+              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\API\\Controllers\\ProductosPruebaController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\ProductosPruebaController.cs",
+              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\API\\Controllers\\ProductosPruebaController.cs",
+              "RelativeToolTip": "API\\Controllers\\ProductosPruebaController.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAxwAcAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T12:17:31.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "clsListadoProductoPrueba.cs",
+              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\DAL\\Listados\\clsListadoProductoPrueba.cs",
+              "RelativeDocumentMoniker": "DAL\\Listados\\clsListadoProductoPrueba.cs",
+              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\DAL\\Listados\\clsListadoProductoPrueba.cs",
+              "RelativeToolTip": "DAL\\Listados\\clsListadoProductoPrueba.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T12:16:54.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "clsHandlerProductoPrueba.cs",
+              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\DAL\\Handlers\\clsHandlerProductoPrueba.cs",
+              "RelativeDocumentMoniker": "DAL\\Handlers\\clsHandlerProductoPrueba.cs",
+              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\DAL\\Handlers\\clsHandlerProductoPrueba.cs",
+              "RelativeToolTip": "DAL\\Handlers\\clsHandlerProductoPrueba.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T12:16:54.895Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "clsProductoPrueba.cs",
+              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\Entidades\\clsProductoPrueba.cs",
+              "RelativeDocumentMoniker": "Entidades\\clsProductoPrueba.cs",
+              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\Entidades\\clsProductoPrueba.cs",
+              "RelativeToolTip": "Entidades\\clsProductoPrueba.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACgAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T12:16:54.909Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-=======
-          "SelectedChildIndex": 1,
-          "Children": [
+              "Title": "ProductosController.cs",
+              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\API\\Controllers\\ProductosController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\ProductosController.cs",
+              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\API\\Controllers\\ProductosController.cs",
+              "RelativeToolTip": "API\\Controllers\\ProductosController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T12:16:54.925Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
+              "Title": "clsProducto.cs",
+              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\Entidades\\clsProducto.cs",
+              "RelativeDocumentMoniker": "Entidades\\clsProducto.cs",
+              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\Entidades\\clsProducto.cs",
+              "RelativeToolTip": "Entidades\\clsProducto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T12:16:54.939Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "clsUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\Entidades\\clsUsuario.cs",
+              "RelativeDocumentMoniker": "Entidades\\clsUsuario.cs",
+              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\Entidades\\clsUsuario.cs",
+              "RelativeToolTip": "Entidades\\clsUsuario.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAAACsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T12:16:54.953Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "clsHandlerUsuarioDAL.cs",
               "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\DAL\\Handlers\\clsHandlerUsuarioDAL.cs",
               "RelativeDocumentMoniker": "DAL\\Handlers\\clsHandlerUsuarioDAL.cs",
@@ -73,94 +169,7 @@
               "RelativeToolTip": "DAL\\Handlers\\clsHandlerUsuarioDAL.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAI0AAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T23:25:34.751Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProductosController.cs",
-              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\API\\Controllers\\ProductosController.cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\ProductosController.cs",
-              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\API\\Controllers\\ProductosController.cs",
-              "RelativeToolTip": "API\\Controllers\\ProductosController.cs",
-              "ViewState": "AQIAAFMAAAAAAAAAAAAgwA8AAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T16:58:10.585Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
->>>>>>> Stashed changes
-              "Title": "clsListadoProductosDAL.cs",
-              "DocumentMoniker": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\DAL\\Listados\\clsListadoProductosDAL.cs",
-              "RelativeDocumentMoniker": "DAL\\Listados\\clsListadoProductosDAL.cs",
-              "ToolTip": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\DAL\\Listados\\clsListadoProductosDAL.cs",
-              "RelativeToolTip": "DAL\\Listados\\clsListadoProductosDAL.cs",
-              "ViewState": "AQIAAFoAAAAAAAAAAAAkwD4AAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T23:26:14.032Z"
-            },
-            {
-              "$type": "Document",
-<<<<<<< Updated upstream
-              "DocumentIndex": 3,
-=======
-              "DocumentIndex": 4,
-              "Title": "clsListadoUsuariosDAL.cs",
-              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\DAL\\Listados\\clsListadoUsuariosDAL.cs",
-              "RelativeDocumentMoniker": "DAL\\Listados\\clsListadoUsuariosDAL.cs",
-              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\DAL\\Listados\\clsListadoUsuariosDAL.cs",
-              "RelativeToolTip": "DAL\\Listados\\clsListadoUsuariosDAL.cs",
-              "ViewState": "AQIAAGkAAAAAAAAAAAAYwFsAAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T23:26:41.746Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
->>>>>>> Stashed changes
-              "Title": "clsHandlerProductoDAL.cs",
-              "DocumentMoniker": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\DAL\\Handlers\\clsHandlerProductoDAL.cs",
-              "RelativeDocumentMoniker": "DAL\\Handlers\\clsHandlerProductoDAL.cs",
-              "ToolTip": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\DAL\\Handlers\\clsHandlerProductoDAL.cs",
-              "RelativeToolTip": "DAL\\Handlers\\clsHandlerProductoDAL.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAAwJEAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-<<<<<<< Updated upstream
-              "WhenOpened": "2024-06-03T16:16:36.362Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ProductosController.cs",
-              "DocumentMoniker": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\API\\Controllers\\ProductosController.cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\ProductosController.cs",
-              "ToolTip": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\API\\Controllers\\ProductosController.cs",
-              "RelativeToolTip": "API\\Controllers\\ProductosController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T16:58:10.585Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-=======
-              "WhenOpened": "2024-06-03T16:16:36.362Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UsuariosController.cs",
-              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\API\\Controllers\\UsuariosController.cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\UsuariosController.cs",
-              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\API\\Controllers\\UsuariosController.cs",
-              "RelativeToolTip": "API\\Controllers\\UsuariosController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAE4AAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T21:27:21.095Z"
+              "WhenOpened": "2024-10-22T12:16:54.967Z"
             },
             {
               "$type": "Document",
@@ -170,126 +179,81 @@
               "RelativeDocumentMoniker": "DAL\\Connection\\clsConnection.cs",
               "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\DAL\\Connection\\clsConnection.cs",
               "RelativeToolTip": "DAL\\Connection\\clsConnection.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAQwDIAAAANAAAA",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAIwDIAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T16:14:42.774Z"
+              "WhenOpened": "2024-10-22T12:16:54.98Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "clsUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\Entidades\\clsUsuario.cs",
-              "RelativeDocumentMoniker": "Entidades\\clsUsuario.cs",
-              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\Entidades\\clsUsuario.cs",
-              "RelativeToolTip": "Entidades\\clsUsuario.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFYAAAAAAAAA",
+              "DocumentIndex": 3,
+              "Title": "clsListadoProductosDAL.cs",
+              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\DAL\\Listados\\clsListadoProductosDAL.cs",
+              "RelativeDocumentMoniker": "DAL\\Listados\\clsListadoProductosDAL.cs",
+              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\DAL\\Listados\\clsListadoProductosDAL.cs",
+              "RelativeToolTip": "DAL\\Listados\\clsListadoProductosDAL.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T17:32:42.362Z"
+              "WhenOpened": "2024-10-22T12:16:54.992Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
->>>>>>> Stashed changes
-              "Title": "clsProducto.cs",
-              "DocumentMoniker": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\Entidades\\clsProducto.cs",
-              "RelativeDocumentMoniker": "Entidades\\clsProducto.cs",
-              "ToolTip": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\Entidades\\clsProducto.cs",
-              "RelativeToolTip": "Entidades\\clsProducto.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAAwDIAAAAIAAAA",
+              "DocumentIndex": 12,
+              "Title": "UsuariosController.cs",
+              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\API\\Controllers\\UsuariosController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\UsuariosController.cs",
+              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\API\\Controllers\\UsuariosController.cs",
+              "RelativeToolTip": "API\\Controllers\\UsuariosController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAKgAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T17:47:01.231Z"
+              "WhenOpened": "2024-10-22T12:16:55.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "clsListadoUsuariosDAL.cs",
+              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\DAL\\Listados\\clsListadoUsuariosDAL.cs",
+              "RelativeDocumentMoniker": "DAL\\Listados\\clsListadoUsuariosDAL.cs",
+              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\DAL\\Listados\\clsListadoUsuariosDAL.cs",
+              "RelativeToolTip": "DAL\\Listados\\clsListadoUsuariosDAL.cs",
+              "ViewState": "AQIAAEkAAAAAAAAAAAAQwFsAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T12:16:55.015Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "clsUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\Entidades\\clsUsuario.cs",
-              "RelativeDocumentMoniker": "Entidades\\clsUsuario.cs",
-              "ToolTip": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\Entidades\\clsUsuario.cs",
-              "RelativeToolTip": "Entidades\\clsUsuario.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACsAAAAAAAAA",
+              "Title": "clsHandlerProductoDAL.cs",
+              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\DAL\\Handlers\\clsHandlerProductoDAL.cs",
+              "RelativeDocumentMoniker": "DAL\\Handlers\\clsHandlerProductoDAL.cs",
+              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\DAL\\Handlers\\clsHandlerProductoDAL.cs",
+              "RelativeToolTip": "DAL\\Handlers\\clsHandlerProductoDAL.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T17:32:42.362Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-22T12:16:55.026Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "clsListadoUsuariosDAL.cs",
-              "DocumentMoniker": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\DAL\\Listados\\clsListadoUsuariosDAL.cs",
-              "RelativeDocumentMoniker": "DAL\\Listados\\clsListadoUsuariosDAL.cs",
-              "ToolTip": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\DAL\\Listados\\clsListadoUsuariosDAL.cs",
-              "RelativeToolTip": "DAL\\Listados\\clsListadoUsuariosDAL.cs",
-              "ViewState": "AQIAAEkAAAAAAAAAAAAQwFsAAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T23:26:41.746Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "clsHandlerUsuarioDAL.cs",
-              "DocumentMoniker": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\DAL\\Handlers\\clsHandlerUsuarioDAL.cs",
-              "RelativeDocumentMoniker": "DAL\\Handlers\\clsHandlerUsuarioDAL.cs",
-              "ToolTip": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\DAL\\Handlers\\clsHandlerUsuarioDAL.cs",
-              "RelativeToolTip": "DAL\\Handlers\\clsHandlerUsuarioDAL.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAI0AAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T23:25:34.751Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UsuariosController.cs",
-              "DocumentMoniker": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\API\\Controllers\\UsuariosController.cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\UsuariosController.cs",
-              "ToolTip": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\API\\Controllers\\UsuariosController.cs",
-              "RelativeToolTip": "API\\Controllers\\UsuariosController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAKgAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T21:27:21.095Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "clsConnection.cs",
-              "DocumentMoniker": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\DAL\\Connection\\clsConnection.cs",
-              "RelativeDocumentMoniker": "DAL\\Connection\\clsConnection.cs",
-              "ToolTip": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\DAL\\Connection\\clsConnection.cs",
-              "RelativeToolTip": "DAL\\Connection\\clsConnection.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAQwDIAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T16:14:42.774Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\API\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\API\\Program.cs",
               "RelativeDocumentMoniker": "API\\Program.cs",
-              "ToolTip": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\API\\Program.cs",
+              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\API\\Program.cs",
               "RelativeToolTip": "API\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T17:02:56.63Z"
+              "WhenOpened": "2024-10-22T12:16:55.037Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "DAL.csproj",
-              "DocumentMoniker": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\DAL\\DAL.csproj",
+              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\DAL\\DAL.csproj",
               "RelativeDocumentMoniker": "DAL\\DAL.csproj",
-              "ToolTip": "C:\\Users\\IsabelKatharinaLoerz\\OneDrive - Paradox Cat GmbH\\Desktop\\api\\TFG\\BBDD\\API\\DAL\\DAL.csproj",
+              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\BBDD\\API\\DAL\\DAL.csproj",
               "RelativeToolTip": "DAL\\DAL.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-05-26T20:16:33.826Z"
+              "WhenOpened": "2024-10-22T12:16:55.048Z"
             }
           ]
         }

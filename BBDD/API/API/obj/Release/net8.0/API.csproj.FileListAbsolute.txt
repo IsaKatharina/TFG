@@ -132,3 +132,4 @@ C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\A
 C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\API\obj\Release\net8.0\API.pdb
 C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\API\obj\Release\net8.0\API.genruntimeconfig.cache
 C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\API\obj\Release\net8.0\ref\API.dll
+C:\Users\Isa K\Desktop\TFG\BBDD\API\API\bin\Release\net8.0\System.ClientModel.dll

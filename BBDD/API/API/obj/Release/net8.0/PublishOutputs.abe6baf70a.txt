@@ -18,6 +18,7 @@ C:\Users\Isa K\Desktop\TFG\BBDD\API\API\obj\Release\net8.0\PubTmp\Out\Microsoft.
 C:\Users\Isa K\Desktop\TFG\BBDD\API\API\obj\Release\net8.0\PubTmp\Out\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\Isa K\Desktop\TFG\BBDD\API\API\obj\Release\net8.0\PubTmp\Out\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Isa K\Desktop\TFG\BBDD\API\API\obj\Release\net8.0\PubTmp\Out\Microsoft.SqlServer.Server.dll
+C:\Users\Isa K\Desktop\TFG\BBDD\API\API\obj\Release\net8.0\PubTmp\Out\System.ClientModel.dll
 C:\Users\Isa K\Desktop\TFG\BBDD\API\API\obj\Release\net8.0\PubTmp\Out\System.Configuration.ConfigurationManager.dll
 C:\Users\Isa K\Desktop\TFG\BBDD\API\API\obj\Release\net8.0\PubTmp\Out\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Isa K\Desktop\TFG\BBDD\API\API\obj\Release\net8.0\PubTmp\Out\System.Memory.Data.dll
