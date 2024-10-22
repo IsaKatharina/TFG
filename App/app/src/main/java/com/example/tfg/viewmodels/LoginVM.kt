@@ -60,6 +60,8 @@ class LoginVM:ViewModel(){
     //función que checkea que uno se puede loggear
     private fun checkLogin (loginTrue:Boolean):Boolean {
 
+        //TODO:aqui iría la movida de los usuarios
+
         return loginTrue
     }
 }

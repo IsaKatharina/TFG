@@ -96,6 +96,9 @@ dependencies {
     //Picasso, para transformar url a img
     implementation("com.squareup.picasso:picasso:2.71828")
 
+    // Coil
+    implementation("io.coil-kt:coil-compose:2.4.0")
+
     //Updock Font
     implementation("androidx.compose.ui:ui-text-google-fonts:1.7.4")
 

@@ -1,9 +1,8 @@
 package com.example.tfg.core.models
 
-class Product (title:String, body:Int){
+import com.google.gson.annotations.SerializedName
 
-    var title=title
-    var body=body
-
-}
+data class Product (
+    @SerializedName("nombre") var title:String,
+    @SerializedName ("img") var body:String)
 
