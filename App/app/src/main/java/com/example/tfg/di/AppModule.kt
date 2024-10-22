@@ -1,7 +1,6 @@
 package com.example.tfg.di
 
-import com.example.tfg.core.utils.Constants.BASE_URL
-import com.example.tfg.data.remote.api
+import com.example.tfg.dal.remote.utils.ApiService.BASE_URL
 import com.example.tfg.repo.ProductsRepoImp
 //import dagger.Module
 //import dagger.hilt.InstallIn

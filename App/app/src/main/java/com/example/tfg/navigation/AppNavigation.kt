@@ -22,6 +22,7 @@ import com.example.tfg.ui.screens.add_edit.NewProductScreen
 //se encarga de gestionar la navegación entre pantallas.
 @Composable
 fun AppNavigation() {
+
     val vm= LoginVM() //instanciamos el vm del login
     val navController= rememberNavController() //hay que propagarla por todas las pantallas.
     NavHost(navController = navController, startDestination = AppScreens.StartScreen.route ) {
@@ -67,3 +68,5 @@ fun AppNavigation() {
 
 
 }
+
+

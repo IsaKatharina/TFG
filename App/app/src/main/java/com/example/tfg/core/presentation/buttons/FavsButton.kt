@@ -35,7 +35,7 @@ fun FavsButton(navController: NavController, modifier: Modifier){
 
     } else {
         //cuando le damos al boton, tiene que navegar hasta Home.
-        Button(onClick = {navController.navigate(AppScreens.MainListScreen.route)},
+        Button(onClick = {navController.navigate(AppScreens.FavsScreen.route)},
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color.Transparent,
                 contentColor=Color.Black

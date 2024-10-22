@@ -1,4 +1,4 @@
-package com.example.tfg.core.utils
+package com.example.tfg.dal.remote.utils
 
 /*
     Clase que se encarga de los tipos de respuesta posibles y contiene otras clases
