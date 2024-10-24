@@ -40,17 +40,18 @@ namespace DAL.Listados
                         oProducto = new clsProducto();
                         oProducto.IdProducto = (int)reader["idProducto"];
                         oProducto.IdUsuario = (int)reader["idUsuario"];
+                        oProducto.Nombre = (string)reader["nombre"];
+                        oProducto.Marca = (string)reader["marca"];
                         //en caso de que pueda ser null
-                        if (reader["nombre"] != System.DBNull.Value)
+                        if (reader["nombreOG"] != System.DBNull.Value)
                         {
-                            oProducto.Nombre = (string)reader["nombre"];
+                            oProducto.NombreOG = (string)reader["nombre"];
                         }
-                        if (reader["marca"] != System.DBNull.Value)
+                        if (reader["marcaOG"] != System.DBNull.Value)
                         {
-                            oProducto.Marca = (string)reader["marca"];
+                            oProducto.MarcaOG = (string)reader["marca"];
                         }
-                        oProducto.NombreOG = (string)reader["nombreOG"];
-                        oProducto.MarcaOG = (string)reader["marcaOG"];
+                       
                         oProducto.Original = (string)reader["original"];
 
                         if (reader["comentario"] != System.DBNull.Value)
@@ -96,14 +97,14 @@ namespace DAL.Listados
             clsProducto oProducto = new clsProducto();
 
             //Añadimos un parámetro que luego necesitaremos en el comando sql.
-            cmd.Parameters.Add("@id", System.Data.SqlDbType.Int).Value = idProducto;
+            cmd.Parameters.Add("@idProducto", System.Data.SqlDbType.Int).Value = idProducto;
 
             try
             {
                 //abrimos la conexion y la guardamos en una variable
                 SqlConnection conexionAbierta = conexion.getConnection();
 
-                cmd.CommandText = "Select * from productos WHERE ID=@id";
+                cmd.CommandText = "Select * from productos WHERE idProducto =@idProducto";
                 cmd.Connection = conexionAbierta;
 
                 reader = cmd.ExecuteReader();
