@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
+import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -26,15 +27,17 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.tfg.R
 import com.example.tfg.core.models.Product
+import com.example.tfg.navigation.AppScreens
 
 @Composable
 fun ProductCard(modifier: Modifier, navController: NavController, product: Product){
-    ElevatedCard(
-        elevation = CardDefaults.cardElevation(
-            defaultElevation = 6.dp
-        ),
+    FloatingActionButton(
+
         modifier = Modifier
-            .size(width = 150.dp, height = 150.dp)
+            .size(width = 150.dp, height = 150.dp),
+
+        onClick = {navegarDetalles(navController)}
+
     ) {
 
         Box(modifier = Modifier.fillMaxSize()
@@ -64,7 +67,7 @@ fun ProductCard(modifier: Modifier, navController: NavController, product: Produ
                 //la imagen se cargará de forma asíncrona, viene de la api
                 AsyncImage(
                     model=ImageRequest.Builder(LocalContext.current)
-                        .data("https://github.com/IsaKatharina/TFG/blob/main/DupesImg/Hollywood%20Flawless%20Filter.jpeg?raw=true")
+                        .data(product.body)
                         .crossfade(true)
                         .build(),
                     placeholder = painterResource(id = R.drawable.home_pink),
@@ -83,6 +86,15 @@ fun ProductCard(modifier: Modifier, navController: NavController, product: Produ
 
         }
     }
+}
+
+fun navegarDetalles(navController: NavController) {
+
+    //vamos a la pantalla de detalles del producto
+    navController.navigate(AppScreens.ProductDetailsScreen.route)
+
+    Log.i("nav", "a la pag detalles")
+
 }
 
 

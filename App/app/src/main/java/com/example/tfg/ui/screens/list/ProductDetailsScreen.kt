@@ -22,14 +22,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
 import com.example.tfg.R
+import com.example.tfg.core.models.Product
 import com.example.tfg.core.presentation.buttons.BackButton
 import com.example.tfg.core.presentation.buttons.HeartButton
 import com.example.tfg.core.presentation.composables.BottomBar
@@ -38,7 +43,9 @@ import com.example.tfg.navigation.AppScreens
 import com.example.tfg.ui.theme.TFGTheme
 
 @Composable
-fun ProductDetailsScreen(navController: NavController, idProduct: Int?) {
+fun ProductDetailsScreen(navController: NavController, idProduct: Int) {
+
+
 
     Column (modifier= Modifier
         .fillMaxSize()
@@ -65,14 +72,16 @@ fun ProductDetailsScreen(navController: NavController, idProduct: Int?) {
 
         ) {
 
-
-
-            //TODO: aquí hay que comprobar que todas las imagenes se cuadran bien
-
-                Image( modifier = Modifier.wrapContentSize(),
-                    painter = painterResource(id = R.drawable.halo_glow_elf),
-                    contentDescription = "placeholderImage"
-                )
+            //la imagen se cargará de forma asíncrona, viene de la api
+            AsyncImage(
+                model= ImageRequest.Builder(LocalContext.current)
+                    .data(product.body)
+                    .crossfade(true)
+                    .build(),
+                placeholder = painterResource(id = R.drawable.home_pink),
+                contentDescription = stringResource(id=R.string.app_name),
+                modifier = Modifier.fillMaxSize()
+            )
         }
 
         //nombre del producto
@@ -82,7 +91,7 @@ fun ProductDetailsScreen(navController: NavController, idProduct: Int?) {
             horizontalAlignment = Alignment.CenterHorizontally
 
         ) {
-            Text("Nombre del producto",
+            Text(product.title,
                 fontWeight = FontWeight.Bold, fontSize = 26.sp)
 
              Text("Nombre del producto original")

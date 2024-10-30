@@ -27,8 +27,12 @@ class MainListVM: ViewModel() {
     private var _isLoading= MutableLiveData<Boolean>()
     var isLoading:LiveData<Boolean> =_isLoading
 
+
+
+
+
     //corrutina que llama a la api y carga el listado principal
-    suspend fun getListadoProductos(){
+ /*   suspend fun getListadoProductos(){
 
         viewModelScope.launch(Dispatchers.IO) {
 
@@ -46,8 +50,6 @@ class MainListVM: ViewModel() {
                     _listadoProductosPrueba.postValue(emptyList())
                 }
 
-                //TODO:transformar la respuesta en un listado de productos
-                //_listadoProductosPrueba=MutableLiveData(response)
                 Log.i("sos", "ha entrado bien en la corrutina")
 
             } catch (e:Exception) {
@@ -60,10 +62,8 @@ class MainListVM: ViewModel() {
 
     }
 
+*/
 
-
-//    private fun showError() {
-//        Toast.makeText(context,"Ha ocurrido un error",Toast.LENGTH_SHORT).show()
-//    }
+    //buscamos un producto dentro de un listado
 
 }
