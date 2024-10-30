@@ -53,7 +53,7 @@ namespace API.Controllers
                 {
                     productById = clsListadoProductosDAL.readDetailsProductoDAL(idProducto);
 
-                    if (productById == null)
+                    if (productById.IdProducto == 0)
                     {
                         salida = NotFound(); //no se encuentra la persona
 

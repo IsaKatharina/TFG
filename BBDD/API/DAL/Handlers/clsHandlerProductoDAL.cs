@@ -27,14 +27,14 @@ namespace DAL.Handlers
             SqlCommand cmd = new SqlCommand();
 
             //Añadimos un parámetro que luego necesitaremos en el comando sql.
-            cmd.Parameters.Add("@id", System.Data.SqlDbType.Int).Value = idProducto;
+            cmd.Parameters.Add("@idProducto", System.Data.SqlDbType.Int).Value = idProducto;
 
             try
             {
                 //abrimos la conexion y la guardamos en una variable
                 SqlConnection conexionAbierta = conexion.getConnection();
 
-                cmd.CommandText = "DELETE FROM Usuarios WHERE idProducto=@id";
+                cmd.CommandText = "DELETE FROM Productos WHERE idProducto=@idProducto";
                 cmd.Connection = conexionAbierta;
                 numeroFilasAfectadas = cmd.ExecuteNonQuery();
 
@@ -144,7 +144,7 @@ namespace DAL.Handlers
                 SqlConnection conexionAbierta = conexion.getConnection();
 
                 cmd.CommandText = "INSERT INTO Productos (idUsuario, nombre, marca, nombreOG, marcaOG, original, comentario, imagen)" +
-                    "values (@idUsuario, @nombre, @emarca, @nombreOG, @marcaOG, @original, @comentario, @imagen)";
+                    "values (@idUsuario, @nombre, @marca, @nombreOG, @marcaOG, @original, @comentario, @imagen)";
                 cmd.Connection = conexionAbierta;
                 numeroFilasAfectadas = cmd.ExecuteNonQuery();
 

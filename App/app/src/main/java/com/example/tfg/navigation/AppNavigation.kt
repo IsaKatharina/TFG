@@ -57,7 +57,7 @@ fun AppNavigation() {
         ) { backStackEntry ->
             val idProduct = backStackEntry.arguments?.getInt("idProduct")
 
-            ProductDetailsScreen(navController, idProduct=Product.idProduct)
+            ProductDetailsScreen(navController, idProduct=Product.)
         }
 
         composable(route=AppScreens.NewProductScreen.route){

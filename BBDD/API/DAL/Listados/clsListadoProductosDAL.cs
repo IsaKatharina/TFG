@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace DAL.Listados
 {
 
-    public class clsListadoProductosDAL 
+    public class clsListadoProductosDAL
     {
         public static List<clsProducto> getListadoProductosDAL()
         {
@@ -51,7 +51,7 @@ namespace DAL.Listados
                         {
                             oProducto.MarcaOG = (string)reader["marca"];
                         }
-                       
+
                         oProducto.Original = (string)reader["original"];
 
                         if (reader["comentario"] != System.DBNull.Value)
@@ -61,7 +61,7 @@ namespace DAL.Listados
                         if (reader["imagen"] != System.DBNull.Value)
                         {
                             oProducto.Imagen = (string)reader["imagen"];
-                        }                       
+                        }
 
                         listadoProductos.Add(oProducto);
 
@@ -116,11 +116,25 @@ namespace DAL.Listados
                         oProducto.IdUsuario = (int)reader["idUsuario"];
                         oProducto.Nombre = (string)reader["nombre"];
                         oProducto.Marca = (string)reader["marca"];
-                        oProducto.NombreOG = (string)reader["nombreOG"];
-                        oProducto.MarcaOG = (string)reader["marcaOG"];
+                        if (reader["nombreOG"] != System.DBNull.Value)
+                        {
+                            oProducto.NombreOG = (string)reader["nombre"];
+                        }
+                        if (reader["marcaOG"] != System.DBNull.Value)
+                        {
+                            oProducto.MarcaOG = (string)reader["marca"];
+                        }
+
                         oProducto.Original = (string)reader["original"];
-                        oProducto.Comentario = (string)reader["comentario"];
-                        oProducto.Imagen = (string)reader["imagen"];
+
+                        if (reader["comentario"] != System.DBNull.Value)
+                        {
+                            oProducto.Comentario = (string)reader["comentario"];
+                        }
+                        if (reader["imagen"] != System.DBNull.Value)
+                        {
+                            oProducto.Imagen = (string)reader["imagen"];
+                        }
 
                     }
                 }
@@ -133,7 +147,7 @@ namespace DAL.Listados
             {
                 throw ex;
 
-                
+
             }
 
             return oProducto;
@@ -141,6 +155,5 @@ namespace DAL.Listados
         }
 
     }
-   
 
 }

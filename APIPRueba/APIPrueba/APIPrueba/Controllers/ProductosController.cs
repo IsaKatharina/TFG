@@ -53,14 +53,15 @@ namespace APIPrueba.Controllers
                 {
                     productById = clsListadoProductosDAL.readDetailsProductoDAL(idProducto);
 
-                    if (productById == null)
+                    //si el idProducto del producto es 0 significa que no existe en la tabla 
+                    if (productById.IdProducto == 0)
                     {
-                        salida = NotFound(); //no se encuentra la persona
+                        salida = NotFound(); //no se encuentra el producto
 
                     }
                     else
                     {
-                        salida = Ok(productById); //hay que mandar la persona con el ActionResult.
+                        salida = Ok(productById); //hay que mandar el producto con el ActionResult.
                     }
 
                 }
