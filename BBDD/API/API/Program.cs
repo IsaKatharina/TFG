@@ -14,6 +14,6 @@ app.MapControllers();
 
 app.MapControllerRoute(
     name:"default",
-    pattern:"{controller=Usuarios}");
+    pattern:"{controller=Productos}");
 
 app.Run();

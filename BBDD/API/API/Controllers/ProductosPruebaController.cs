@@ -6,7 +6,7 @@ namespace API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductosPruebaController : Controller
+    public class ProductosPruebaController : ControllerBase
     {
         //GET:ProductosPruebasController
         [HttpGet]
@@ -36,5 +36,38 @@ namespace API.Controllers
             return salida;
 
         }
+
+
+        // GET api/<ProductosPrueba>/5
+        [HttpGet("{nombre}")]
+        public IActionResult Get(string nombre)
+        {
+            IActionResult salida;
+            clsProductoPrueba productById = new clsProductoPrueba();
+
+
+            try
+            {
+                productById = clsListadoProductoPrueba.readDetailsProductosPruebaDAL(nombre);
+
+                if (productById == null)
+                {
+                    salida = NotFound(); //no se encuentra la persona
+
+                }
+                else
+                {
+                    salida = Ok(productById); //hay que mandar la persona con el ActionResult.
+                }
+
+            }
+            catch (Exception e)
+            {
+                salida = BadRequest(e);
+            }
+
+            return salida;
+        }
     }
+
 }

@@ -72,3 +72,4 @@ C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\A
 C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\API\obj\Debug\net8.0\API.csproj.CoreCompileInputs.cache
 C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\API\obj\Debug\net8.0\API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\API\obj\Debug\net8.0\API.sourcelink.json
+C:\Users\Isa K\Desktop\TFG\BBDD\API\API\bin\Debug\net8.0\System.ClientModel.dll

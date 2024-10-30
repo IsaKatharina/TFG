@@ -35,6 +35,8 @@ namespace API.Controllers
                 catch (Exception e)
                 {
                     salida = BadRequest(e);
+                    Console.
+                WriteLine(e.Message);
                 }
                 return salida;
 
@@ -46,7 +48,6 @@ namespace API.Controllers
             {
                 IActionResult salida;
                 clsProducto productById = new clsProducto();
-
 
                 try
                 {
@@ -66,7 +67,9 @@ namespace API.Controllers
                 catch (Exception e)
                 {
                     salida = BadRequest(e);
-                }
+                Console.
+                WriteLine(e.Message);
+            }
 
                 return salida;
             }
