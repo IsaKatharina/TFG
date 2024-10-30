@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.example.tfg.core.models.Product
 import com.example.tfg.ui.screens.profile.EditProfileScreen
 import com.example.tfg.ui.screens.list.MainListScreen
 import com.example.tfg.ui.screens.login.LoginScreen
@@ -48,16 +49,17 @@ fun AppNavigation() {
             MainListScreen(navController)
         }
         composable(route=AppScreens.ProductDetailsScreen.route,
-            arguments= listOf(
+            arguments = listOf(
                 //tenemos que pasar como navArgument lo que identifica a cada producto.
                 navArgument("idProduct"){
                     type= NavType.IntType
                 })
-        ){ backStackEntry ->
+        ) { backStackEntry ->
             val idProduct = backStackEntry.arguments?.getInt("idProduct")
 
-            ProductDetailsScreen(navController, idProduct=idProduct)
+            ProductDetailsScreen(navController, idProduct=Product.idProduct)
         }
+
         composable(route=AppScreens.NewProductScreen.route){
             NewProductScreen(navController )
         }

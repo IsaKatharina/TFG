@@ -72,3 +72,10 @@ C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\A
 C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\API\obj\Debug\net8.0\API.csproj.CoreCompileInputs.cache
 C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\API\obj\Debug\net8.0\API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\API\obj\Debug\net8.0\API.sourcelink.json
+C:\Users\IsaK\Desktop\TFG\BBDD\API\API\obj\Debug\net8.0\API.csproj.AssemblyReference.cache
+C:\Users\IsaK\Desktop\TFG\BBDD\API\API\obj\Debug\net8.0\API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IsaK\Desktop\TFG\BBDD\API\API\obj\Debug\net8.0\API.AssemblyInfoInputs.cache
+C:\Users\IsaK\Desktop\TFG\BBDD\API\API\obj\Debug\net8.0\API.AssemblyInfo.cs
+C:\Users\IsaK\Desktop\TFG\BBDD\API\API\obj\Debug\net8.0\API.csproj.CoreCompileInputs.cache
+C:\Users\IsaK\Desktop\TFG\BBDD\API\API\obj\Debug\net8.0\API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\IsaK\Desktop\TFG\BBDD\API\API\obj\Debug\net8.0\API.sourcelink.json

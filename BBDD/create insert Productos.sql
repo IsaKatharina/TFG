@@ -35,3 +35,6 @@ insert into Productos values
 (1, 'Hollywood Flawless Filter', 'Charlotte Tilbury',null, null, 'Si',null,'https://www.dropbox.com/scl/fi/6rffgnbt1l6x2qj1wxorf/Hollywood-Flawless-Filter.jpeg?rlkey=6v4q4yxo0eulgm5dpnawkrwv8&st=8rtvm3dv&dl=0'),
 (1, 'What a tint','Essence','Benetint', 'Benefit', 'no', null, 'https://www.dropbox.com/scl/fi/y7azfiibpnb0cdmb1cxf7/wha_a_tint.jpg?rlkey=2318205ey12s2dthurgnfueu9&st=gtg1e7f9&dl=0'),
 (1,'Benetint','Benefit',null,null, 'si',null, 'https://www.dropbox.com/scl/fi/scz6qdaldf6vygksih1dt/benetint.jpg?rlkey=ixu5qsenbs36765942nw7m99h&st=lj9satff&dl=0')
+
+
+select * from ProductosPrueba where nombre='benetint'

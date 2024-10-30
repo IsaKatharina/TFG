@@ -24,6 +24,7 @@ import androidx.lifecycle.LiveData
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.tfg.R
+import com.example.tfg.core.models.Listado
 import com.example.tfg.core.models.Product
 import com.example.tfg.dal.remote.utils.ApiService
 import com.example.tfg.dal.remote.utils.getRetrofit
@@ -38,11 +39,23 @@ fun ProductsGrid (modifier: Modifier, navController: NavController) {
 
     val vm=MainListVM()
     val isLoading:Boolean by vm.isLoading.observeAsState(initial=false)
-    val products:List<Product> by vm.listadoProductosPruebas.observeAsState(initial = emptyList())
+ //   val products:List<Product> by vm.listadoProductosPruebas.observeAsState(initial = emptyList())
 
-    LaunchedEffect(Unit) {
-        vm.getListadoProductos()
-    }
+    val products= listOf(
+
+        Product(1,"soft glam fluid","https://www.dropbox.com/scl/fi/mssln3q50lvqjxilgr8gv/Soft-Glam-Filter-Fluid-Catrice.png?rlkey=fd9yhm1woa16djinm8z3i6zkn&st=uyq17wl9&dl=0"),
+        Product(2,"soft glam fluid","https://www.dropbox.com/scl/fi/mssln3q50lvqjxilgr8gv/Soft-Glam-Filter-Fluid-Catrice.png?rlkey=fd9yhm1woa16djinm8z3i6zkn&st=uyq17wl9&dl=0"),
+        Product(3,"soft glam fluid","https://www.dropbox.com/scl/fi/mssln3q50lvqjxilgr8gv/Soft-Glam-Filter-Fluid-Catrice.png?rlkey=fd9yhm1woa16djinm8z3i6zkn&st=uyq17wl9&dl=0"),
+        Product(4,"soft glam fluid","https://www.dropbox.com/scl/fi/mssln3q50lvqjxilgr8gv/Soft-Glam-Filter-Fluid-Catrice.png?rlkey=fd9yhm1woa16djinm8z3i6zkn&st=uyq17wl9&dl=0"),
+        Product(5,"soft glam fluid","https://www.dropbox.com/scl/fi/mssln3q50lvqjxilgr8gv/Soft-Glam-Filter-Fluid-Catrice.png?rlkey=fd9yhm1woa16djinm8z3i6zkn&st=uyq17wl9&dl=0"),
+        Product(6,"soft glam fluid","https://www.dropbox.com/scl/fi/mssln3q50lvqjxilgr8gv/Soft-Glam-Filter-Fluid-Catrice.png?rlkey=fd9yhm1woa16djinm8z3i6zkn&st=uyq17wl9&dl=0"),
+        Product(7, "soft glam fluid","https://www.dropbox.com/scl/fi/mssln3q50lvqjxilgr8gv/Soft-Glam-Filter-Fluid-Catrice.png?rlkey=fd9yhm1woa16djinm8z3i6zkn&st=uyq17wl9&dl=0"),
+        Product(8,"soft glam fluid","https://www.dropbox.com/scl/fi/mssln3q50lvqjxilgr8gv/Soft-Glam-Filter-Fluid-Catrice.png?rlkey=fd9yhm1woa16djinm8z3i6zkn&st=uyq17wl9&dl=0"),
+        Product(9,"soft glam fluid","https://www.dropbox.com/scl/fi/mssln3q50lvqjxilgr8gv/Soft-Glam-Filter-Fluid-Catrice.png?rlkey=fd9yhm1woa16djinm8z3i6zkn&st=uyq17wl9&dl=0"))
+
+//    LaunchedEffect(Unit) {
+//        vm.getListadoProductos()
+//    }
 
     if (products.isEmpty()&&isLoading) {
 
