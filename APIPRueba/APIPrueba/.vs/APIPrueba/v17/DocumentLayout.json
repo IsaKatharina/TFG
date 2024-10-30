@@ -50,8 +50,7 @@
               "RelativeToolTip": "DAL\\Handlers\\clsHandlerProductoPrueba.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T09:35:34.949Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-30T09:35:34.949Z"
             },
             {
               "$type": "Document",
@@ -76,8 +75,7 @@
               "RelativeToolTip": "APIPrueba\\Controllers\\UsuariosController.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T09:16:26.894Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-30T09:16:26.894Z"
             },
             {
               "$type": "Document",
@@ -89,8 +87,7 @@
               "RelativeToolTip": "APIPrueba\\Controllers\\ProductosController.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAYAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T09:13:51.882Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-30T09:13:51.882Z"
             },
             {
               "$type": "Document",
@@ -102,8 +99,7 @@
               "RelativeToolTip": "DAL\\Handlers\\clsHandlerProductoDAL.cs",
               "ViewState": "AQIAAKYAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T09:13:47.101Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-30T09:13:47.101Z"
             },
             {
               "$type": "Document",
@@ -115,21 +111,19 @@
               "RelativeToolTip": "DAL\\Connection\\clsConnection.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T09:12:23.525Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-30T09:12:23.525Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "DAL",
+              "Title": "DAL.csproj",
               "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\APIPRueba\\APIPrueba\\DAL\\DAL.csproj",
               "RelativeDocumentMoniker": "DAL\\DAL.csproj",
               "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\APIPRueba\\APIPrueba\\DAL\\DAL.csproj",
               "RelativeToolTip": "DAL\\DAL.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-30T09:08:32.276Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-30T09:08:32.276Z"
             }
           ]
         }
