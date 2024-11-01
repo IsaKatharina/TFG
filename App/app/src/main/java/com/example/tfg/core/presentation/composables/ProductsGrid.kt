@@ -35,45 +35,33 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @Composable
-fun ProductsGrid (modifier: Modifier, navController: NavController) {
+fun ProductsGrid (modifier: Modifier, onProductClick:(Int)->Unit ){
 
     val vm=MainListVM()
-    val isLoading:Boolean by vm.isLoading.observeAsState(initial=false)
- //   val products:List<Product> by vm.listadoProductosPruebas.observeAsState(initial = emptyList())
+    //TODO:poner a true
+    val isLoading:Boolean by vm.isLoading.observeAsState(initial = false)
+    val products:List<Product> by vm.listadoProductos.observeAsState(initial = emptyList())
+    LaunchedEffect(Unit) {
+        vm.getListadoProductos()
+    }
 
-    val products= listOf(
-
-        Product(1,"soft glam fluid","https://www.dropbox.com/scl/fi/mssln3q50lvqjxilgr8gv/Soft-Glam-Filter-Fluid-Catrice.png?rlkey=fd9yhm1woa16djinm8z3i6zkn&st=uyq17wl9&dl=0"),
-        Product(2,"soft glam fluid","https://www.dropbox.com/scl/fi/mssln3q50lvqjxilgr8gv/Soft-Glam-Filter-Fluid-Catrice.png?rlkey=fd9yhm1woa16djinm8z3i6zkn&st=uyq17wl9&dl=0"),
-        Product(3,"soft glam fluid","https://www.dropbox.com/scl/fi/mssln3q50lvqjxilgr8gv/Soft-Glam-Filter-Fluid-Catrice.png?rlkey=fd9yhm1woa16djinm8z3i6zkn&st=uyq17wl9&dl=0"),
-        Product(4,"soft glam fluid","https://www.dropbox.com/scl/fi/mssln3q50lvqjxilgr8gv/Soft-Glam-Filter-Fluid-Catrice.png?rlkey=fd9yhm1woa16djinm8z3i6zkn&st=uyq17wl9&dl=0"),
-        Product(5,"soft glam fluid","https://www.dropbox.com/scl/fi/mssln3q50lvqjxilgr8gv/Soft-Glam-Filter-Fluid-Catrice.png?rlkey=fd9yhm1woa16djinm8z3i6zkn&st=uyq17wl9&dl=0"),
-        Product(6,"soft glam fluid","https://www.dropbox.com/scl/fi/mssln3q50lvqjxilgr8gv/Soft-Glam-Filter-Fluid-Catrice.png?rlkey=fd9yhm1woa16djinm8z3i6zkn&st=uyq17wl9&dl=0"),
-        Product(7, "soft glam fluid","https://www.dropbox.com/scl/fi/mssln3q50lvqjxilgr8gv/Soft-Glam-Filter-Fluid-Catrice.png?rlkey=fd9yhm1woa16djinm8z3i6zkn&st=uyq17wl9&dl=0"),
-        Product(8,"soft glam fluid","https://www.dropbox.com/scl/fi/mssln3q50lvqjxilgr8gv/Soft-Glam-Filter-Fluid-Catrice.png?rlkey=fd9yhm1woa16djinm8z3i6zkn&st=uyq17wl9&dl=0"),
-        Product(9,"soft glam fluid","https://www.dropbox.com/scl/fi/mssln3q50lvqjxilgr8gv/Soft-Glam-Filter-Fluid-Catrice.png?rlkey=fd9yhm1woa16djinm8z3i6zkn&st=uyq17wl9&dl=0"))
-
-//    LaunchedEffect(Unit) {
-//        vm.getListadoProductos()
-//    }
-
-    if (products.isEmpty()&&isLoading) {
+    if (isLoading) {
 
         Box(Modifier.fillMaxSize()) {
             CircularProgressIndicator(Modifier.align(Alignment.Center), color = Color(0xFFFF5290))
 
         }
-
     } else {
 
-        LazyVerticalStaggeredGrid (
+
+        LazyVerticalStaggeredGrid(
             columns = StaggeredGridCells.Adaptive(150.dp),
             verticalItemSpacing = 10.dp,
             horizontalArrangement = Arrangement.spacedBy(7.dp),
             content = {
                 items(products) { product ->
 
-                    ProductCard(modifier, navController, product)
+                    ProductCard(modifier, product, onProductClick)
 
                 }
             }
@@ -82,14 +70,3 @@ fun ProductsGrid (modifier: Modifier, navController: NavController) {
     }
 }
 
-
-@Preview
-@Composable
-fun ProductsPR(){
-    TFGTheme {
-        ProductsGrid(
-            modifier =Modifier, navController = rememberNavController()
-        )
-
-    }
-}

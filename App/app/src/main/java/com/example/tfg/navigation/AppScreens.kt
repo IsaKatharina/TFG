@@ -12,9 +12,10 @@ sealed class AppScreens (val route:String) {
     object FavsScreen:AppScreens("favs_screen")
     object MainListScreen:AppScreens("mainlist_screen")
     object NewProductScreen:AppScreens("newproduct_screen")
-  //  object ProductDetailsScreen:AppScreens("productdetails_screen/{idProduct}")
   //TODO:arreglar la navegacion
-    object ProductDetailsScreen:AppScreens("productdetails_screen/{product}")
+    object ProductDetailsScreen:AppScreens("productdetails_screen") {
+//        fun createRoute(idProduct:Int)= "productdetails_screen/$idProduct"
+    }
     object ProfileScreen:AppScreens("profile_screen")
 
 }

@@ -22,7 +22,13 @@ fun getRetrofit():Retrofit{
 
 interface ApiService {
 
-    @GET("productosprueba")
+    @GET("productos")
     suspend fun getProductsList (): List<Product>
+
+    @GET("productos/{idProduct}")
+    suspend fun getProductById(@Path("idProduct")idProduct: Int):Product
+
+
+
 
 }

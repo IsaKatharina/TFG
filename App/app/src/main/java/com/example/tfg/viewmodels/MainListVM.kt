@@ -21,18 +21,17 @@ import retrofit2.http.Query
 //vm de la lista principal
 class MainListVM: ViewModel() {
 
-    private var _listadoProductosPrueba: MutableLiveData<List<Product>> = MutableLiveData<List<Product>>()
-    var listadoProductosPruebas: MutableLiveData<List<Product>> =_listadoProductosPrueba
+    private var _listadoProductos: MutableLiveData<List<Product>> = MutableLiveData<List<Product>>()
+    var listadoProductos: LiveData<List<Product>> =_listadoProductos
+
+    private var _listaProductosBusqueda: MutableLiveData<List<Product>> =MutableLiveData<List<Product>>()
+    var listadoProductosBusqueda: LiveData<List<Product>> =_listaProductosBusqueda
 
     private var _isLoading= MutableLiveData<Boolean>()
     var isLoading:LiveData<Boolean> =_isLoading
 
-
-
-
-
     //corrutina que llama a la api y carga el listado principal
- /*   suspend fun getListadoProductos(){
+  suspend fun getListadoProductos(){
 
         viewModelScope.launch(Dispatchers.IO) {
 
@@ -40,14 +39,14 @@ class MainListVM: ViewModel() {
                 //hacemos la llamada a la api
                 var response= getRetrofit().create(ApiService::class.java).getProductsList()
 
-                if (!response.isEmpty()){
+                if (response.isNotEmpty()){
 
                     //detenemos la carga
                     _isLoading.postValue(false)
-                    _listadoProductosPrueba.postValue(response)
+                    _listadoProductos.postValue(response)
 
                 } else {
-                    _listadoProductosPrueba.postValue(emptyList())
+                    _listadoProductos.postValue(emptyList())
                 }
 
                 Log.i("sos", "ha entrado bien en la corrutina")
@@ -55,15 +54,29 @@ class MainListVM: ViewModel() {
             } catch (e:Exception) {
                 //en caso de error, muestra un mensaje
                 // showError(context,e)
-                //_listadoProductosPrueba= MutableLiveData(emptyList())
+
                 Log.i("sos", "no ha entrado bien en la corrutina, $e")
             }
         }
 
     }
 
-*/
+    //buscamos un producto dentro de un listado y devolvemos el producto encontrado.
+    //si no encuentra ningún producto que coincida, devolverá un null
+    fun getProductbyId(idProduct:Int): Product? {
 
-    //buscamos un producto dentro de un listado
+        var productFound:Product?=Product()
+
+        //si el listado no está vacío
+        if(listadoProductos.value?.isEmpty()==false) {
+
+            //recorremos el valor del listado hasta que encontremos el que queremos
+            productFound= _listadoProductos.value?.find { it.idProduct==idProduct }
+
+        }
+        return productFound
+    }
 
 }
+
+

@@ -97,7 +97,7 @@ dependencies {
     implementation("com.squareup.picasso:picasso:2.71828")
 
     // Coil
-    implementation("io.coil-kt:coil-compose:2.4.0")
+    implementation("io.coil-kt.coil3:coil-compose:3.0.0-rc02")
 
     //Updock Font
     implementation("androidx.compose.ui:ui-text-google-fonts:1.7.4")

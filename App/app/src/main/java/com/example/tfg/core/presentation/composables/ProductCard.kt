@@ -1,15 +1,12 @@
 package com.example.tfg.core.presentation.composables
 
 import android.util.Log
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -23,20 +20,21 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import androidx.navigation.NavController
-import coil.compose.AsyncImage
-import coil.request.ImageRequest
+import coil3.compose.AsyncImage
+import coil3.request.ImageRequest
+import coil3.request.crossfade
 import com.example.tfg.R
 import com.example.tfg.core.models.Product
 import com.example.tfg.navigation.AppScreens
 
 @Composable
-fun ProductCard(modifier: Modifier, navController: NavController, product: Product){
+fun ProductCard(modifier: Modifier, product: Product, onProductClick:(Int) ->Unit){
     FloatingActionButton(
 
         modifier = Modifier
             .size(width = 150.dp, height = 150.dp),
 
-        onClick = {navegarDetalles(navController)}
+        onClick = {onProductClick(product.idProduct)}
 
     ) {
 
@@ -66,20 +64,20 @@ fun ProductCard(modifier: Modifier, navController: NavController, product: Produ
             ) {
                 //la imagen se cargará de forma asíncrona, viene de la api
                 AsyncImage(
-                    model=ImageRequest.Builder(LocalContext.current)
-                        .data(product.body)
+                    model= ImageRequest.Builder(LocalContext.current)
+                        .data(product.imagen)
                         .crossfade(true)
                         .build(),
                     placeholder = painterResource(id = R.drawable.home_pink),
                     contentDescription = stringResource(id=R.string.app_name),
                     modifier = Modifier.fillMaxSize()
                 )
-                Log.i("pic","${product.body}")
+                Log.i("pic","${product.imagen}")
             }
 
             Row(modifier=Modifier.align(Alignment.BottomCenter)) {
                 Text(
-                    text = product.title,
+                    text = product.nombre,
                     color = Color.Black,
                 )
             }
@@ -88,13 +86,5 @@ fun ProductCard(modifier: Modifier, navController: NavController, product: Produ
     }
 }
 
-fun navegarDetalles(navController: NavController) {
-
-    //vamos a la pantalla de detalles del producto
-    navController.navigate(AppScreens.ProductDetailsScreen.route)
-
-    Log.i("nav", "a la pag detalles")
-
-}
 
 

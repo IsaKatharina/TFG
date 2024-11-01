@@ -1,6 +1,7 @@
 package com.example.tfg.ui.screens.list
 
 import android.content.Context
+import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -28,6 +29,7 @@ import com.example.tfg.core.presentation.composables.BottomBar
 import com.example.tfg.core.presentation.composables.ProductsGrid
 import com.example.tfg.dal.remote.utils.ApiService
 import com.example.tfg.dal.remote.utils.getRetrofit
+import com.example.tfg.navigation.AppScreens
 import com.example.tfg.ui.theme.TFGTheme
 import com.example.tfg.viewmodels.MainListVM
 import kotlinx.coroutines.CoroutineScope
@@ -38,13 +40,17 @@ import kotlinx.coroutines.launch
 @Composable
 fun MainListScreen(navController: NavController) {
 
+    //creamos una lambda para navegar a los detalles de un producto
+    val navigateToDetails:(Int) ->Unit= {idProduct ->
+        navController.navigate(AppScreens.ProductDetailsScreen.route+"/$idProduct")
+
+        Log.i("nav", "navegando a la página de detalles del producto $idProduct")
+    }
+
     Column (modifier= Modifier
         .fillMaxSize()
         .background(Color.White)
     ) {
-        BackButton(navController = navController,
-            modifier=Modifier.align(Alignment.Start))
-
 
         //aqui va la top bar
         Row (modifier = Modifier
@@ -69,7 +75,7 @@ fun MainListScreen(navController: NavController) {
             .weight(1f)
             .padding(15.dp)
         ) {
-            ProductsGrid(modifier = Modifier, navController)
+            ProductsGrid(modifier = Modifier, onProductClick = navigateToDetails)
         }
 
         Row (
