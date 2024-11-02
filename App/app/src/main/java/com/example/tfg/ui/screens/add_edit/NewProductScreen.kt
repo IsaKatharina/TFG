@@ -10,17 +10,19 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.modifier.ModifierLocalConsumer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -29,19 +31,21 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.tfg.R
 import com.example.tfg.core.presentation.buttons.BackButton
-import com.example.tfg.core.presentation.composables.HeaderImagen
-import com.example.tfg.core.presentation.composables.ProfileCircle
-import com.example.tfg.ui.screens.login.LoginScreen
-import com.example.tfg.ui.screens.login.NewEmail
-import com.example.tfg.ui.screens.login.NewPassword
-import com.example.tfg.ui.screens.login.NewPic
-import com.example.tfg.ui.screens.login.NewUserName
-import com.example.tfg.ui.screens.login.WelcomeButton
 import com.example.tfg.ui.theme.TFGTheme
-import com.example.tfg.viewmodels.LoginVM
+import com.example.tfg.viewmodels.NewProductVM
 
 @Composable
 fun NewProductScreen(navController: NavController) {
+
+    val vm= NewProductVM()
+
+    //declaramos las variables que necesita la vista
+    val nombre:String by vm.nombre.observeAsState(initial="")
+    val marca:String by vm.marca.observeAsState(initial="")
+    val nombreOG:String by vm.nombreOG.observeAsState(initial = "")
+    val marcaOG:String by vm.marcaOG.observeAsState(initial = "")
+    val imagen:String by vm.imagen.observeAsState(initial = "")
+
 
     Column (modifier= Modifier.fillMaxSize()
         .background(Color.White)
@@ -58,44 +62,42 @@ fun NewProductScreen(navController: NavController) {
         ) { Text("Add a new one", fontWeight = FontWeight.Bold) }
 
         //foto del producto nuevo
-        NewProdPic(navController)
+        NewProdPic(imagen)
 
         //ponemos un espacio
         Spacer(modifier = Modifier.padding(16.dp))
-        NewProdName(navController)
+        NewProdName(nombre)
 
         //otro espacio
         Spacer(modifier = Modifier.padding(16.dp))
-        NewProdMarca(navController)
+        NewProdMarca(marca)
 
         //otro espacio
         Spacer(modifier = Modifier.padding(16.dp))
-        NewProdOgName(navController)
+        NewProdOgName(nombreOG)
 
         //otro espacio
         Spacer(modifier = Modifier.padding(16.dp))
-        NewProdOgMarca(navController)
+        NewProdOgMarca(marcaOG)
 
         //otro espacio
         Spacer(modifier = Modifier.padding(16.dp))
-        NewProdOg(navController)
-
-
+        NewProdOg(vm)
 
         //otro espacio
         Spacer(modifier = Modifier.padding(16.dp))
 
-        //TODO:entender bien
-        WelcomeButton(navController)
+
+        GoButton(navController)
     }
 
 
 }
 
 @Composable
-fun NewProdName(navController: NavController) {
+fun NewProdName(nombre:String) {
     TextField(
-        value = "", //TODO:va para vm
+        value = nombre,
         onValueChange = {},
         modifier = Modifier
             .fillMaxWidth()
@@ -106,8 +108,9 @@ fun NewProdName(navController: NavController) {
     )
 }
 
+//TODO:terminar esta parte
 @Composable
-fun NewProdPic(navController: NavController) {
+fun NewProdPic(imagen: String) {
     Row(modifier = Modifier.fillMaxWidth()
         .height(200.dp)
         .padding(15.dp,0.dp,15.dp,0.dp)
@@ -118,9 +121,9 @@ fun NewProdPic(navController: NavController) {
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically
 
-        //TODO:ponerlo en el centro
+
     ) {
-        IconButton(onClick = { /*TODO*/ }) {
+        IconButton(onClick = {  }) {
             Icon(
                 painterResource(id = R.drawable.camara_pink),
                 contentDescription = "camara_pink",
@@ -131,9 +134,9 @@ fun NewProdPic(navController: NavController) {
 }
 
 @Composable
-fun NewProdMarca(navController: NavController) {
+fun NewProdMarca(marca:String) {
     TextField(
-        value = "", //TODO:va para vm
+        value = marca,
         onValueChange = {},
         modifier = Modifier
             .fillMaxWidth()
@@ -145,9 +148,9 @@ fun NewProdMarca(navController: NavController) {
 }
 
 @Composable
-fun NewProdOgName(navController: NavController) {
+fun NewProdOgName(nombreOG:String) {
     TextField(
-        value = "", //TODO:va para vm
+        value = nombreOG,
         onValueChange = {},
         modifier = Modifier
             .fillMaxWidth()
@@ -159,9 +162,9 @@ fun NewProdOgName(navController: NavController) {
 }
 
 @Composable
-fun NewProdOgMarca(navController: NavController) {
+fun NewProdOgMarca(marcaOG:String) {
     TextField(
-        value = "", //TODO:va para vm
+        value = marcaOG,
         onValueChange = {},
         modifier = Modifier
             .fillMaxWidth()
@@ -173,21 +176,42 @@ fun NewProdOgMarca(navController: NavController) {
 }
 
 @Composable
-fun NewProdOg(navController: NavController) {
+fun NewProdOg(vm: NewProductVM) {
    Row (
-       modifier = Modifier,
+       modifier = Modifier.padding(10.dp),
        horizontalArrangement = Arrangement.Center
    ){
        Text("¿Es el original?")
 
        Checkbox(checked = false,
-           onCheckedChange = trueOG()
+           onCheckedChange = {
+               //llamamos a la función que checkea el valor del original
+               vm.checkOG()
+           }
        )
    }
 }
 
-fun trueOG(): ((Boolean) -> Unit)? {
-    TODO("Not yet implemented")
+//TODO: hay que hacer una función que habilite o no el boton?
+@Composable
+fun GoButton(navController: NavController) {
+    Button(onClick = {terminarAdd()},
+        modifier= Modifier
+            .fillMaxWidth()
+            .padding(15.dp, 0.dp, 15.dp, 0.dp)
+            .height(48.dp),
+        colors = ButtonDefaults.buttonColors(
+            containerColor = Color(0xFFFF5290)
+        )) {
+        Text(text = "Añadir")
+
+    }
+}
+
+//fun trueOG(): ((Boolean) -> Unit)?
+
+fun terminarAdd() {
+
 }
 
 @Preview

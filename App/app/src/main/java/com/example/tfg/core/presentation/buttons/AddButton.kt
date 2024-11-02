@@ -1,5 +1,6 @@
 package com.example.tfg.core.presentation.buttons
 
+import android.util.Log
 import androidx.compose.foundation.clipScrollableContainer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
@@ -37,15 +38,16 @@ fun AddButton(navController: NavController, modifier: Modifier){
 
 
     } else {
+
+        Log.i("nav", "le he dado al botón de añadir producto")
         //cuando le damos al boton, tiene que navegar hasta Home.
         Button(onClick = {navController.navigate(AppScreens.NewProductScreen.route)},
-           colors = ButtonDefaults.buttonColors(
-               containerColor = Color.Transparent,
-               contentColor=Color.Black
+                colors = ButtonDefaults.buttonColors(
+                containerColor = Color.Transparent,
+                contentColor=Color.Black
+
            )
         ) {
-
-
             Icon(painter = painterResource(id = R.drawable.add_black), contentDescription = "home_black")
             Text(text = "Add", color = Color.Black)
 

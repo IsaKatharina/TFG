@@ -9,7 +9,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.tfg.core.models.Product
 import com.example.tfg.dal.remote.utils.ApiService
-import com.example.tfg.dal.remote.utils.Resources
 import com.example.tfg.dal.remote.utils.getRetrofit
 import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.CoroutineScope

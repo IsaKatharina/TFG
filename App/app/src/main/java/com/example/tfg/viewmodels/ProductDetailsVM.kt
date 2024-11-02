@@ -14,6 +14,8 @@ import java.util.Optional.empty
 
 class ProductDetailsVM:ViewModel() {
 
+    //TODO: hay que poner un check de que es el original
+
     private var _productFound:MutableLiveData<Product> = MutableLiveData<Product>()
     var productFound:LiveData<Product> =_productFound
 

@@ -1,11 +1,14 @@
 package com.example.tfg.dal.remote.utils
 
+import com.example.tfg.core.models.NewProduct
 import com.example.tfg.core.models.Product
 import com.example.tfg.dal.remote.responses.ProductsList
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.Query
 
@@ -27,6 +30,11 @@ interface ApiService {
 
     @GET("productos/{idProduct}")
     suspend fun getProductById(@Path("idProduct")idProduct: Int):Product
+
+    @POST("productos")
+    suspend fun addProduct(
+        @Body newProduct: NewProduct
+    )
 
 
 
