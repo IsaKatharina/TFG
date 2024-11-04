@@ -13,13 +13,18 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Checkbox
+import androidx.compose.material3.CheckboxDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -31,8 +36,10 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.tfg.R
 import com.example.tfg.core.presentation.buttons.BackButton
+import com.example.tfg.navigation.AppScreens
 import com.example.tfg.ui.theme.TFGTheme
 import com.example.tfg.viewmodels.NewProductVM
+import kotlinx.coroutines.launch
 
 @Composable
 fun NewProductScreen(navController: NavController) {
@@ -45,6 +52,16 @@ fun NewProductScreen(navController: NavController) {
     val nombreOG:String by vm.nombreOG.observeAsState(initial = "")
     val marcaOG:String by vm.marcaOG.observeAsState(initial = "")
     val imagen:String by vm.imagen.observeAsState(initial = "")
+    val ogBool:Boolean by remember { mutableStateOf(false) }
+    val goClicked:Boolean by vm.goClicked.observeAsState(initial = false)
+
+//    var nombre = remember { mutableStateOf("") }
+//    var marca= remember { mutableStateOf("") }
+//    var nombreOG= remember { mutableStateOf("") }
+//    var marcaOG= remember { mutableStateOf("") }
+//    var imagen= remember { mutableStateOf("") }
+//    var og= remember { mutableStateOf(false) }
+
 
 
     Column (modifier= Modifier.fillMaxSize()
@@ -62,43 +79,44 @@ fun NewProductScreen(navController: NavController) {
         ) { Text("Add a new one", fontWeight = FontWeight.Bold) }
 
         //foto del producto nuevo
-        NewProdPic(imagen)
+        NewProdPic(imagen) //{vm.createProduct(nombre,marca,nombreOG, marcaOG, it)}
 
         //ponemos un espacio
         Spacer(modifier = Modifier.padding(16.dp))
-        NewProdName(nombre)
+        NewProdName(nombre) {vm.createProduct(it,marca,nombreOG,marcaOG,ogBool,imagen, goClicked)}
 
         //otro espacio
         Spacer(modifier = Modifier.padding(16.dp))
-        NewProdMarca(marca)
+        NewProdMarca(marca) {vm.createProduct(nombre,it, nombreOG,marcaOG,ogBool,imagen, goClicked)}
 
         //otro espacio
         Spacer(modifier = Modifier.padding(16.dp))
-        NewProdOgName(nombreOG)
+        NewProdOgName(nombreOG) {vm.createProduct(nombre,marca, it, marcaOG,ogBool,imagen, goClicked)}
 
         //otro espacio
         Spacer(modifier = Modifier.padding(16.dp))
-        NewProdOgMarca(marcaOG)
+        NewProdOgMarca(marcaOG) {vm.createProduct(nombre,marca,nombreOG,it, ogBool, imagen, goClicked)}
 
         //otro espacio
         Spacer(modifier = Modifier.padding(16.dp))
-        NewProdOg(vm)
+        NewProdOg(ogBool) {vm.createProduct(nombre, marca, nombreOG,marcaOG, ogBool, imagen, goClicked)}
 
         //otro espacio
         Spacer(modifier = Modifier.padding(16.dp))
 
 
-        GoButton(navController)
+        GoButton(navController, goClicked) {vm.createProduct(nombre, marca, nombreOG, marcaOG,ogBool,imagen, it)}
     }
 
 
 }
 
 @Composable
-fun NewProdName(nombre:String) {
+fun NewProdName(nombre:String, onTextFieldChanged: (String) -> Unit) {
+
     TextField(
         value = nombre,
-        onValueChange = {},
+        onValueChange = {onTextFieldChanged(it)},
         modifier = Modifier
             .fillMaxWidth()
             .padding(15.dp, 0.dp, 15.dp, 0.dp),
@@ -134,10 +152,10 @@ fun NewProdPic(imagen: String) {
 }
 
 @Composable
-fun NewProdMarca(marca:String) {
+fun NewProdMarca(marca:String, onTextFieldChanged: (String) -> Unit ) {
     TextField(
         value = marca,
-        onValueChange = {},
+        onValueChange = {onTextFieldChanged(it)},
         modifier = Modifier
             .fillMaxWidth()
             .padding(15.dp, 0.dp, 15.dp, 0.dp),
@@ -148,10 +166,10 @@ fun NewProdMarca(marca:String) {
 }
 
 @Composable
-fun NewProdOgName(nombreOG:String) {
+fun NewProdOgName(nombreOG:String, onTextFieldChanged: (String) -> Unit ) {
     TextField(
         value = nombreOG,
-        onValueChange = {},
+        onValueChange = {onTextFieldChanged(it)},
         modifier = Modifier
             .fillMaxWidth()
             .padding(15.dp, 0.dp, 15.dp, 0.dp),
@@ -162,10 +180,10 @@ fun NewProdOgName(nombreOG:String) {
 }
 
 @Composable
-fun NewProdOgMarca(marcaOG:String) {
+fun NewProdOgMarca(marcaOG:String, onTextFieldChanged: (String) -> Unit ) {
     TextField(
         value = marcaOG,
-        onValueChange = {},
+        onValueChange = {onTextFieldChanged(it)},
         modifier = Modifier
             .fillMaxWidth()
             .padding(15.dp, 0.dp, 15.dp, 0.dp),
@@ -176,26 +194,37 @@ fun NewProdOgMarca(marcaOG:String) {
 }
 
 @Composable
-fun NewProdOg(vm: NewProductVM) {
+fun NewProdOg(ogBool: Boolean, onTextFieldChanged: (Boolean) -> Unit) {
    Row (
        modifier = Modifier.padding(10.dp),
        horizontalArrangement = Arrangement.Center
    ){
        Text("¿Es el original?")
 
-       Checkbox(checked = false,
-           onCheckedChange = {
-               //llamamos a la función que checkea el valor del original
-               vm.checkOG()
-           }
+       Checkbox(checked = ogBool,
+           onCheckedChange = {onTextFieldChanged(it)},
+           colors = CheckboxDefaults.colors(
+               checkedColor = Color(0xFFFF5290)
+           )
        )
    }
 }
 
+
 //TODO: hay que hacer una función que habilite o no el boton?
 @Composable
-fun GoButton(navController: NavController) {
-    Button(onClick = {terminarAdd()},
+fun GoButton(
+    navController: NavController,
+    goClicked:Boolean,
+    onTextFieldChanged: (Boolean) -> Unit
+) {
+
+
+    Button(onClick = { onTextFieldChanged(true)
+
+        navController.navigate(AppScreens.MainListScreen.route)
+    },
+
         modifier= Modifier
             .fillMaxWidth()
             .padding(15.dp, 0.dp, 15.dp, 0.dp)
@@ -208,13 +237,8 @@ fun GoButton(navController: NavController) {
     }
 }
 
-//fun trueOG(): ((Boolean) -> Unit)?
 
-fun terminarAdd() {
-
-}
-
-@Preview
+@Preview(showSystemUi = true)
 @Composable
 fun PCAddPr(){
     TFGTheme {

@@ -29,13 +29,14 @@ import com.example.tfg.core.models.Product
 import com.example.tfg.dal.remote.utils.ApiService
 import com.example.tfg.dal.remote.utils.getRetrofit
 import com.example.tfg.ui.theme.TFGTheme
+import com.example.tfg.viewmodels.ListByIdVM
 import com.example.tfg.viewmodels.MainListVM
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @Composable
-fun ProductsGrid (modifier: Modifier, onProductClick:(Int)->Unit ){
+fun ProductsGrid (modifier: Modifier, onProductClick:(Int)->Unit){
 
     val vm=MainListVM()
     //TODO:poner a true
@@ -67,6 +68,40 @@ fun ProductsGrid (modifier: Modifier, onProductClick:(Int)->Unit ){
             }
         )
 
+    }
+}
+
+@Composable
+fun ProductsGrid (modifier: Modifier, onProductClick:(Int)->Unit, idUsuario:Int){
+
+    val vm=ListByIdVM()
+    //TODO:poner a true
+    val isLoading:Boolean by vm.isLoading.observeAsState(initial = false)
+    val products:List<Product> by vm.listadoProductos.observeAsState(initial = emptyList())
+    LaunchedEffect(idUsuario) {
+        vm.getListadoProductosByUser(idUsuario)
+    }
+
+    if (isLoading) {
+
+        Box(Modifier.fillMaxSize()) {
+            CircularProgressIndicator(Modifier.align(Alignment.Center), color = Color(0xFFFF5290))
+        }
+    } else {
+
+
+        LazyVerticalStaggeredGrid(
+            columns = StaggeredGridCells.Adaptive(150.dp),
+            verticalItemSpacing = 10.dp,
+            horizontalArrangement = Arrangement.spacedBy(7.dp),
+            content = {
+                items(products) { product ->
+
+                    ProductCard(modifier, product, onProductClick)
+
+                }
+            }
+        )
     }
 }
 

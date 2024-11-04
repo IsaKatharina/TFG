@@ -41,8 +41,13 @@ fun AppNavigation() {
         composable(route=AppScreens.ProfileScreen.route){
             ProfileScreen(navController)
         }
-        composable(route=AppScreens.EditProductScreen.route){
-            EditProductScreen(navController)
+        composable(route=AppScreens.EditProductScreen.route +"/idProduct",
+            arguments = listOf(
+                navArgument("idProduct"){
+                    type=NavType.IntType
+                })
+        ){
+            it.arguments?.let { it1 -> EditProductScreen(navController, it1.getInt("idProduct")) }
         }
         composable(route=AppScreens.MainListScreen.route){
             MainListScreen(navController)
