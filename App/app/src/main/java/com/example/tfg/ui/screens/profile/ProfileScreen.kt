@@ -36,11 +36,11 @@ fun ProfileScreen(navController: NavController) {
 
     var idUsuario=1
 
-    //creamos una lambda para navegar a los detalles de un producto
-    val navigateToDetails:(Int) ->Unit= {idProduct ->
-        navController.navigate(AppScreens.ProductDetailsScreen.route+"/$idProduct")
+    //creamos una lambda para navegar a editar un producto
+    val navigateToEdit:(Int) ->Unit= {idProduct ->
+        navController.navigate(AppScreens.EditProductScreen.route+"/$idProduct")
 
-        Log.i("navEdit", "navegando a la edición del producto $idProduct")
+        Log.i("nav", "navegando a la página editar el producto $idProduct")
     }
 
     Column (modifier= Modifier
@@ -87,7 +87,7 @@ fun ProfileScreen(navController: NavController) {
             .weight(1f)
             .padding(15.dp)
         ) {
-            ProductsGrid(modifier = Modifier, onProductClick = navigateToDetails, idUsuario)
+            ProductsGrid(navController, modifier = Modifier, idUsuario, onEditClick=navigateToEdit)
         }
 
         Row (

@@ -41,7 +41,7 @@ fun AppNavigation() {
         composable(route=AppScreens.ProfileScreen.route){
             ProfileScreen(navController)
         }
-        composable(route=AppScreens.EditProductScreen.route +"/idProduct",
+        composable(route=AppScreens.EditProductScreen.route +"/{idProduct}",
             arguments = listOf(
                 navArgument("idProduct"){
                     type=NavType.IntType

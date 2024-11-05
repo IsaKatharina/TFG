@@ -23,22 +23,25 @@ class MainListVM: ViewModel() {
     private var _listadoProductos: MutableLiveData<List<Product>> = MutableLiveData<List<Product>>()
     var listadoProductos: LiveData<List<Product>> =_listadoProductos
 
-    private var _listaProductosBusqueda: MutableLiveData<List<Product>> =MutableLiveData<List<Product>>()
-    var listadoProductosBusqueda: LiveData<List<Product>> =_listaProductosBusqueda
+    private var _listadoProductosBusqueda: MutableLiveData<List<Product>> =MutableLiveData<List<Product>>()
+    var listadoProductosBusqueda: LiveData<List<Product>> =_listadoProductosBusqueda
+
+    private var _listadoProductosPorUsuario:MutableLiveData<List<Product>> =MutableLiveData<List<Product>>()
+    var listadoProductosPorUsuario: LiveData<List<Product>> =_listadoProductosPorUsuario
 
     private var _isLoading= MutableLiveData<Boolean>()
     var isLoading:LiveData<Boolean> =_isLoading
 
     //corrutina que llama a la api y carga el listado principal
-  suspend fun getListadoProductos(){
+  suspend fun getListadoProductos() {
 
         viewModelScope.launch(Dispatchers.IO) {
 
             try {
                 //hacemos la llamada a la api
-                var response= getRetrofit().create(ApiService::class.java).getProductsList()
+                var response = getRetrofit().create(ApiService::class.java).getProductsList()
 
-                if (response.isNotEmpty()){
+                if (response.isNotEmpty()) {
 
                     //detenemos la carga
                     _isLoading.postValue(false)
@@ -50,32 +53,64 @@ class MainListVM: ViewModel() {
 
                 Log.i("sos", "ha entrado bien en la corrutina")
 
-            } catch (e:Exception) {
+            } catch (e: Exception) {
                 //en caso de error, muestra un mensaje
                 // showError(context,e)
 
                 Log.i("sos", "no ha entrado bien en la corrutina, $e")
             }
         }
-
     }
 
-    //buscamos un producto dentro de un listado y devolvemos el producto encontrado.
-    //si no encuentra ningún producto que coincida, devolverá un null
-    fun getProductbyId(idProduct:Int): Product? {
 
-        var productFound:Product?=Product()
+    //corrutina que llama a la api y carga el listado completo
+    suspend fun getListadoProductosPorUsuario(idUsuario: Int) {
 
-        //si el listado no está vacío
-        if(listadoProductos.value?.isEmpty()==false) {
+            viewModelScope.launch(Dispatchers.IO) {
 
-            //recorremos el valor del listado hasta que encontremos el que queremos
-            productFound= _listadoProductos.value?.find { it.idProduct==idProduct }
+                try {
+                    //hacemos la llamada a la api
+                    var response = getRetrofit().create(ApiService::class.java).getProductsList()
 
+                    if (response.isNotEmpty()) {
+
+                        //detenemos la carga
+                        _isLoading.postValue(false)
+                        _listadoProductosBusqueda.postValue(response)
+
+                    } else {
+                        _listadoProductosBusqueda.postValue(emptyList())
+                    }
+
+                    Log.i("sos", "ha entrado bien en la corrutina")
+
+                } catch (e: Exception) {
+                    //en caso de error, muestra un mensaje
+                    // showError(context,e)
+
+                    Log.i("sos", "no ha entrado bien en la corrutina, $e")
+                }
+            }
+
+            // Creamos una lista temporal para almacenar los productos filtrados
+            val productosPorUsuario = mutableListOf<Product>()
+
+            //si el listado no está vacío
+            if (_listadoProductosBusqueda.value?.isNotEmpty() == true) {
+
+                //recorremos el valor del listado hasta que encontremos el que queremos
+                _listadoProductosBusqueda.value!!.forEach{ product: Product ->
+                    //por cada producto, si su idUsuario es igual al que recibe por parametro
+                    //lo añadimos a la lista
+                    if (product.idUsuario ==idUsuario) {
+                        productosPorUsuario.add(product)
+                    }
+                }
+
+                //igualamos ambas listas
+              _listadoProductosPorUsuario.value=productosPorUsuario
+            }
         }
-        return productFound
-    }
-
 }
 
 

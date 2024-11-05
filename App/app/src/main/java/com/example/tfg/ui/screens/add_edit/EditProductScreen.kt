@@ -45,6 +45,8 @@ import com.example.tfg.viewmodels.ProductDetailsVM
 @Composable
 fun EditProductScreen(navController: NavController, idProduct: Int) {
 
+
+
     val vmGetProduct = ProductDetailsVM()
     val vmEditProduct = EditProductVM()
 
@@ -54,6 +56,7 @@ fun EditProductScreen(navController: NavController, idProduct: Int) {
     //buscamos el producto correspondiente
     val product: Product by vmGetProduct.productFound.observeAsState(initial = Product())
     val editClicked: Boolean by vmEditProduct.editClicked.observeAsState(initial = false)
+    val productEditado: Product by vmEditProduct.productEditado.observeAsState(initial = product)
 
     LaunchedEffect(idProduct) {
         vmGetProduct.getProduct(idProduct)
@@ -89,7 +92,7 @@ fun EditProductScreen(navController: NavController, idProduct: Int) {
 
                 //ponemos un espacio
                 Spacer(modifier = Modifier.padding(16.dp))
-                EditProdName(product.nombre) {
+                EditProdName(product.nombre, productEditado) {
                     vmEditProduct.editProduct(product, editClicked)
                 }
 
@@ -138,11 +141,11 @@ fun EditProductScreen(navController: NavController, idProduct: Int) {
 }
 
     @Composable
-    fun EditProdName(nombre: String, onTextFieldChanged: (String) -> Unit) {
+    fun EditProdName(nombre: String, productEditado:Product, onTextFieldChanged: (String) -> Unit) {
 
         TextField(
             value = nombre,
-            onValueChange = { onTextFieldChanged(it) },
+            onValueChange = { onTextFieldChanged(productEditado.nombre) },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(15.dp, 0.dp, 15.dp, 0.dp),
@@ -260,7 +263,7 @@ fun EditProductScreen(navController: NavController, idProduct: Int) {
                 containerColor = Color(0xFFFF5290)
             )
         ) {
-            Text(text = "Añadir")
+            Text(text = "Actualizar")
 
         }
     }

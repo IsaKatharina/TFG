@@ -28,8 +28,8 @@ import com.example.tfg.core.models.Listado
 import com.example.tfg.core.models.Product
 import com.example.tfg.dal.remote.utils.ApiService
 import com.example.tfg.dal.remote.utils.getRetrofit
+import com.example.tfg.navigation.AppScreens
 import com.example.tfg.ui.theme.TFGTheme
-import com.example.tfg.viewmodels.ListByIdVM
 import com.example.tfg.viewmodels.MainListVM
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -72,14 +72,14 @@ fun ProductsGrid (modifier: Modifier, onProductClick:(Int)->Unit){
 }
 
 @Composable
-fun ProductsGrid (modifier: Modifier, onProductClick:(Int)->Unit, idUsuario:Int){
+fun ProductsGrid(navController: NavController, modifier: Modifier, idUsuario:Int, onEditClick:(Int)->Unit){
 
-    val vm=ListByIdVM()
+    val vm=MainListVM()
     //TODO:poner a true
     val isLoading:Boolean by vm.isLoading.observeAsState(initial = false)
-    val products:List<Product> by vm.listadoProductos.observeAsState(initial = emptyList())
+    val listadoProductosBusqueda:List<Product> by vm.listadoProductosBusqueda.observeAsState(initial = emptyList())
     LaunchedEffect(idUsuario) {
-        vm.getListadoProductosByUser(idUsuario)
+        vm.getListadoProductosPorUsuario(idUsuario)
     }
 
     if (isLoading) {
@@ -89,15 +89,14 @@ fun ProductsGrid (modifier: Modifier, onProductClick:(Int)->Unit, idUsuario:Int)
         }
     } else {
 
-
         LazyVerticalStaggeredGrid(
             columns = StaggeredGridCells.Adaptive(150.dp),
             verticalItemSpacing = 10.dp,
             horizontalArrangement = Arrangement.spacedBy(7.dp),
             content = {
-                items(products) { product ->
+                items(listadoProductosBusqueda) { product ->
 
-                    ProductCard(modifier, product, onProductClick)
+                    EditProductCard(navController, product)
 
                 }
             }

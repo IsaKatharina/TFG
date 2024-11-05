@@ -1,16 +1,19 @@
 package com.example.tfg.core.presentation.composables
 
-import android.util.Log
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.FloatingActionButton
-import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -31,17 +34,16 @@ import com.example.tfg.R
 import com.example.tfg.core.models.Product
 import com.example.tfg.core.presentation.buttons.DeleteButton
 import com.example.tfg.core.presentation.buttons.EditButton
-import com.example.tfg.ui.screens.profile.ProfileScreen
 import com.example.tfg.ui.theme.TFGTheme
 
 @Composable
-fun EditProductCard(navController:NavController/*modifier: Modifier, product: Product, onProductClick:(Int) ->Unit*/){
-    FloatingActionButton(
+fun EditProductCard(navController: NavController,  product: Product){
+
+    ElevatedCard (
 
         modifier = Modifier
             .size(width = 150.dp, height = 150.dp),
-
-        onClick = {/*onProductClick(product.idProduct)*/}
+        elevation = CardDefaults.cardElevation(defaultElevation = 6.dp)
 
     ) {
 
@@ -51,15 +53,20 @@ fun EditProductCard(navController:NavController/*modifier: Modifier, product: Pr
 
             Box(
                 modifier = Modifier.width(30.dp)
-                    .height(70.dp)
+                    .height(200.dp)
                     .align(Alignment.TopEnd)
                     .zIndex(1f)
-                    .padding(4.dp)
-
+                    .padding(4.dp),
             ) {
-                //TODO:arreglar posiciones
-                EditButton(navController)
-                DeleteButton(navController)
+                Column(
+                    modifier = Modifier.fillMaxHeight(),
+                    verticalArrangement = Arrangement.SpaceBetween
+                ) {
+
+                    EditButton(navController,product.idProduct)
+                    DeleteButton(product.idProduct, product.imagen, navController)
+
+                }
 
             }
 
@@ -81,7 +88,7 @@ fun EditProductCard(navController:NavController/*modifier: Modifier, product: Pr
 
             Row(modifier= Modifier.align(Alignment.BottomCenter)) {
                 Text(
-                    text = "Nombre del producto",//product.nombre,
+                    text = product.nombre,
                     color = Color.Black,
                 )
             }
@@ -94,7 +101,7 @@ fun EditProductCard(navController:NavController/*modifier: Modifier, product: Pr
 @Composable
 fun PRPEditProductCard(){
     TFGTheme {
-        EditProductCard (navController = rememberNavController())
+        EditProductCard (navController = rememberNavController(), product = Product())
     }
 
 }

@@ -46,8 +46,16 @@ class EditProductVM:ViewModel() {
     private val _editClicked= MutableLiveData<Boolean>()
     val editClicked: LiveData<Boolean> =_editClicked
 
+    private val _product=MutableLiveData<Product>()
+    val product:LiveData<Product> =_product
+
+    private val _productEditado:MutableLiveData<Product> =MutableLiveData<Product>()
+    val productEditado:LiveData<Product> =_productEditado
+
     //corrutina que edita un producto
-    fun editProduct(product: Product, editClicked:Boolean) {
+    fun editProduct(productEditado: Product, editClicked:Boolean) {
+
+        _product.value=productEditado
 
         if (editClicked) {
 
@@ -56,7 +64,7 @@ class EditProductVM:ViewModel() {
 
                 try {
                     //hacemos la llamada a la api
-                    var response = getRetrofit().create(ApiService::class.java).editProduct(product.idProduct, product)
+                    var response = getRetrofit().create(ApiService::class.java).editProduct(_product.value!!.idProduct, _product.value!!)
 
                     //TODO:como controlo los duplicados??
                     if (response.equals(200)) {
