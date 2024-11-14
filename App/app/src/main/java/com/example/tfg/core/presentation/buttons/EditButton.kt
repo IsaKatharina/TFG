@@ -19,8 +19,8 @@ fun EditButton(navController: NavController,idProduct: Int) {
     val botonClickado:Boolean=false
 
     if(!botonClickado) {
-
-        IconButton(onClick = {navController.navigate(AppScreens.EditProductScreen.route +"$idProduct")}) {
+val ruta=AppScreens.EditProductScreen.route +"/$idProduct"
+        IconButton(onClick = {navController.navigate(ruta)}) {
             Icon(
                 painter= painterResource(id = R.drawable.edit_icon),
                 contentDescription = "EditProfile",
