@@ -36,7 +36,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-
 @Composable
 fun MainListScreen(navController: NavController) {
 
@@ -86,11 +85,3 @@ fun MainListScreen(navController: NavController) {
     }
 }
 
-@Preview(showSystemUi = true)
-@Composable
-fun PCMainListScreen(){
-    TFGTheme {
-        MainListScreen(
-            navController = rememberNavController())
-    }
-}

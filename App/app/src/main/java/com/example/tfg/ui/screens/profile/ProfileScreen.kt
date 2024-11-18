@@ -23,6 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.example.tfg.core.models.Product
 import com.example.tfg.core.presentation.buttons.EditProfileButton
 import com.example.tfg.core.presentation.composables.BottomBar
 import com.example.tfg.core.presentation.composables.ProductsGrid
@@ -87,7 +88,7 @@ fun ProfileScreen(navController: NavController) {
             .weight(1f)
             .padding(15.dp)
         ) {
-            ProductsGrid(navController, modifier = Modifier, idUsuario, onEditClick=navigateToEdit)
+            ProductsGrid(modifier = Modifier, idUsuario, onEditProductClick=navigateToEdit)
         }
 
         Row (

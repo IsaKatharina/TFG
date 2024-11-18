@@ -72,7 +72,7 @@ fun ProductsGrid (modifier: Modifier, onProductClick:(Int)->Unit){
 }
 
 @Composable
-fun ProductsGrid(navController: NavController, modifier: Modifier, idUsuario:Int, onEditClick:(Int)->Unit){
+fun ProductsGrid(modifier: Modifier, idUsuario:Int, onEditProductClick:(Int)->Unit){
 
     val vm=MainListVM()
     //TODO:poner a true
@@ -96,7 +96,7 @@ fun ProductsGrid(navController: NavController, modifier: Modifier, idUsuario:Int
             content = {
                 items(listadoProductosBusqueda) { product ->
 
-                    EditProductCard(navController, product)
+                    EditProductCard(product, onEditProductClick)
 
                 }
             }

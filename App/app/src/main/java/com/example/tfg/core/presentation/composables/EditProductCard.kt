@@ -32,43 +32,25 @@ import coil3.request.ImageRequest
 import coil3.request.crossfade
 import com.example.tfg.R
 import com.example.tfg.core.models.Product
-import com.example.tfg.core.presentation.buttons.DeleteButton
 import com.example.tfg.core.presentation.buttons.EditButton
 import com.example.tfg.ui.theme.TFGTheme
 
 @Composable
-fun EditProductCard(navController: NavController,  product: Product){
+fun EditProductCard(product: Product, onEditProductClick:(Int)->Unit){
 
-    ElevatedCard (
+    FloatingActionButton (
 
         modifier = Modifier
             .size(width = 150.dp, height = 150.dp),
-        elevation = CardDefaults.cardElevation(defaultElevation = 6.dp)
 
-    ) {
+        onClick = {onEditProductClick(product.idProduct)}
+
+        ) {
 
         Box(modifier = Modifier.fillMaxSize()
             .background(Color.White)
         ) {
 
-            Box(
-                modifier = Modifier.width(30.dp)
-                    .height(200.dp)
-                    .align(Alignment.TopEnd)
-                    .zIndex(1f)
-                    .padding(4.dp),
-            ) {
-                Column(
-                    modifier = Modifier.fillMaxHeight(),
-                    verticalArrangement = Arrangement.SpaceBetween
-                ) {
-
-                    EditButton(navController,product.idProduct)
-                    DeleteButton(product.idProduct, product.imagen, navController)
-
-                }
-
-            }
 
             Box(
 
@@ -97,11 +79,11 @@ fun EditProductCard(navController: NavController,  product: Product){
     }
 }
 
-@Preview(showSystemUi = true)
-@Composable
-fun PRPEditProductCard(){
-    TFGTheme {
-        EditProductCard (navController = rememberNavController(), product = Product())
-    }
-
-}
+//@Preview(showSystemUi = true)
+//@Composable
+//fun PRPEditProductCard(){
+//    TFGTheme {
+//        EditProductCard (product = Product(), onEditProductClick)
+//    }
+//
+//}
