@@ -2,10 +2,11 @@ package com.example.tfg.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.tfg.ui.screens.profile.EditProfileScreen
 import com.example.tfg.ui.screens.list.MainListScreen
@@ -18,19 +19,20 @@ import com.example.tfg.viewmodels.LoginVM
 import com.example.tfg.ui.screens.add_edit.EditProductScreen
 import com.example.tfg.ui.screens.list.FavsScreen
 import com.example.tfg.ui.screens.add_edit.NewProductScreen
+import com.google.firebase.auth.FirebaseAuth
 
 //se encarga de gestionar la navegación entre pantallas.
 @Composable
-fun AppNavigation() {
+fun AppNavigation(navController: NavHostController) {
 
     val vm= LoginVM() //instanciamos el vm del login
-    val navController= rememberNavController() //hay que propagarla por todas las pantallas.
+
     NavHost(navController = navController, startDestination = AppScreens.StartScreen.route ) {
         composable(route=AppScreens.StartScreen.route){
             StartScreen(modifier=Modifier, navController)
         }
         composable (route=AppScreens.LoginScreen.route){
-            LoginScreen(modifier=Modifier, navController, vm )
+            LoginScreen(modifier=Modifier, navController, vm)
         }
         composable(route=AppScreens.NewUserScreen.route){
             NewUserScreen(navController)

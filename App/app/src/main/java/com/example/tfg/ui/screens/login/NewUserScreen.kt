@@ -1,26 +1,21 @@
 package com.example.tfg.ui.screens.login
 
-import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -30,8 +25,6 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.drawscope.Stroke
-import androidx.compose.ui.input.pointer.motionEventSpy
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
@@ -43,9 +36,8 @@ import com.example.tfg.core.presentation.buttons.BackButton
 import com.example.tfg.core.presentation.composables.HeaderImagen
 import com.example.tfg.core.presentation.composables.ProfileCircle
 import com.example.tfg.ui.theme.TFGTheme
-import com.example.tfg.ui.theme.backgroundLight
-import com.example.tfg.ui.theme.primaryLight
 import com.example.tfg.viewmodels.LoginVM
+import com.google.firebase.auth.FirebaseAuth
 
 @Composable
 fun NewUserScreen(navController: NavController) {
@@ -192,12 +184,12 @@ fun NewUserName(navController: NavController) {
     )
 }
 
-@Preview
-@Composable
-fun PCNewUser(){
-    TFGTheme {
-        NewUserScreen(navController = rememberNavController())
-    }
-}
+//@Preview
+//@Composable
+//fun PCNewUser(){
+//    TFGTheme {
+//        NewUserScreen(navController = rememberNavController())
+//    }
+//}
 
 

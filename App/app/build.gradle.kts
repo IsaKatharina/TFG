@@ -78,7 +78,7 @@ dependencies {
     //Firebase
     implementation("com.google.firebase:firebase-auth:23.0.0")
     //noinspection BomWithoutPlatform
-    implementation("com.google.firebase:firebase-bom:33.4.0")
+    implementation("com.google.firebase:firebase-bom:33.6.0")
 
     // Retrofit
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")

@@ -1,11 +1,17 @@
 package com.example.tfg.viewmodels
 
 import android.provider.ContactsContract.CommonDataKinds.Email
+import android.util.Log
 import android.util.Patterns
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 //esto es una clase vm que hereda de ViewModel
 class LoginVM:ViewModel(){
@@ -27,6 +33,8 @@ class LoginVM:ViewModel(){
 
     private val _loginTrue=MutableLiveData<Boolean>()
     val loginTrue:LiveData<Boolean> =_loginTrue
+
+    private val auth: FirebaseAuth= Firebase.auth
 
     //función que comprueba que el email y la contraseña son válidos.
     //si lo son, se pone disponible el botón de login.
@@ -57,11 +65,27 @@ class LoginVM:ViewModel(){
         return validPassword
     }
 
-    //función que checkea que uno se puede loggear
-    private fun checkLogin (loginTrue:Boolean):Boolean {
+//    //función que checkea que uno se puede loggear
+//    fun checkLogin (auth: FirebaseAuth) {
+//
+//       viewModelScope.launch {
+//           try{
+//               auth.signInWithEmailAndPassword(_email.value.toString(), _password.value.toString())
+//                   .addOnCompleteListener { task ->
+//                       if (task.isSuccessful) {
+//                           Log.i("login", "login bien")
+//                           _loginTrue.postValue(true)
+//                       }
+//                       else{
+//                           Log.i("login", "error: ${task.result.toString()}")
+//                           _loginTrue.postValue(false)
+//                       }
+//
+//                   }
+//           } catch (e:Exception){
+//               Log.i("login", "error: ${e.message}")
+//           }
+//
+//       }
 
-        //TODO:aqui iría la movida de los usuarios
-
-        return loginTrue
-    }
 }

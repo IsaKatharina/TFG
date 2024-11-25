@@ -11,5 +11,6 @@ plugins {
     // Kapt debe estar debajo de Dagger-
     id ("org.jetbrains.kotlin.kapt") version "1.7.20"
     id("com.google.devtools.ksp") version "1.8.10-1.0.9" apply false
+    id("com.google.gms.google-services") version "4.4.2" apply false
 
 }
