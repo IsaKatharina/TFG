@@ -71,11 +71,9 @@ namespace DAL.Handlers
 
             //Añadimos un parámetro que luego necesitaremos en el comando sql.
             cmd.Parameters.Add("@idUsuario", System.Data.SqlDbType.Int).Value = usuario.IdUsuario;
-            cmd.Parameters.Add("@nombre", System.Data.SqlDbType.VarChar, 30).Value = usuario.Nombre;
-            cmd.Parameters.Add("@apellidos", System.Data.SqlDbType.VarChar, 60).Value = usuario.Apellidos;
+            cmd.Parameters.Add("@nombreUsu", System.Data.SqlDbType.VarChar, 30).Value = usuario.NombreUsu;
             cmd.Parameters.Add("@correo", System.Data.SqlDbType.VarChar, 100).Value = usuario.Correo;
             cmd.Parameters.Add("@password", System.Data.SqlDbType.VarChar, 30).Value = usuario.Password;
-            cmd.Parameters.Add("@fechaNac", System.Data.SqlDbType.Date).Value = usuario.FechaNac;
             cmd.Parameters.Add("@foto", System.Data.SqlDbType.Date).Value = usuario.Foto;
 
 
@@ -84,8 +82,8 @@ namespace DAL.Handlers
                 //abrimos la conexion y la guardamos en una variable
                 SqlConnection conexionAbierta = conexion.getConnection();
 
-                cmd.CommandText = "UPDATE Usuarios SET Nombre=@nombre, Apellidos=@apellidos, correo=@correo, password=@password," +
-                    "Foto=@foto, FechaNac=@fechaNac WHERE idUsuario=@idUsuario";
+                cmd.CommandText = "UPDATE Usuarios SET NombreUsu=@nombreUsu, correo=@correo, password=@password," +
+                    "Foto=@foto WHERE idUsuario=@idUsuario";
                 cmd.Connection = conexionAbierta;
                 numeroFilasAfectadas = cmd.ExecuteNonQuery();
 
@@ -127,11 +125,9 @@ namespace DAL.Handlers
             SqlCommand cmd = new SqlCommand();
 
             //Añadimos un parámetro que luego necesitaremos en el comando sql.
-            cmd.Parameters.Add("@nombre", System.Data.SqlDbType.VarChar, 30).Value = usuario.Nombre;
-            cmd.Parameters.Add("@apellidos", System.Data.SqlDbType.VarChar, 60).Value = usuario.Apellidos;
+            cmd.Parameters.Add("@nombreUsu", System.Data.SqlDbType.VarChar, 30).Value = usuario.NombreUsu;
             cmd.Parameters.Add("@correo", System.Data.SqlDbType.VarChar, 100).Value = usuario.Correo;
             cmd.Parameters.Add("@password", System.Data.SqlDbType.VarChar, 30).Value = usuario.Password;
-            cmd.Parameters.Add("@fechaNac", System.Data.SqlDbType.Date).Value = usuario.FechaNac;
             cmd.Parameters.Add("@foto", System.Data.SqlDbType.Date).Value = usuario.Foto;
 
             try
@@ -139,8 +135,8 @@ namespace DAL.Handlers
                 //abrimos la conexion y la guardamos en una variable
                 SqlConnection conexionAbierta = conexion.getConnection();
 
-                cmd.CommandText = "INSERT INTO Usuarios (Nombre, Apellidos, Correo, Password, Foto, FechaNac)" +
-                    "values (@nombre, @apellidos, @correo, @password, @foto, @fechaNac)";
+                cmd.CommandText = "INSERT INTO Usuarios (NombreUsu,  Correo, Password, Foto)" +
+                    "values (@nombreUsu, @correo, @password, @foto)";
                 cmd.Connection = conexionAbierta;
                 numeroFilasAfectadas = cmd.ExecuteNonQuery();
 

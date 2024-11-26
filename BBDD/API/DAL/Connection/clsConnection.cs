@@ -20,8 +20,8 @@ namespace DAL.Connection
         public clsConnection()
         {
 
-            this.server = "isakatha.database.windows.net";
-            this.dataBase = "BDIsaKatha";
+            this.server = "bestdupe.database.windows.net";
+            this.dataBase = "BestDupeDB";
             this.user = "prueba";
             this.pass = "fernandoG321";
 
