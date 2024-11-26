@@ -62,7 +62,7 @@ fun EditProductScreen(navController: NavController, idProduct: Int) {
     val vmEditProduct = EditProductVM()
 
     //TODO:poner a true
-    val isLoading: Boolean by vmGetProduct.isLoading.observeAsState(initial = true)
+    val isLoading: Boolean by vmGetProduct.isLoading.observeAsState(initial = false)
 
     //buscamos el producto correspondiente
     val product: Product by vmGetProduct.productFound.observeAsState(initial = Product())

@@ -45,75 +45,69 @@ fun NewUserScreen(navController: NavController) {
         .fillMaxSize()
         .background(Color.White)
     ) {
-        NewUser(Modifier.align(Alignment.Center), navController)
+        //declaramos el vm
+        val vm= LoginVM()
+
+        //declaramos las variables que necesita la vista
+        val email:String by vm.email.observeAsState(initial="")
+        val password:String by vm.password.observeAsState(initial="")
+        val loginEnable:Boolean by vm.loginEnable.observeAsState(initial=false)
+        val isLoading:Boolean by vm.isLoading.observeAsState(initial=false)
+
+        //aquí declaramos una corrutina.
+        //TODO:ver en el vídeo pa qué
+        val coroutineScope= rememberCoroutineScope()
+
+        //en caso de que esté cargando ponemos un circulito para indicar la carga
+        if (isLoading){
+            Box(Modifier.fillMaxSize()) {
+                CircularProgressIndicator(Modifier.align(Alignment.Center),)
+            }
+        }else {
+            Column (modifier=Modifier.fillMaxSize()){
+                //aquí simplemente ponemos los nombre de los composables
+                BackButton(navController = navController,
+                    modifier=Modifier.align(Alignment.Start))
+                // (sus funciones), no los "pintamos"
+                HeaderImagen(Modifier.align(Alignment.CenterHorizontally), navController)
+
+                //ponemos un espacio
+                Spacer(modifier= Modifier.padding(16.dp))
+                NewUserName(navController)
+
+                //otro espacio
+                Spacer(modifier = Modifier.padding(16.dp))
+                NewEmail(navController)
+
+                //otro espacio
+                Spacer(modifier = Modifier.padding(16.dp))
+                NewPassword(navController)
+
+                //otro espacio
+                Spacer(modifier = Modifier.padding(16.dp))
+                NewPic(navController)
+
+                //otro espacio
+                Spacer(modifier = Modifier.padding(16.dp))
+
+                //TODO:entender bien
+                WelcomeButton(navController)
+
+
+            }
+        }
     }
 
 }
-
-@Composable
-fun NewUser(modifier: Modifier, navController: NavController){
-
-    //declaramos el vm
-    val vm= LoginVM()
-
-    //declaramos las variables que necesita la vista
-    val email:String by vm.email.observeAsState(initial="")
-    val password:String by vm.password.observeAsState(initial="")
-    val loginEnable:Boolean by vm.loginEnable.observeAsState(initial=false)
-    val isLoading:Boolean by vm.isLoading.observeAsState(initial=false)
-
-    //aquí declaramos una corrutina.
-    //TODO:ver en el vídeo pa qué
-    val coroutineScope= rememberCoroutineScope()
-
-    //en caso de que esté cargando ponemos un circulito para indicar la carga
-    if (isLoading){
-        Box(Modifier.fillMaxSize()) {
-            CircularProgressIndicator(Modifier.align(Alignment.Center),)
-        }
-    }else {
-        Column (modifier=Modifier.fillMaxSize()){
-            //aquí simplemente ponemos los nombre de los composables
-            BackButton(navController = navController,
-                modifier=Modifier.align(Alignment.Start))
-            // (sus funciones), no los "pintamos"
-            HeaderImagen(Modifier.align(Alignment.CenterHorizontally), navController)
-
-            //ponemos un espacio
-            Spacer(modifier= Modifier.padding(16.dp))
-            NewUserName(navController)
-
-            //otro espacio
-            Spacer(modifier = Modifier.padding(16.dp))
-            NewEmail(navController)
-
-            //otro espacio
-            Spacer(modifier = Modifier.padding(16.dp))
-            NewPassword(navController)
-
-            //otro espacio
-            Spacer(modifier = Modifier.padding(16.dp))
-            NewPic(navController)
-
-            //otro espacio
-            Spacer(modifier = Modifier.padding(16.dp))
-
-            //TODO:entender bien
-            WelcomeButton(navController)
-
-
-        }
-    }
-}
-
 
 @Composable
 fun WelcomeButton(navController: NavController) {
-    Button(onClick = { },
+    Button(onClick = {  },
         modifier= Modifier
             .fillMaxWidth()
             .padding(15.dp, 0.dp, 15.dp, 0.dp)
             .height(48.dp),
+
         colors = ButtonDefaults.buttonColors(
             containerColor = Color(0xFFFF5290)
         )) {
@@ -132,7 +126,7 @@ fun NewPic(navController: NavController) {
     ) {
        ProfileCircle(navController)
 
-        IconButton(onClick = { /*TODO*/ }) {
+        IconButton(onClick = {  }) {
             Icon(painterResource(id = R.drawable.camara_pink),
                 contentDescription = "camara_pink",
                 tint = Color(0xFFFF5290)
@@ -142,10 +136,10 @@ fun NewPic(navController: NavController) {
 }
 
 @Composable
-fun NewPassword(navController: NavController) {
+fun NewPassword(navController: NavController, password:String) {
     TextField(
-        value = "", //TODO:va para vm
-        onValueChange = {},
+        value = password,
+        onValueChange = {password=it},
         modifier = Modifier
             .fillMaxWidth()
             .padding(15.dp, 0.dp, 15.dp, 0.dp),
@@ -184,12 +178,12 @@ fun NewUserName(navController: NavController) {
     )
 }
 
-//@Preview
-//@Composable
-//fun PCNewUser(){
-//    TFGTheme {
-//        NewUserScreen(navController = rememberNavController())
-//    }
-//}
+@Preview
+@Composable
+fun PCNewUser(){
+    TFGTheme {
+        NewUserScreen(navController = rememberNavController())
+    }
+}
 
 
