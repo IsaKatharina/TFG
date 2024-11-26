@@ -1,0 +1,48 @@
+C:\Users\Isa K\Desktop\TFG\BBDD\API\Entidades\bin\Release\net8.0\Entidades.deps.json
+C:\Users\Isa K\Desktop\TFG\BBDD\API\Entidades\bin\Release\net8.0\Entidades.dll
+C:\Users\Isa K\Desktop\TFG\BBDD\API\Entidades\bin\Release\net8.0\Entidades.pdb
+C:\Users\Isa K\Desktop\TFG\BBDD\API\Entidades\obj\Release\net8.0\Entidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Isa K\Desktop\TFG\BBDD\API\Entidades\obj\Release\net8.0\Entidades.AssemblyInfoInputs.cache
+C:\Users\Isa K\Desktop\TFG\BBDD\API\Entidades\obj\Release\net8.0\Entidades.AssemblyInfo.cs
+C:\Users\Isa K\Desktop\TFG\BBDD\API\Entidades\obj\Release\net8.0\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Isa K\Desktop\TFG\BBDD\API\Entidades\obj\Release\net8.0\Entidades.sourcelink.json
+C:\Users\Isa K\Desktop\TFG\BBDD\API\Entidades\obj\Release\net8.0\Entidades.dll
+C:\Users\Isa K\Desktop\TFG\BBDD\API\Entidades\obj\Release\net8.0\refint\Entidades.dll
+C:\Users\Isa K\Desktop\TFG\BBDD\API\Entidades\obj\Release\net8.0\Entidades.pdb
+C:\Users\Isa K\Desktop\TFG\BBDD\API\Entidades\obj\Release\net8.0\ref\Entidades.dll
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\Entidades\bin\Release\net8.0\Entidades.deps.json
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\Entidades\bin\Release\net8.0\Entidades.dll
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\Entidades\bin\Release\net8.0\Entidades.pdb
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\Entidades\obj\Release\net8.0\Entidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\Entidades\obj\Release\net8.0\Entidades.AssemblyInfoInputs.cache
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\Entidades\obj\Release\net8.0\Entidades.AssemblyInfo.cs
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\Entidades\obj\Release\net8.0\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\Entidades\obj\Release\net8.0\Entidades.sourcelink.json
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\Entidades\obj\Release\net8.0\Entidades.dll
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\Entidades\obj\Release\net8.0\refint\Entidades.dll
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\Entidades\obj\Release\net8.0\Entidades.pdb
+C:\Users\IsabelKatharinaLoerz\OneDrive - Paradox Cat GmbH\Desktop\api\TFG\BBDD\API\Entidades\obj\Release\net8.0\ref\Entidades.dll
+C:\Users\IsaK\Desktop\TFG\BBDD\API\Entidades\bin\Release\net8.0\Entidades.deps.json
+C:\Users\IsaK\Desktop\TFG\BBDD\API\Entidades\bin\Release\net8.0\Entidades.dll
+C:\Users\IsaK\Desktop\TFG\BBDD\API\Entidades\bin\Release\net8.0\Entidades.pdb
+C:\Users\IsaK\Desktop\TFG\BBDD\API\Entidades\obj\Release\net8.0\Entidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IsaK\Desktop\TFG\BBDD\API\Entidades\obj\Release\net8.0\Entidades.AssemblyInfoInputs.cache
+C:\Users\IsaK\Desktop\TFG\BBDD\API\Entidades\obj\Release\net8.0\Entidades.AssemblyInfo.cs
+C:\Users\IsaK\Desktop\TFG\BBDD\API\Entidades\obj\Release\net8.0\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\IsaK\Desktop\TFG\BBDD\API\Entidades\obj\Release\net8.0\Entidades.sourcelink.json
+C:\Users\IsaK\Desktop\TFG\BBDD\API\Entidades\obj\Release\net8.0\Entidades.dll
+C:\Users\IsaK\Desktop\TFG\BBDD\API\Entidades\obj\Release\net8.0\refint\Entidades.dll
+C:\Users\IsaK\Desktop\TFG\BBDD\API\Entidades\obj\Release\net8.0\Entidades.pdb
+C:\Users\IsaK\Desktop\TFG\BBDD\API\Entidades\obj\Release\net8.0\ref\Entidades.dll
+C:\Users\IsaK\Desktop\TFG\API_Novale\Entidades\bin\Release\net8.0\Entidades.deps.json
+C:\Users\IsaK\Desktop\TFG\API_Novale\Entidades\bin\Release\net8.0\Entidades.dll
+C:\Users\IsaK\Desktop\TFG\API_Novale\Entidades\bin\Release\net8.0\Entidades.pdb
+C:\Users\IsaK\Desktop\TFG\API_Novale\Entidades\obj\Release\net8.0\Entidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IsaK\Desktop\TFG\API_Novale\Entidades\obj\Release\net8.0\Entidades.AssemblyInfoInputs.cache
+C:\Users\IsaK\Desktop\TFG\API_Novale\Entidades\obj\Release\net8.0\Entidades.AssemblyInfo.cs
+C:\Users\IsaK\Desktop\TFG\API_Novale\Entidades\obj\Release\net8.0\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\IsaK\Desktop\TFG\API_Novale\Entidades\obj\Release\net8.0\Entidades.sourcelink.json
+C:\Users\IsaK\Desktop\TFG\API_Novale\Entidades\obj\Release\net8.0\Entidades.dll
+C:\Users\IsaK\Desktop\TFG\API_Novale\Entidades\obj\Release\net8.0\refint\Entidades.dll
+C:\Users\IsaK\Desktop\TFG\API_Novale\Entidades\obj\Release\net8.0\Entidades.pdb
+C:\Users\IsaK\Desktop\TFG\API_Novale\Entidades\obj\Release\net8.0\ref\Entidades.dll
