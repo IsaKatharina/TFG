@@ -10,15 +10,14 @@ using System.Threading.Tasks;
 namespace DAL.Handlers
 {
   public class clsHandlerUsuarioDAL
-    {
-        /// <summary>
-        /// Método que borra un registro de la tabla Personas
-        /// 
-        /// Precondición: int idPersona
-        /// Postcondición: int numeroFilasAfectadas
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+    { /// <summary>
+      /// Método que borra un registro de la tabla Personas
+      /// 
+      /// Precondición: int idPersona
+      /// Postcondición: int numeroFilasAfectadas
+      /// </summary>
+      /// <param name="id"></param>
+      /// <returns></returns>
         public static int deleteUsuarioDAL(int idUsuario)
         {
             int numeroFilasAfectadas = 0;
@@ -73,7 +72,7 @@ namespace DAL.Handlers
             cmd.Parameters.Add("@idUsuario", System.Data.SqlDbType.Int).Value = usuario.IdUsuario;
             cmd.Parameters.Add("@nombreUsu", System.Data.SqlDbType.VarChar, 30).Value = usuario.NombreUsu;
             cmd.Parameters.Add("@correo", System.Data.SqlDbType.VarChar, 100).Value = usuario.Correo;
-            cmd.Parameters.Add("@foto", System.Data.SqlDbType.Date).Value = usuario.Foto;
+            cmd.Parameters.Add("@foto", System.Data.SqlDbType.VarChar).Value = usuario.Foto;
 
 
             try
@@ -126,14 +125,14 @@ namespace DAL.Handlers
             //Añadimos un parámetro que luego necesitaremos en el comando sql.
             cmd.Parameters.Add("@nombreUsu", System.Data.SqlDbType.VarChar, 30).Value = usuario.NombreUsu;
             cmd.Parameters.Add("@correo", System.Data.SqlDbType.VarChar, 100).Value = usuario.Correo;
-            cmd.Parameters.Add("@foto", System.Data.SqlDbType.Date).Value = usuario.Foto;
+            cmd.Parameters.Add("@foto", System.Data.SqlDbType.VarChar).Value = usuario.Foto;
 
             try
             {
                 //abrimos la conexion y la guardamos en una variable
                 SqlConnection conexionAbierta = conexion.getConnection();
 
-                cmd.CommandText = "INSERT INTO Usuarios (NombreUsu,  Correo, Foto)" +
+                cmd.CommandText = "INSERT INTO Usuarios (NombreUsu, Correo, Foto)" +
                     "values (@nombreUsu, @correo, @foto)";
                 cmd.Connection = conexionAbierta;
                 numeroFilasAfectadas = cmd.ExecuteNonQuery();

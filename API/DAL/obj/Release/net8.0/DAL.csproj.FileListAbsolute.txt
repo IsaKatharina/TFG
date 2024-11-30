@@ -73,8 +73,8 @@ C:\Users\IsaK\Desktop\TFG\API\DAL\obj\Release\net8.0\DAL.AssemblyInfoInputs.cach
 C:\Users\IsaK\Desktop\TFG\API\DAL\obj\Release\net8.0\DAL.AssemblyInfo.cs
 C:\Users\IsaK\Desktop\TFG\API\DAL\obj\Release\net8.0\DAL.csproj.CoreCompileInputs.cache
 C:\Users\IsaK\Desktop\TFG\API\DAL\obj\Release\net8.0\DAL.sourcelink.json
-C:\Users\IsaK\Desktop\TFG\API\DAL\obj\Release\net8.0\DAL.csproj.CopyComplete
 C:\Users\IsaK\Desktop\TFG\API\DAL\obj\Release\net8.0\DAL.dll
 C:\Users\IsaK\Desktop\TFG\API\DAL\obj\Release\net8.0\refint\DAL.dll
 C:\Users\IsaK\Desktop\TFG\API\DAL\obj\Release\net8.0\DAL.pdb
 C:\Users\IsaK\Desktop\TFG\API\DAL\obj\Release\net8.0\ref\DAL.dll
+C:\Users\IsaK\Desktop\TFG\API\DAL\obj\Release\net8.0\DAL.csproj.Up2Date

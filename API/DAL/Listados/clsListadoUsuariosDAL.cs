@@ -37,7 +37,6 @@ namespace DAL.Listados
 
                 if (reader.HasRows)
                 {
-                    
                     while (reader.Read())
                     {
                         oUsuario = new clsUsuario();
@@ -87,7 +86,7 @@ namespace DAL.Listados
                 //abrimos la conexion y la guardamos en una variable
                 SqlConnection conexionAbierta = conexion.getConnection();
 
-                cmd.CommandText = "Select * from usuarios WHERE ID=@id";
+                cmd.CommandText = "Select * from usuarios WHERE idUsuario=@id";
                 cmd.Connection = conexionAbierta;
 
                 reader = cmd.ExecuteReader();
@@ -96,7 +95,7 @@ namespace DAL.Listados
                 {
                     while (reader.Read())
                     {
-               
+
                         oUsuario.IdUsuario = (int)reader["idUsuario"];
                         oUsuario.NombreUsu = (string)reader["nombreUsu"];
                         oUsuario.Correo = (string)reader["correo"];
@@ -115,6 +114,6 @@ namespace DAL.Listados
 
             return oUsuario;
 
-        }   
+        }
     }
 }

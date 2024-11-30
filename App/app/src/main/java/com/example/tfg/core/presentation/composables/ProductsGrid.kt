@@ -23,7 +23,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.LiveData
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.tfg.R
 import com.example.tfg.core.models.Listado
 import com.example.tfg.core.models.Product
 import com.example.tfg.dal.remote.utils.ApiService
@@ -54,7 +53,6 @@ fun ProductsGrid (modifier: Modifier, onProductClick:(Int)->Unit){
         }
     } else {
 
-
         LazyVerticalStaggeredGrid(
             columns = StaggeredGridCells.Adaptive(150.dp),
             verticalItemSpacing = 10.dp,
@@ -78,9 +76,9 @@ fun ProductsGrid(modifier: Modifier, idUsuario:Int, onEditProductClick:(Int)->Un
     //TODO:poner a true
     val isLoading:Boolean by vm.isLoading.observeAsState(initial = false)
     val listadoProductosBusqueda:List<Product> by vm.listadoProductosBusqueda.observeAsState(initial = emptyList())
-    LaunchedEffect(idUsuario) {
-        vm.getListadoProductosPorUsuario(idUsuario)
-    }
+//    LaunchedEffect(idUsuario) {
+//        vm.getListadoProductosPorUsuario(idUsuario)
+//    }
 
     if (isLoading) {
 

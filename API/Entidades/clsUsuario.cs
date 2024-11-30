@@ -24,7 +24,7 @@ namespace Entidades
             foto = string.Empty;
         }
 
-        public clsUsuario(int idUsuario, string nombreUsu, string apellidos, string correo, string password, DateTime fechaNac, string foto)
+        public clsUsuario(int idUsuario, string nombreUsu, string correo, string foto)
         {
             this.idUsuario = idUsuario;
             this.nombreUsu = nombreUsu;
@@ -34,12 +34,14 @@ namespace Entidades
         #endregion
 
         #region propiedades
-        public int IdUsuario {
+        public int IdUsuario
+        {
             get { return idUsuario; }
             set { idUsuario = value; }
         }
 
-        public string NombreUsu {
+        public string NombreUsu
+        {
             get { return nombreUsu; }
             set { nombreUsu = value; }
         }
@@ -50,7 +52,6 @@ namespace Entidades
             set { correo = value; }
         }
 
-    
 
         public string Foto
         {
@@ -59,6 +60,7 @@ namespace Entidades
         }
 
         #endregion
+
 
     }
 }

@@ -87,7 +87,7 @@ namespace DAL.Handlers
                 SqlConnection conexionAbierta = conexion.getConnection();
 
                 cmd.CommandText = "UPDATE Productos SET Nombre=@nombre, marca=@marca, nombreOG=@nombreOG, marcaOG=@marcaOG, original=@original," +
-                    "comentario=@comentario, imagen=@imagen WHERE idProducto=@idProducto and idUsuario=@idUsuario";
+                    "comentario=@comentario, imagen=@imagen WHERE idProducto=@idProducto";
                 cmd.Connection = conexionAbierta;
                 numeroFilasAfectadas = cmd.ExecuteNonQuery();
 
