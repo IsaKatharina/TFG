@@ -34,6 +34,7 @@ class ProductDetailsVM:ViewModel() {
                 if (response.idProduct == idProduct){
 
                     _productFound.postValue(response)
+                    _isLoading.postValue(false)
 
                 } else {
                     //devolvemos un producto vacío
@@ -47,9 +48,9 @@ class ProductDetailsVM:ViewModel() {
 
                 Log.i("sos", "no ha entrado bien en la corrutina, $e")
 
-            } finally {
-                _isLoading.postValue(false)
             }
+
+
         }
 
     }

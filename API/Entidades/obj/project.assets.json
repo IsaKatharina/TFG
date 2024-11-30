@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\IsaK\\Desktop\\TFG\\API_Novale\\Entidades\\Entidades.csproj",
+      "projectUniqueName": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\Entidades\\Entidades.csproj",
       "projectName": "Entidades",
-      "projectPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API_Novale\\Entidades\\Entidades.csproj",
+      "projectPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\Entidades\\Entidades.csproj",
       "packagesPath": "C:\\Users\\IsaK\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API_Novale\\Entidades\\obj\\",
+      "outputPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\Entidades\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

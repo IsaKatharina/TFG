@@ -1,5 +1,8 @@
 package com.example.tfg.ui.screens.login
 
+import android.content.Context
+import android.util.Log
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -10,10 +13,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
@@ -21,10 +25,10 @@ import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
@@ -35,36 +39,36 @@ import com.example.tfg.R
 import com.example.tfg.core.presentation.buttons.BackButton
 import com.example.tfg.core.presentation.composables.HeaderImagen
 import com.example.tfg.core.presentation.composables.ProfileCircle
+import com.example.tfg.navigation.AppScreens
 import com.example.tfg.ui.theme.TFGTheme
-import com.example.tfg.viewmodels.LoginVM
+import com.example.tfg.viewmodels.NewUserVM
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 @Composable
 fun NewUserScreen(navController: NavController) {
+
     Box(modifier= Modifier
         .fillMaxSize()
         .background(Color.White)
     ) {
         //declaramos el vm
-        val vm= LoginVM()
+        val vm= NewUserVM()
 
         //declaramos las variables que necesita la vista
         val email:String by vm.email.observeAsState(initial="")
         val password:String by vm.password.observeAsState(initial="")
-        val loginEnable:Boolean by vm.loginEnable.observeAsState(initial=false)
-        val isLoading:Boolean by vm.isLoading.observeAsState(initial=false)
+        val nombreUsu:String by vm.nombreUsu.observeAsState(initial = "")
+        val picture:String by vm.pic.observeAsState("")
 
-        //aquí declaramos una corrutina.
-        //TODO:ver en el vídeo pa qué
-        val coroutineScope= rememberCoroutineScope()
+        val newUserEnable:Boolean by vm.newUserEnable.observeAsState(initial=false)
+        val welcomeClicked:Boolean by vm.welcomeClicked.observeAsState(initial = false)
 
-        //en caso de que esté cargando ponemos un circulito para indicar la carga
-        if (isLoading){
-            Box(Modifier.fillMaxSize()) {
-                CircularProgressIndicator(Modifier.align(Alignment.Center),)
-            }
-        }else {
-            Column (modifier=Modifier.fillMaxSize()){
+        var auth:FirebaseAuth= Firebase.auth
+
+        //TODO:comprobar que el scroll funciona
+            Column (modifier=Modifier.fillMaxSize().verticalScroll(rememberScrollState())){
                 //aquí simplemente ponemos los nombre de los composables
                 BackButton(navController = navController,
                     modifier=Modifier.align(Alignment.Start))
@@ -73,36 +77,64 @@ fun NewUserScreen(navController: NavController) {
 
                 //ponemos un espacio
                 Spacer(modifier= Modifier.padding(16.dp))
-                NewUserName(navController)
+                NewUserName(nombreUsu){vm.onNewUserChanged(email,it,picture,password)}
 
                 //otro espacio
                 Spacer(modifier = Modifier.padding(16.dp))
-                NewEmail(navController)
+                NewEmail(email){vm.onNewUserChanged(it,nombreUsu,picture,password)}
 
                 //otro espacio
                 Spacer(modifier = Modifier.padding(16.dp))
-                NewPassword(navController)
+                NewPassword(password){vm.onNewUserChanged(email,nombreUsu,picture,it)}
 
                 //otro espacio
                 Spacer(modifier = Modifier.padding(16.dp))
-                NewPic(navController)
+                NewPic(navController, picture)
 
                 //otro espacio
                 Spacer(modifier = Modifier.padding(16.dp))
 
                 //TODO:entender bien
-                WelcomeButton(navController)
+                WelcomeButton(navController, newUserEnable, vm, email, nombreUsu, password, picture, auth)
 
 
             }
         }
-    }
 
 }
 
 @Composable
-fun WelcomeButton(navController: NavController) {
-    Button(onClick = {  },
+fun WelcomeButton(
+    navController: NavController,
+    newUserEnable: Boolean,
+    vm: NewUserVM,
+    email: String,
+    nombreUsu: String,
+    password:String,
+    picture: String,
+    auth: FirebaseAuth
+) {
+
+    var context: Context = LocalContext.current
+
+    Button(onClick = {
+
+        //se crea el usuario en Firebase
+        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener{ task ->
+            if (task.isSuccessful){
+                //se crea el usuario en la badat
+                vm.createUser(email, nombreUsu, picture)
+                navController.navigate(AppScreens.MainListScreen.route)
+
+            } else {
+                Log.i("isabel", "error")
+                //error
+
+                Toast.makeText(context, "Algo ha fallado", Toast.LENGTH_LONG).show()
+            }
+        }
+
+    },
         modifier= Modifier
             .fillMaxWidth()
             .padding(15.dp, 0.dp, 15.dp, 0.dp)
@@ -110,14 +142,17 @@ fun WelcomeButton(navController: NavController) {
 
         colors = ButtonDefaults.buttonColors(
             containerColor = Color(0xFFFF5290)
-        )) {
-        Text(text = "Welcome!")
-
+        )
+        , enabled = newUserEnable) {
+        Text("Welcome")
     }
+
+
 }
 
+//TODO:terminar esto
 @Composable
-fun NewPic(navController: NavController) {
+fun NewPic(navController:NavController,picture:String) {
     Row(modifier = Modifier.fillMaxWidth()
         .padding(10.dp,0.dp,0.dp,0.dp),
         horizontalArrangement = Arrangement.Center
@@ -136,10 +171,10 @@ fun NewPic(navController: NavController) {
 }
 
 @Composable
-fun NewPassword(navController: NavController, password:String) {
+fun NewPassword(password:String, onTextFieldChanged:(String)->Unit) {
     TextField(
         value = password,
-        onValueChange = {password=it},
+        onValueChange = {onTextFieldChanged(it)},
         modifier = Modifier
             .fillMaxWidth()
             .padding(15.dp, 0.dp, 15.dp, 0.dp),
@@ -151,10 +186,10 @@ fun NewPassword(navController: NavController, password:String) {
 }
 
 @Composable
-fun NewEmail(navController: NavController) {
+fun NewEmail(email: String, onTextFieldChanged:(String)->Unit) {
     TextField(
-        value = "", //TODO:va para vm
-        onValueChange = {},
+        value = email, //TODO:va para vm
+        onValueChange = {onTextFieldChanged(it)},
         modifier = Modifier
             .fillMaxWidth()
             .padding(15.dp, 0.dp, 15.dp, 0.dp),
@@ -165,10 +200,10 @@ fun NewEmail(navController: NavController) {
 }
 
 @Composable
-fun NewUserName(navController: NavController) {
+fun NewUserName(nombreUsu: String, onTextFieldChanged:(String)->Unit) {
     TextField(
-        value = "", //TODO:va para vm
-        onValueChange = {},
+        value = nombreUsu, //va para vm
+        onValueChange = {onTextFieldChanged(it)},
         modifier = Modifier
             .fillMaxWidth()
             .padding(15.dp, 0.dp, 15.dp, 0.dp),

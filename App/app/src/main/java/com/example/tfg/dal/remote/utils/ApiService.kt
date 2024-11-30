@@ -1,6 +1,7 @@
 package com.example.tfg.dal.remote.utils
 
 import com.example.tfg.core.models.NewProduct
+import com.example.tfg.core.models.NewUser
 import com.example.tfg.core.models.Product
 import com.example.tfg.dal.remote.responses.ProductsList
 import retrofit2.Response
@@ -16,7 +17,7 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 //constante que guarda la url de la api
-private const val BASE_URL="https://bestdupe.azurewebsites.net/api/"
+private const val BASE_URL="https://bestdupeapp.azurewebsites.net/api/"
 
 //objeto de retrofit que convierte el string del JSON en el tipo que queramos.
 fun getRetrofit():Retrofit{
@@ -42,6 +43,11 @@ interface ApiService {
         @Body newProduct: NewProduct
     )
 
+    @POST("usuarios")
+    suspend fun addUser(
+        @Body newUser: NewUser
+    )
+
     @PUT("productos/{idProduct}")
     suspend fun editProduct(
         @Path("idProduct")idProduct: Int,
@@ -52,6 +58,8 @@ interface ApiService {
     suspend fun deleteProduct(
         @Path("idProduct")idProduct: Int
     )
+
+
 
 
 }

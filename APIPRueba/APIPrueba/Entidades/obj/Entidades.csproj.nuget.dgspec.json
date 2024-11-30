@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Isa K\\Desktop\\TFG\\APIPRueba\\APIPrueba\\Entidades\\Entidades.csproj": {}
+    "C:\\Users\\IsaK\\Desktop\\TFG\\APIPRueba\\APIPrueba\\Entidades\\Entidades.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Isa K\\Desktop\\TFG\\APIPRueba\\APIPrueba\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\IsaK\\Desktop\\TFG\\APIPRueba\\APIPrueba\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Isa K\\Desktop\\TFG\\APIPRueba\\APIPrueba\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\IsaK\\Desktop\\TFG\\APIPRueba\\APIPrueba\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\Isa K\\Desktop\\TFG\\APIPRueba\\APIPrueba\\Entidades\\Entidades.csproj",
-        "packagesPath": "C:\\Users\\Isa K\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Isa K\\Desktop\\TFG\\APIPRueba\\APIPrueba\\Entidades\\obj\\",
+        "projectPath": "C:\\Users\\IsaK\\Desktop\\TFG\\APIPRueba\\APIPrueba\\Entidades\\Entidades.csproj",
+        "packagesPath": "C:\\Users\\IsaK\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\IsaK\\Desktop\\TFG\\APIPRueba\\APIPrueba\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Isa K\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\IsaK\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -39,11 +39,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -65,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

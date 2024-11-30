@@ -73,7 +73,6 @@ namespace DAL.Handlers
             cmd.Parameters.Add("@idUsuario", System.Data.SqlDbType.Int).Value = usuario.IdUsuario;
             cmd.Parameters.Add("@nombreUsu", System.Data.SqlDbType.VarChar, 30).Value = usuario.NombreUsu;
             cmd.Parameters.Add("@correo", System.Data.SqlDbType.VarChar, 100).Value = usuario.Correo;
-            cmd.Parameters.Add("@password", System.Data.SqlDbType.VarChar, 30).Value = usuario.Password;
             cmd.Parameters.Add("@foto", System.Data.SqlDbType.Date).Value = usuario.Foto;
 
 
@@ -82,7 +81,7 @@ namespace DAL.Handlers
                 //abrimos la conexion y la guardamos en una variable
                 SqlConnection conexionAbierta = conexion.getConnection();
 
-                cmd.CommandText = "UPDATE Usuarios SET NombreUsu=@nombreUsu, correo=@correo, password=@password," +
+                cmd.CommandText = "UPDATE Usuarios SET NombreUsu=@nombreUsu, correo=@correo," +
                     "Foto=@foto WHERE idUsuario=@idUsuario";
                 cmd.Connection = conexionAbierta;
                 numeroFilasAfectadas = cmd.ExecuteNonQuery();
@@ -127,7 +126,6 @@ namespace DAL.Handlers
             //Añadimos un parámetro que luego necesitaremos en el comando sql.
             cmd.Parameters.Add("@nombreUsu", System.Data.SqlDbType.VarChar, 30).Value = usuario.NombreUsu;
             cmd.Parameters.Add("@correo", System.Data.SqlDbType.VarChar, 100).Value = usuario.Correo;
-            cmd.Parameters.Add("@password", System.Data.SqlDbType.VarChar, 30).Value = usuario.Password;
             cmd.Parameters.Add("@foto", System.Data.SqlDbType.Date).Value = usuario.Foto;
 
             try
@@ -135,8 +133,8 @@ namespace DAL.Handlers
                 //abrimos la conexion y la guardamos en una variable
                 SqlConnection conexionAbierta = conexion.getConnection();
 
-                cmd.CommandText = "INSERT INTO Usuarios (NombreUsu,  Correo, Password, Foto)" +
-                    "values (@nombreUsu, @correo, @password, @foto)";
+                cmd.CommandText = "INSERT INTO Usuarios (NombreUsu,  Correo, Foto)" +
+                    "values (@nombreUsu, @correo, @foto)";
                 cmd.Connection = conexionAbierta;
                 numeroFilasAfectadas = cmd.ExecuteNonQuery();
 

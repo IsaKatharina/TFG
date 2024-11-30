@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\IsaK\\Desktop\\TFG\\API_Novale\\API\\API.csproj": {}
+    "C:\\Users\\IsaK\\Desktop\\TFG\\API\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\IsaK\\Desktop\\TFG\\API_Novale\\API\\API.csproj": {
+    "C:\\Users\\IsaK\\Desktop\\TFG\\API\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\IsaK\\Desktop\\TFG\\API_Novale\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API_Novale\\API\\API.csproj",
+        "projectPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\API\\API.csproj",
         "packagesPath": "C:\\Users\\IsaK\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API_Novale\\API\\obj\\",
+        "outputPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,11 +33,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\IsaK\\Desktop\\TFG\\API_Novale\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API_Novale\\DAL\\DAL.csproj"
+              "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\DAL.csproj"
               },
-              "C:\\Users\\IsaK\\Desktop\\TFG\\API_Novale\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API_Novale\\Entidades\\Entidades.csproj"
+              "C:\\Users\\IsaK\\Desktop\\TFG\\API\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\Entidades\\Entidades.csproj"
               }
             }
           }
@@ -74,14 +74,14 @@
         }
       }
     },
-    "C:\\Users\\IsaK\\Desktop\\TFG\\API_Novale\\DAL\\DAL.csproj": {
+    "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\IsaK\\Desktop\\TFG\\API_Novale\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API_Novale\\DAL\\DAL.csproj",
+        "projectPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\IsaK\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API_Novale\\DAL\\obj\\",
+        "outputPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -103,8 +103,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\IsaK\\Desktop\\TFG\\API_Novale\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API_Novale\\Entidades\\Entidades.csproj"
+              "C:\\Users\\IsaK\\Desktop\\TFG\\API\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\Entidades\\Entidades.csproj"
               }
             }
           }
@@ -144,14 +144,14 @@
         }
       }
     },
-    "C:\\Users\\IsaK\\Desktop\\TFG\\API_Novale\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\IsaK\\Desktop\\TFG\\API\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\IsaK\\Desktop\\TFG\\API_Novale\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API_Novale\\Entidades\\Entidades.csproj",
+        "projectPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\Entidades\\Entidades.csproj",
         "packagesPath": "C:\\Users\\IsaK\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API_Novale\\Entidades\\obj\\",
+        "outputPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

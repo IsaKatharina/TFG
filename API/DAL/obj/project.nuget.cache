@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jKGf7EIRqqCyaZqqBzCGpHt5W/bTHQLEs1dEu1xQkrGjrzsMNbi08Y4SnrUrn+UH6tUXfjkw9gGb6thkUTuEHA==",
+  "dgSpecHash": "E8HHpO7cjeQBWh+hN+Jf0ctfuufOugMr8uXu2/aQCsIZ2zOtiDZgdP+Yo3qvwgt+9fi0EVVeuhk8R+H/GG65Ew==",
   "success": true,
-  "projectFilePath": "C:\\Users\\IsaK\\Desktop\\TFG\\API_Novale\\DAL\\DAL.csproj",
+  "projectFilePath": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\IsaK\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\IsaK\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

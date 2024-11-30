@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "slPhe10EhTh6jwftb/BSJjE4izpQQkUxtY6Bowtx56SoF5wXctZu1HdcQvJ+0qCQ1cEnhHz4Sdca97Kprdz+gw==",
+  "dgSpecHash": "j8GniSp5C6lOZb+iTnxoEny+UEFfRjcRmLlMBVWnEh7mUMLLni8E+JE1zi8JkaUwT/KFMzRxQ3lAMqZm6wgjZA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\IsaK\\Desktop\\TFG\\API_Novale\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\IsaK\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\IsaK\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
