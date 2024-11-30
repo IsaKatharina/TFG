@@ -10,11 +10,8 @@ namespace Entidades
     {
         #region atributos
         private int idUsuario;
-        private string nombre;
-        private string apellidos;
+        private string nombreUsu;
         private string correo;
-        private string password;
-        private DateTime fechaNac;
         private string foto;
         #endregion
 
@@ -22,22 +19,16 @@ namespace Entidades
         public clsUsuario()
         {
             idUsuario = 0;
-            nombre = string.Empty;
-            apellidos = string.Empty;
+            nombreUsu = string.Empty;
             correo = string.Empty;
-            password = string.Empty;
-            fechaNac = DateTime.Now;
             foto = string.Empty;
         }
 
-        public clsUsuario(int idUsuario, string nombre, string apellidos, string correo, string password, DateTime fechaNac, string foto)
+        public clsUsuario(int idUsuario, string nombreUsu, string correo, string foto)
         {
             this.idUsuario = idUsuario;
-            this.nombre = nombre;
-            this.apellidos = apellidos;
+            this.nombreUsu = nombreUsu;
             this.correo = correo;
-            this.password = password;
-            this.fechaNac = fechaNac;
             this.foto = foto;
         }
         #endregion
@@ -48,15 +39,9 @@ namespace Entidades
             set { idUsuario = value; }
         }
 
-        public string Nombre {
-            get { return nombre; }
-            set { nombre = value; }
-        }
-
-        public string Apellidos
-        {
-            get { return apellidos; }
-            set { apellidos = value; }
+        public string NombreUsu {
+            get { return nombreUsu; }
+            set { nombreUsu = value; }
         }
 
         public string Correo
@@ -65,17 +50,6 @@ namespace Entidades
             set { correo = value; }
         }
 
-        public string Password
-        {
-            get { return password; }
-            set { password = value; }
-        }
-
-        public DateTime FechaNac
-        {
-            get { return fechaNac; }
-            set { fechaNac = value; }
-        }
 
         public string Foto
         {

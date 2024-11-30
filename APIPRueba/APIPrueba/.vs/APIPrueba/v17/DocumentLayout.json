@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\Isa K\\Desktop\\TFG\\APIPRueba\\APIPrueba\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BF9C08CC-00A2-4123-839C-30374D99BD68}|APIPrueba\\APIPrueba.csproj|c:\\users\\isa k\\desktop\\tfg\\apiprueba\\apiprueba\\apiprueba\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF9C08CC-00A2-4123-839C-30374D99BD68}|APIPrueba\\APIPrueba.csproj|solutionrelative:apiprueba\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42CF9043-D413-4D5B-858C-671232B11118}|DAL\\DAL.csproj|c:\\users\\isa k\\desktop\\tfg\\apiprueba\\apiprueba\\dal\\handlers\\clshandlerusuariodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42CF9043-D413-4D5B-858C-671232B11118}|DAL\\DAL.csproj|solutionrelative:dal\\handlers\\clshandlerusuariodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42CF9043-D413-4D5B-858C-671232B11118}|DAL\\DAL.csproj|c:\\users\\isa k\\desktop\\tfg\\apiprueba\\apiprueba\\dal\\connection\\clsconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42CF9043-D413-4D5B-858C-671232B11118}|DAL\\DAL.csproj|solutionrelative:dal\\connection\\clsconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42CF9043-D413-4D5B-858C-671232B11118}|DAL\\DAL.csproj|c:\\users\\isa k\\desktop\\tfg\\apiprueba\\apiprueba\\dal\\listados\\clslistadousuariosdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42CF9043-D413-4D5B-858C-671232B11118}|DAL\\DAL.csproj|solutionrelative:dal\\listados\\clslistadousuariosdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D332292-B4CF-467C-91C5-4681C5D5E7E4}|Entidades\\Entidades.csproj|c:\\users\\isa k\\desktop\\tfg\\apiprueba\\apiprueba\\entidades\\clsusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D332292-B4CF-467C-91C5-4681C5D5E7E4}|Entidades\\Entidades.csproj|solutionrelative:entidades\\clsusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BF9C08CC-00A2-4123-839C-30374D99BD68}|APIPrueba\\APIPrueba.csproj|c:\\users\\isa k\\desktop\\tfg\\apiprueba\\apiprueba\\apiprueba\\controllers\\productospruebacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BF9C08CC-00A2-4123-839C-30374D99BD68}|APIPrueba\\APIPrueba.csproj|solutionrelative:apiprueba\\controllers\\productospruebacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,14 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{42CF9043-D413-4D5B-858C-671232B11118}|DAL\\DAL.csproj|c:\\users\\isa k\\desktop\\tfg\\apiprueba\\apiprueba\\dal\\handlers\\clshandlerproductoprueba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{42CF9043-D413-4D5B-858C-671232B11118}|DAL\\DAL.csproj|solutionrelative:dal\\handlers\\clshandlerproductoprueba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{42CF9043-D413-4D5B-858C-671232B11118}|DAL\\DAL.csproj|c:\\users\\isa k\\desktop\\tfg\\apiprueba\\apiprueba\\dal\\connection\\clsconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42CF9043-D413-4D5B-858C-671232B11118}|DAL\\DAL.csproj|solutionrelative:dal\\connection\\clsconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF9C08CC-00A2-4123-839C-30374D99BD68}|APIPrueba\\APIPrueba.csproj|c:\\users\\isa k\\desktop\\tfg\\apiprueba\\apiprueba\\apiprueba\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF9C08CC-00A2-4123-839C-30374D99BD68}|APIPrueba\\APIPrueba.csproj|solutionrelative:apiprueba\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{42CF9043-D413-4D5B-858C-671232B11118}|DAL\\DAL.csproj|c:\\users\\isa k\\desktop\\tfg\\apiprueba\\apiprueba\\dal\\handlers\\clshandlerproductodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,11 +50,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "clsHandlerProductoPrueba.cs",
               "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\APIPRueba\\APIPrueba\\DAL\\Handlers\\clsHandlerProductoPrueba.cs",
               "RelativeDocumentMoniker": "DAL\\Handlers\\clsHandlerProductoPrueba.cs",
@@ -54,32 +66,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "ProductosPruebaController.cs",
               "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\APIPRueba\\APIPrueba\\APIPrueba\\Controllers\\ProductosPruebaController.cs",
               "RelativeDocumentMoniker": "APIPrueba\\Controllers\\ProductosPruebaController.cs",
               "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\APIPRueba\\APIPrueba\\APIPrueba\\Controllers\\ProductosPruebaController.cs",
               "RelativeToolTip": "APIPrueba\\Controllers\\ProductosPruebaController.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAgwCUAAAAIAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAQwBYAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-30T09:16:27.59Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "UsuariosController.cs",
               "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\APIPRueba\\APIPrueba\\APIPrueba\\Controllers\\UsuariosController.cs",
               "RelativeDocumentMoniker": "APIPrueba\\Controllers\\UsuariosController.cs",
               "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\APIPRueba\\APIPrueba\\APIPrueba\\Controllers\\UsuariosController.cs",
               "RelativeToolTip": "APIPrueba\\Controllers\\UsuariosController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAAIAAAA",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAIwF4AAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T09:16:26.894Z"
+              "WhenOpened": "2024-10-30T09:16:26.894Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "ProductosController.cs",
               "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\APIPRueba\\APIPrueba\\APIPrueba\\Controllers\\ProductosController.cs",
               "RelativeDocumentMoniker": "APIPrueba\\Controllers\\ProductosController.cs",
@@ -91,7 +104,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
+              "Title": "clsHandlerUsuarioDAL.cs",
+              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\APIPRueba\\APIPrueba\\DAL\\Handlers\\clsHandlerUsuarioDAL.cs",
+              "RelativeDocumentMoniker": "DAL\\Handlers\\clsHandlerUsuarioDAL.cs",
+              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\APIPRueba\\APIPrueba\\DAL\\Handlers\\clsHandlerUsuarioDAL.cs",
+              "RelativeToolTip": "DAL\\Handlers\\clsHandlerUsuarioDAL.cs",
+              "ViewState": "AQIAAIoAAAAAAAAAAAAmwJgAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T18:24:57.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "clsUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\APIPRueba\\APIPrueba\\Entidades\\clsUsuario.cs",
+              "RelativeDocumentMoniker": "Entidades\\clsUsuario.cs",
+              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\APIPRueba\\APIPrueba\\Entidades\\clsUsuario.cs",
+              "RelativeToolTip": "Entidades\\clsUsuario.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAiwBgAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T18:22:13.24Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "clsHandlerProductoDAL.cs",
               "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\APIPRueba\\APIPrueba\\DAL\\Handlers\\clsHandlerProductoDAL.cs",
               "RelativeDocumentMoniker": "DAL\\Handlers\\clsHandlerProductoDAL.cs",
@@ -103,19 +142,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "clsConnection.cs",
               "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\APIPRueba\\APIPrueba\\DAL\\Connection\\clsConnection.cs",
               "RelativeDocumentMoniker": "DAL\\Connection\\clsConnection.cs",
               "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\APIPRueba\\APIPrueba\\DAL\\Connection\\clsConnection.cs",
               "RelativeToolTip": "DAL\\Connection\\clsConnection.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAmwD4AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T09:12:23.525Z"
+              "WhenOpened": "2024-10-30T09:12:23.525Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
+              "Title": "clsListadoUsuariosDAL.cs",
+              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\APIPRueba\\APIPrueba\\DAL\\Listados\\clsListadoUsuariosDAL.cs",
+              "RelativeDocumentMoniker": "DAL\\Listados\\clsListadoUsuariosDAL.cs",
+              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\APIPRueba\\APIPrueba\\DAL\\Listados\\clsListadoUsuariosDAL.cs",
+              "RelativeToolTip": "DAL\\Listados\\clsListadoUsuariosDAL.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAmwD8AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T18:28:51.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "DAL.csproj",
               "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\APIPRueba\\APIPrueba\\DAL\\DAL.csproj",
               "RelativeDocumentMoniker": "DAL\\DAL.csproj",
