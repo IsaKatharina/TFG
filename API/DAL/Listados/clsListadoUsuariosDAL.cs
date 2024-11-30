@@ -44,7 +44,6 @@ namespace DAL.Listados
                         oUsuario.IdUsuario = (int)reader["idUsuario"];
                         oUsuario.NombreUsu = (string)reader["nombreUsu"];
                         oUsuario.Correo = (string)reader["correo"];
-                        oUsuario.Password = (string)reader["password"];
                         oUsuario.Foto = (string)reader["foto"];
 
                         listadoUsuarios.Add(oUsuario);
@@ -101,7 +100,6 @@ namespace DAL.Listados
                         oUsuario.IdUsuario = (int)reader["idUsuario"];
                         oUsuario.NombreUsu = (string)reader["nombreUsu"];
                         oUsuario.Correo = (string)reader["correo"];
-                        oUsuario.Password = (string)reader["password"];
                         oUsuario.Foto = (string)reader["foto"];
                     }
                 }

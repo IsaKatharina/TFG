@@ -12,7 +12,6 @@ namespace Entidades
         private int idUsuario;
         private string nombreUsu;
         private string correo;
-        private string password;
         private string foto;
         #endregion
 
@@ -22,7 +21,6 @@ namespace Entidades
             idUsuario = 0;
             nombreUsu = string.Empty;
             correo = string.Empty;
-            password = string.Empty;
             foto = string.Empty;
         }
 
@@ -31,7 +29,6 @@ namespace Entidades
             this.idUsuario = idUsuario;
             this.nombreUsu = nombreUsu;
             this.correo = correo;
-            this.password = password;
             this.foto = foto;
         }
         #endregion
@@ -53,11 +50,7 @@ namespace Entidades
             set { correo = value; }
         }
 
-        public string Password
-        {
-            get { return password; }
-            set { password = value; }
-        }
+    
 
         public string Foto
         {

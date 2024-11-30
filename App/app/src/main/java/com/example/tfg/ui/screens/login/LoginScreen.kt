@@ -52,17 +52,8 @@ fun Login(modifier: Modifier, navController: NavController, vm: LoginVM, auth: F
     val email:String by vm.email.observeAsState(initial="")
     val password:String by vm.password.observeAsState(initial="")
     val loginEnable:Boolean by vm.loginEnable.observeAsState(initial=false)
-    val isLoading:Boolean by vm.isLoading.observeAsState(initial=false)
-    val loginTrue:Boolean by vm.loginTrue.observeAsState(initial = false)
 
-    //en caso de que esté cargando ponemos un circulito para indicar la carga
-    if (isLoading){
-        Box(Modifier.fillMaxSize()) {
-            CircularProgressIndicator(Modifier.align(Alignment.Center), color = Color(0xFFFF5290))
-        }
-    }else {
-
-        Column(modifier = modifier.fillMaxSize()) {
+    Column(modifier = modifier.fillMaxSize()) {
             //aquí simplemente ponemos los nombre de los composables
             // (sus funciones), no los "pintamos"
             BackButton(navController = navController,
@@ -83,8 +74,8 @@ fun Login(modifier: Modifier, navController: NavController, vm: LoginVM, auth: F
             ForgotPassword(Modifier.align(Alignment.End).padding(0.dp,60.dp,10.dp,16.dp))
 
             LoginButton(loginEnable, navController, auth, email, password)
-        }
     }
+
 
 }
 
@@ -142,6 +133,7 @@ fun ForgotPassword(modifier: Modifier) {
 
 @Composable
 fun PasswordField(password: String, onTextFieldChanged: (String) -> Unit) {
+    //TODO:hacer lo del ojito para que se vea la contraseña
     TextField(
         value = password,
         onValueChange = {onTextFieldChanged(it)},
