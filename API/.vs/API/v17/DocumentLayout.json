@@ -74,33 +74,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "clsConnection.cs",
-              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\DAL\\Connection\\clsConnection.cs",
-              "RelativeDocumentMoniker": "DAL\\Connection\\clsConnection.cs",
-              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\DAL\\Connection\\clsConnection.cs",
-              "RelativeToolTip": "DAL\\Connection\\clsConnection.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAA8wBYAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T12:16:54.98Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\API\\appsettings.json",
-              "RelativeDocumentMoniker": "API\\appsettings.json",
-              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\API\\appsettings.json",
-              "RelativeToolTip": "API\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-24T09:09:27.103Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 7,
@@ -174,9 +149,34 @@
               "RelativeDocumentMoniker": "DAL\\Listados\\clsListadoProductosDAL.cs",
               "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\DAL\\Listados\\clsListadoProductosDAL.cs",
               "RelativeToolTip": "DAL\\Listados\\clsListadoProductosDAL.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAUwDMAAABHAAAA",
+              "ViewState": "AQIAABwAAAAAAAAAAAAYwDMAAABHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-24T10:12:21.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\API\\appsettings.json",
+              "RelativeDocumentMoniker": "API\\appsettings.json",
+              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\API\\appsettings.json",
+              "RelativeToolTip": "API\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-24T09:09:27.103Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "clsConnection.cs",
+              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\DAL\\Connection\\clsConnection.cs",
+              "RelativeDocumentMoniker": "DAL\\Connection\\clsConnection.cs",
+              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\DAL\\Connection\\clsConnection.cs",
+              "RelativeToolTip": "DAL\\Connection\\clsConnection.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAA8wBYAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T12:16:54.98Z",
               "EditorCaption": ""
             },
             {
