@@ -45,11 +45,11 @@ namespace DAL.Listados
                         //en caso de que pueda ser null
                         if (reader["nombreOG"] != System.DBNull.Value)
                         {
-                            oProducto.NombreOG = (string)reader["nombre"];
+                            oProducto.NombreOG = (string)reader["nombreOG"];
                         }
                         if (reader["marcaOG"] != System.DBNull.Value)
                         {
-                            oProducto.MarcaOG = (string)reader["marca"];
+                            oProducto.MarcaOG = (string)reader["marcaOG"];
                         }
 
                         oProducto.Original = (string)reader["original"];

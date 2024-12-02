@@ -9,6 +9,7 @@ import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
 import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
 import androidx.compose.foundation.lazy.staggeredgrid.items
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -40,12 +41,18 @@ fun ProductsGrid (modifier: Modifier, onProductClick:(Int)->Unit){
     val vm=MainListVM()
     //TODO:poner a true
     val isLoading:Boolean by vm.isLoading.observeAsState(initial = false)
-    val products:List<Product> by vm.listadoProductos.observeAsState(initial = emptyList())
+    val products:List<Product> by vm.listadoProductos.observeAsState(initial=emptyList())
+    var productoVacio= Product()
     LaunchedEffect(Unit) {
         vm.getListadoProductos()
-    }
+        if (products.isEmpty()) {
 
-    if (isLoading) {
+            Log.i("sos", "ha entrado en el if")
+        } else {
+            Log.i("sos", "${products[0].nombre}")
+        }
+    }
+    if (products.isEmpty()) {
 
         Box(Modifier.fillMaxSize()) {
             CircularProgressIndicator(Modifier.align(Alignment.Center), color = Color(0xFFFF5290))
@@ -58,7 +65,11 @@ fun ProductsGrid (modifier: Modifier, onProductClick:(Int)->Unit){
             verticalItemSpacing = 10.dp,
             horizontalArrangement = Arrangement.spacedBy(7.dp),
             content = {
+
+
                 items(products) { product ->
+
+                    Log.i("sos", "pinta el ${product.nombre}")
 
                     ProductCard(modifier, product, onProductClick)
 

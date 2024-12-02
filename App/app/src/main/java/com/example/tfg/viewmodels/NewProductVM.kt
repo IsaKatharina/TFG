@@ -62,7 +62,7 @@ class NewProductVM:ViewModel() {
 
     fun createProduct(nombre: String, marca: String,nombreOG: String, marcaOG: String, og:Boolean, imagen: String, goClicked:Boolean) {
 
-        var idUsuario = 1
+        var idUsuario = 2
 
         _nombre.value = nombre
         _marca.value = marca
@@ -97,10 +97,10 @@ class NewProductVM:ViewModel() {
                         //TODO:hay que hacer una ventana emergente?
                         Log.i("apiProd", "ha añadido bien el producto")
                     } else {
-                        Log.i("apiProd", "no se ha añadido bien el producto, $response")
+                        Log.i("apiProd", "no se ha añadido bien el producto,")
 
                     }
-                    Log.i("sos", "ha entrado bien en la corrutina")
+                    //Log.i("sos", "ha entrado bien en la corrutina")
 
                 } catch (e: Exception) {
                     //en caso de error, muestra un mensaje

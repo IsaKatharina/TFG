@@ -35,7 +35,11 @@ class MainListVM: ViewModel() {
     var isLoading: LiveData<Boolean> = _isLoading
 
     //corrutina que llama a la api y carga el listado principal
-    suspend fun getListadoProductos() {
+    suspend fun getListadoProductos(){
+
+        //   var listadoProductos= emptyList<Product>()
+
+        var prod= Product()
 
         viewModelScope.launch(Dispatchers.IO) {
 
@@ -49,11 +53,15 @@ class MainListVM: ViewModel() {
                     _isLoading.postValue(false)
                     _listadoProductos.postValue(response)
 
+
+                    Log.i("sos", prod.nombre)
+
                 } else {
                     _listadoProductos.postValue(emptyList())
+                    Log.i("sos", "lista vacía")
+
                 }
 
-                Log.i("sos", "ha entrado bien en la corrutina")
 
             } catch (e: Exception) {
                 //en caso de error, muestra un mensaje
