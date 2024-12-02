@@ -73,7 +73,7 @@ class MainListVM: ViewModel() {
     }
 }
 
-    //corrutina que llama a la api y carga el listado completo
+   // corrutina que llama a la api y carga el listado completo
 //    suspend fun getListadoProductosPorUsuario(idUsuario: Int) {
 //
 //            viewModelScope.launch(Dispatchers.IO) {

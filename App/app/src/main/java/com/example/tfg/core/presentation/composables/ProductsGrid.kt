@@ -85,8 +85,9 @@ fun ProductsGrid(modifier: Modifier, idUsuario:Int, onEditProductClick:(Int)->Un
 
     val vm=MainListVM()
     //TODO:poner a true
-    val isLoading:Boolean by vm.isLoading.observeAsState(initial = false)
+    val isLoading:Boolean by vm.isLoading.observeAsState(initial = true)
     val listadoProductosBusqueda:List<Product> by vm.listadoProductosBusqueda.observeAsState(initial = emptyList())
+
 //    LaunchedEffect(idUsuario) {
 //        vm.getListadoProductosPorUsuario(idUsuario)
 //    }

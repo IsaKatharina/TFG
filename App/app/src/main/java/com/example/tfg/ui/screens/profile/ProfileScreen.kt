@@ -35,7 +35,7 @@ import com.example.tfg.ui.theme.TFGTheme
 @Composable
 fun ProfileScreen(navController: NavController) {
 
-    var idUsuario=1
+    var idUsuario=2
 
     //creamos una lambda para navegar a editar un producto
     val navigateToEdit:(Int) ->Unit= {idProduct ->

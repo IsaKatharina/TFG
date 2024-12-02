@@ -375,10 +375,7 @@
       "System.Threading.Tasks.Extensions/4.5.4": {},
       "Entidades/1.0.0": {
         "runtime": {
-          "Entidades.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Entidades.dll": {}
         }
       }
     }
