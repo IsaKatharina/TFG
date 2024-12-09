@@ -2,6 +2,7 @@ package com.example.tfg.ui.screens.add_edit
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -10,6 +11,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Checkbox
@@ -36,6 +39,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.tfg.R
 import com.example.tfg.core.presentation.buttons.BackButton
+import com.example.tfg.core.presentation.composables.BottomBar
 import com.example.tfg.navigation.AppScreens
 import com.example.tfg.ui.theme.TFGTheme
 import com.example.tfg.viewmodels.NewProductVM
@@ -63,18 +67,18 @@ fun NewProductScreen(navController: NavController) {
 //    var og= remember { mutableStateOf(false) }
 
 
+Column(modifier= Modifier
+    .fillMaxSize()
+    .background(Color.White)) {
 
-    Column (modifier= Modifier.fillMaxSize()
-        .background(Color.White)
+    Column(
+        modifier = Modifier.fillMaxSize().weight(1f). padding(5.dp)
+            .verticalScroll(state = rememberScrollState(), enabled = true)
     ) {
-        //aquí simplemente ponemos los nombre de los composables
-        BackButton(
-            navController = navController,
-            modifier = Modifier.align(Alignment.Start)
-        )
+
         //titulo
-        Row (
-            modifier = Modifier.padding(10.dp,20.dp, 0.dp, 20.dp)
+        Row(
+            modifier = Modifier.padding(10.dp, 20.dp, 0.dp, 20.dp)
 
         ) { Text("Add a new one", fontWeight = FontWeight.Bold) }
 
@@ -83,31 +87,97 @@ fun NewProductScreen(navController: NavController) {
 
         //ponemos un espacio
         Spacer(modifier = Modifier.padding(16.dp))
-        NewProdName(nombre) {vm.createProduct(it,marca,nombreOG,marcaOG,ogBool,imagen, goClicked)}
+        NewProdName(nombre) {
+            vm.createProduct(
+                it,
+                marca,
+                nombreOG,
+                marcaOG,
+                ogBool,
+                imagen,
+                goClicked
+            )
+        }
 
         //otro espacio
         Spacer(modifier = Modifier.padding(16.dp))
-        NewProdMarca(marca) {vm.createProduct(nombre,it, nombreOG,marcaOG,ogBool,imagen, goClicked)}
+        NewProdMarca(marca) {
+            vm.createProduct(
+                nombre,
+                it,
+                nombreOG,
+                marcaOG,
+                ogBool,
+                imagen,
+                goClicked
+            )
+        }
 
         //otro espacio
         Spacer(modifier = Modifier.padding(16.dp))
-        NewProdOgName(nombreOG) {vm.createProduct(nombre,marca, it, marcaOG,ogBool,imagen, goClicked)}
+        NewProdOgName(nombreOG) {
+            vm.createProduct(
+                nombre,
+                marca,
+                it,
+                marcaOG,
+                ogBool,
+                imagen,
+                goClicked
+            )
+        }
 
         //otro espacio
         Spacer(modifier = Modifier.padding(16.dp))
-        NewProdOgMarca(marcaOG) {vm.createProduct(nombre,marca,nombreOG,it, ogBool, imagen, goClicked)}
+        NewProdOgMarca(marcaOG) {
+            vm.createProduct(
+                nombre,
+                marca,
+                nombreOG,
+                it,
+                ogBool,
+                imagen,
+                goClicked
+            )
+        }
 
         //otro espacio
         Spacer(modifier = Modifier.padding(16.dp))
-        NewProdOg(ogBool) {vm.createProduct(nombre, marca, nombreOG,marcaOG, ogBool, imagen, goClicked)}
+        NewProdOg(ogBool) {
+            vm.createProduct(
+                nombre,
+                marca,
+                nombreOG,
+                marcaOG,
+                ogBool,
+                imagen,
+                goClicked
+            )
+        }
 
         //otro espacio
         Spacer(modifier = Modifier.padding(16.dp))
 
 
-        GoButton(navController, goClicked) {vm.createProduct(nombre, marca, nombreOG, marcaOG,ogBool,imagen, it)}
+        GoButton(navController, goClicked) {
+            vm.createProduct(
+                nombre,
+                marca,
+                nombreOG,
+                marcaOG,
+                ogBool,
+                imagen,
+                it
+            )
+        }
     }
-
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        verticalAlignment = Alignment.Bottom
+    ) {
+        BottomBar(navController)
+    }
+}
 
 }
 

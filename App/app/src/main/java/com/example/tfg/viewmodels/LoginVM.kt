@@ -3,10 +3,14 @@ package com.example.tfg.viewmodels
 import android.provider.ContactsContract.CommonDataKinds.Email
 import android.util.Log
 import android.util.Patterns
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.tfg.dal.connectivity.ConnectivityObserver
+import com.example.tfg.dal.connectivity.NetworkConnectivityObserver
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
@@ -64,6 +68,7 @@ class LoginVM:ViewModel(){
         }
         return validPassword
     }
+
 
 //    //función que checkea que uno se puede loggear
 //    fun checkLogin (auth: FirebaseAuth) {

@@ -17,5 +17,7 @@ sealed class AppScreens (val route:String) {
 //        fun createRoute(idProduct:Int)= "productdetails_screen/$idProduct"
     }
     object ProfileScreen:AppScreens("profile_screen")
+    object ValidateEmailScreen:AppScreens("validate_email_screen")
+    object ForgotPasswordScreen:AppScreens("forgot_password_screen")
 
 }

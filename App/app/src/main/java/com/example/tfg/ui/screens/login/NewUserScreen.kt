@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
@@ -23,6 +24,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
@@ -31,6 +33,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -39,53 +42,90 @@ import com.example.tfg.R
 import com.example.tfg.core.presentation.buttons.BackButton
 import com.example.tfg.core.presentation.composables.HeaderImagen
 import com.example.tfg.core.presentation.composables.ProfileCircle
+import com.example.tfg.dal.connectivity.ConnectivityObserver
+import com.example.tfg.dal.connectivity.NetworkConnectivityObserver
 import com.example.tfg.navigation.AppScreens
 import com.example.tfg.ui.theme.TFGTheme
 import com.example.tfg.viewmodels.NewUserVM
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 @Composable
 fun NewUserScreen(navController: NavController) {
 
+    val context= LocalContext.current
+    val connectivityObserver: ConnectivityObserver = NetworkConnectivityObserver(context)
+    val status by connectivityObserver.observe()
+        .collectAsState(initial = ConnectivityObserver.Status.Available)
+
+    //chequea si hay conexión, si no hay, no se puede seguir con la app.
+    if (status.name != "Available") {
+
+        Log.i("sos", "$status.name")
+
+        Column {
+
+            //aquí simplemente ponemos los nombre de los composables
+            BackButton(
+                navController = navController,
+                modifier = Modifier.align(Alignment.Start)
+            )
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(
+                    painterResource(id = R.drawable.nowifi),
+                    contentDescription = "no wifi available",
+                    tint = Color(0xFFFF5290),
+                    modifier = Modifier.size(100.dp)
+                )
+            }
+        }
+
+    } else {
+
     Box(modifier= Modifier
         .fillMaxSize()
         .background(Color.White)
     ) {
         //declaramos el vm
-        val vm= NewUserVM()
+        val vm = NewUserVM()
 
         //declaramos las variables que necesita la vista
-        val email:String by vm.email.observeAsState(initial="")
-        val password:String by vm.password.observeAsState(initial="")
-        val nombreUsu:String by vm.nombreUsu.observeAsState(initial = "")
-        val picture:String by vm.pic.observeAsState("")
+        val email: String by vm.email.observeAsState(initial = "")
+        val password: String by vm.password.observeAsState(initial = "")
+        val nombreUsu: String by vm.nombreUsu.observeAsState(initial = "")
+        val picture: String by vm.pic.observeAsState("")
 
-        val newUserEnable:Boolean by vm.newUserEnable.observeAsState(initial=false)
-        val welcomeClicked:Boolean by vm.welcomeClicked.observeAsState(initial = false)
+        val newUserEnable: Boolean by vm.newUserEnable.observeAsState(initial = false)
+        val welcomeClicked: Boolean by vm.welcomeClicked.observeAsState(initial = false)
 
-        var auth:FirebaseAuth= Firebase.auth
+        var auth: FirebaseAuth = Firebase.auth
 
-        //TODO:comprobar que el scroll funciona
-            Column (modifier=Modifier.fillMaxSize().verticalScroll(rememberScrollState())){
+            //TODO:comprobar que el scroll funciona
+            Column(modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
                 //aquí simplemente ponemos los nombre de los composables
-                BackButton(navController = navController,
-                    modifier=Modifier.align(Alignment.Start))
+                BackButton(
+                    navController = navController,
+                    modifier = Modifier.align(Alignment.Start)
+                )
                 // (sus funciones), no los "pintamos"
                 HeaderImagen(Modifier.align(Alignment.CenterHorizontally), navController)
 
                 //ponemos un espacio
-                Spacer(modifier= Modifier.padding(16.dp))
-                NewUserName(nombreUsu){vm.onNewUserChanged(email,it,picture,password)}
+                Spacer(modifier = Modifier.padding(16.dp))
+                NewUserName(nombreUsu) { vm.onNewUserChanged(email, it, picture, password) }
 
                 //otro espacio
                 Spacer(modifier = Modifier.padding(16.dp))
-                NewEmail(email){vm.onNewUserChanged(it,nombreUsu,picture,password)}
+                NewEmail(email) { vm.onNewUserChanged(it, nombreUsu, picture, password) }
 
                 //otro espacio
                 Spacer(modifier = Modifier.padding(16.dp))
-                NewPassword(password){vm.onNewUserChanged(email,nombreUsu,picture,it)}
+                NewPassword(password) { vm.onNewUserChanged(email, nombreUsu, picture, it) }
 
                 //otro espacio
                 Spacer(modifier = Modifier.padding(16.dp))
@@ -95,11 +135,21 @@ fun NewUserScreen(navController: NavController) {
                 Spacer(modifier = Modifier.padding(16.dp))
 
                 //TODO:entender bien
-                WelcomeButton(navController, newUserEnable, vm, email, nombreUsu, password, picture, auth)
+                WelcomeButton(
+                    navController,
+                    newUserEnable,
+                    vm,
+                    email,
+                    nombreUsu,
+                    password,
+                    picture,
+                    auth
+                )
 
 
             }
         }
+    }
 
 }
 
@@ -124,13 +174,14 @@ fun WelcomeButton(
             if (task.isSuccessful){
                 //se crea el usuario en la badat
                 vm.createUser(email, nombreUsu, picture)
-                navController.navigate(AppScreens.MainListScreen.route)
 
+
+                navController.navigate(AppScreens.ValidateEmailScreen.route)
+
+            } else if (task.exception is FirebaseAuthUserCollisionException) {
+            Toast.makeText(context, "Ese correo ya está en uso", Toast.LENGTH_SHORT).show()
             } else {
-                Log.i("isabel", "error")
-                //error
-
-                Toast.makeText(context, "Algo ha fallado", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "Error creando la cuenta: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -146,8 +197,6 @@ fun WelcomeButton(
         , enabled = newUserEnable) {
         Text("Welcome")
     }
-
-
 }
 
 //TODO:terminar esto
@@ -181,6 +230,7 @@ fun NewPassword(password:String, onTextFieldChanged:(String)->Unit) {
         singleLine = true,
         maxLines = 1,
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+        visualTransformation = PasswordVisualTransformation(),
         placeholder = { Text(text = "Password") }
     )
 }
@@ -213,12 +263,12 @@ fun NewUserName(nombreUsu: String, onTextFieldChanged:(String)->Unit) {
     )
 }
 
-@Preview
-@Composable
-fun PCNewUser(){
-    TFGTheme {
-        NewUserScreen(navController = rememberNavController())
-    }
-}
+//@Preview
+//@Composable
+//fun PCNewUser(){
+//    TFGTheme {
+//        NewUserScreen(navController = rememberNavController())
+//    }
+//}
 
 

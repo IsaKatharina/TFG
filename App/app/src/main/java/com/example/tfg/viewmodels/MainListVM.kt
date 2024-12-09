@@ -23,9 +23,8 @@ class MainListVM: ViewModel() {
     private var _listadoProductos: MutableLiveData<List<Product>> = MutableLiveData<List<Product>>()
     var listadoProductos: LiveData<List<Product>> = _listadoProductos
 
-    private var _listadoProductosBusqueda: MutableLiveData<List<Product>> =
-        MutableLiveData<List<Product>>()
-    var listadoProductosBusqueda: LiveData<List<Product>> = _listadoProductosBusqueda
+    private var _listadoProductosInicial: MutableLiveData<List<Product>> = MutableLiveData<List<Product>>()
+    var listadoProductosInicial: LiveData<List<Product>> = _listadoProductosInicial
 
     private var _listadoProductosPorUsuario: MutableLiveData<List<Product>> =
         MutableLiveData<List<Product>>()
@@ -34,12 +33,16 @@ class MainListVM: ViewModel() {
     private var _isLoading = MutableLiveData<Boolean>()
     var isLoading: LiveData<Boolean> = _isLoading
 
+    private var _searchText: MutableLiveData<String> = MutableLiveData<String>()
+    var searchText: LiveData<String> = _searchText
+
+
     //corrutina que llama a la api y carga el listado principal
-    suspend fun getListadoProductos(){
+    suspend fun getListadoProductos() {
 
         //   var listadoProductos= emptyList<Product>()
 
-        var prod= Product()
+        var prod = Product()
 
         viewModelScope.launch(Dispatchers.IO) {
 
@@ -52,12 +55,16 @@ class MainListVM: ViewModel() {
                     //detenemos la carga
                     _isLoading.postValue(false)
                     _listadoProductos.postValue(response)
+                    _listadoProductosInicial.postValue(response)
+
+                    //esto nos servirá en caso de que hagmos una búsqueda.
+                   // _listadoProductosBusqueda = _listadoProductos.value!!
 
 
                     Log.i("sos", prod.nombre)
 
                 } else {
-                    _listadoProductos.postValue(emptyList())
+                    _listadoProductosInicial.postValue(emptyList())
                     Log.i("sos", "lista vacía")
 
                 }
@@ -70,6 +77,24 @@ class MainListVM: ViewModel() {
                 Log.i("sos", "no ha entrado bien en la corrutina, $e")
             }
         }
+    }
+
+
+    fun searchProduct(searchText: String, listadoProductos:List<Product>) {
+        _searchText.value = searchText
+            _listadoProductos.value=listadoProductos.filter {
+                it.nombre.contains(
+                    _searchText.value!!,
+                    ignoreCase = true
+                )
+        }
+       // _searchText.value=""
+
+    }
+
+    fun restartProductslist(productsInit: List<Product>) {
+        _listadoProductos.value=productsInit
+
     }
 }
 

@@ -184,7 +184,7 @@ fun EditProductScreen(navController: NavController, idProduct: Int) {
                 //nombre de la marca original
                 TextField(
                     value = marcaOG,
-                    onValueChange = { marcaOG },
+                    onValueChange = { marcaOG=it },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(15.dp, 0.dp, 15.dp, 0.dp),
