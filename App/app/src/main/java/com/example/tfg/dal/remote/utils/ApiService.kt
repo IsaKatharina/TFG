@@ -3,6 +3,7 @@ package com.example.tfg.dal.remote.utils
 import com.example.tfg.core.models.NewProduct
 import com.example.tfg.core.models.NewUser
 import com.example.tfg.core.models.Product
+import com.example.tfg.core.models.User
 import com.example.tfg.dal.remote.responses.ProductsList
 import retrofit2.Response
 import retrofit2.Retrofit
@@ -37,6 +38,9 @@ interface ApiService {
 
     @GET("productos/{idUsuario}")
     suspend fun getProductsListByUser(@Path("idUsuario")idUsuario:Int):List<Product>
+
+    @GET("usuarios/{correo}")
+    suspend fun getUserByMail(@Path("correo")correo:String): User
 
     @POST("productos")
     suspend fun addProduct(

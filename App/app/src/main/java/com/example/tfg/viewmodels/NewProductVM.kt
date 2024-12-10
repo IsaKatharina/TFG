@@ -33,6 +33,9 @@ class NewProductVM:ViewModel() {
     private val _og =MutableLiveData<String>()
     val og:LiveData<String> =_og
 
+    private val _ogBool=MutableLiveData<Boolean>()
+    val ogBool:LiveData<Boolean> =_ogBool
+
     private val _imagen=MutableLiveData<String>()
     val imagen:LiveData<String> =_imagen
 
@@ -60,7 +63,7 @@ class NewProductVM:ViewModel() {
 //
 
 
-    fun createProduct(nombre: String, marca: String,nombreOG: String, marcaOG: String, og:Boolean, imagen: String, goClicked:Boolean) {
+    fun createProduct(nombre: String, marca: String,nombreOG: String, marcaOG: String, ogBool:Boolean, imagen: String, goClicked:Boolean) {
 
         var idUsuario = 2
 
@@ -68,13 +71,13 @@ class NewProductVM:ViewModel() {
         _marca.value = marca
         _nombreOG.value = nombreOG
         _marcaOG.value = marcaOG
+        _ogBool.value=ogBool
 
-        if (og) {
-            _og.value = "si"
+        if(_ogBool.value == true) {
+            _og.value="si"
         } else {
-            _og.value = "no"
+            _og.value="no"
         }
-
         _imagen.value = imagen
 
         if (goClicked) {
@@ -86,7 +89,6 @@ class NewProductVM:ViewModel() {
 
             //enviamos el producto a la api
             viewModelScope.launch(Dispatchers.IO) {
-
                 try {
                     //hacemos la llamada a la api
                     var response = getRetrofit().create(ApiService::class.java).addProduct(newProduct)

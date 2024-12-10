@@ -1,5 +1,6 @@
 package com.example.tfg.ui.screens.add_edit
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.gestures.scrollable
@@ -28,6 +29,7 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -35,12 +37,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.tfg.R
 import com.example.tfg.core.presentation.buttons.BackButton
 import com.example.tfg.core.presentation.composables.BottomBar
 import com.example.tfg.navigation.AppScreens
+import com.example.tfg.ui.screens.login.Login
 import com.example.tfg.ui.theme.TFGTheme
 import com.example.tfg.viewmodels.NewProductVM
 import kotlinx.coroutines.launch
@@ -56,8 +60,10 @@ fun NewProductScreen(navController: NavController) {
     val nombreOG:String by vm.nombreOG.observeAsState(initial = "")
     val marcaOG:String by vm.marcaOG.observeAsState(initial = "")
     val imagen:String by vm.imagen.observeAsState(initial = "")
-    val ogBool:Boolean by remember { mutableStateOf(false) }
+    val ogBool by vm.ogBool.observeAsState(initial = false)
     val goClicked:Boolean by vm.goClicked.observeAsState(initial = false)
+
+
 
 //    var nombre = remember { mutableStateOf("") }
 //    var marca= remember { mutableStateOf("") }
@@ -71,16 +77,16 @@ Column(modifier= Modifier
     .fillMaxSize()
     .background(Color.White)) {
 
+    //titulo
+    Row(
+        modifier = Modifier.padding(10.dp, 20.dp, 0.dp, 20.dp)
+
+    ) { Text("Add a new one", fontWeight = FontWeight.Bold, fontSize = 24.sp) }
+
     Column(
-        modifier = Modifier.fillMaxSize().weight(1f). padding(5.dp)
+        modifier = Modifier.fillMaxSize().weight(1f). padding(10.dp)
             .verticalScroll(state = rememberScrollState(), enabled = true)
     ) {
-
-        //titulo
-        Row(
-            modifier = Modifier.padding(10.dp, 20.dp, 0.dp, 20.dp)
-
-        ) { Text("Add a new one", fontWeight = FontWeight.Bold) }
 
         //foto del producto nuevo
         NewProdPic(imagen) //{vm.createProduct(nombre,marca,nombreOG, marcaOG, it)}
@@ -149,12 +155,11 @@ Column(modifier= Modifier
                 marca,
                 nombreOG,
                 marcaOG,
-                ogBool,
+                it,
                 imagen,
                 goClicked
             )
         }
-
         //otro espacio
         Spacer(modifier = Modifier.padding(16.dp))
 
@@ -264,15 +269,24 @@ fun NewProdOgMarca(marcaOG:String, onTextFieldChanged: (String) -> Unit ) {
 }
 
 @Composable
-fun NewProdOg(ogBool: Boolean, onTextFieldChanged: (Boolean) -> Unit) {
+fun NewProdOg(ogBool:Boolean, onTextFieldChanged: (Boolean) -> Unit) {
+    var isChecked = remember { mutableStateOf(false) }
+    val ogFalse =false
+    val ogTrue=true
    Row (
        modifier = Modifier.padding(10.dp),
-       horizontalArrangement = Arrangement.Center
+       verticalAlignment = Alignment.CenterVertically
    ){
        Text("¿Es el original?")
 
-       Checkbox(checked = ogBool,
-           onCheckedChange = {onTextFieldChanged(it)},
+       Checkbox(checked = isChecked.value,
+           onCheckedChange = {isChecked.value=it
+                            Log.i("checkbox","${isChecked.value}")
+                             if (isChecked.value) {
+                                 onTextFieldChanged(ogTrue)
+                             } else {
+                                 onTextFieldChanged(ogFalse)
+                             } },
            colors = CheckboxDefaults.colors(
                checkedColor = Color(0xFFFF5290)
            )

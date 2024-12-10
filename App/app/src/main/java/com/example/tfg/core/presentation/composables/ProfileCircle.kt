@@ -12,18 +12,25 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import coil3.compose.AsyncImage
+import coil3.compose.rememberAsyncImagePainter
+import coil3.request.ImageRequest
+import coil3.request.crossfade
 import com.example.tfg.R
 import com.example.tfg.ui.screens.login.NewUserScreen
 import com.example.tfg.ui.theme.TFGTheme
 
 @Composable
 
-fun ProfileCircle (navController: NavController) {
+fun ProfileCircle (navController: NavController, fotoUser:String) {
 
     Box(modifier = Modifier.wrapContentSize(),
         contentAlignment = Alignment.Center
@@ -41,9 +48,17 @@ fun ProfileCircle (navController: NavController) {
             )
         }
 
-        Image( modifier = Modifier.size(150.dp),
-            painter = painterResource(id = R.drawable.home_pink),
-            contentDescription = "placeholderImage"
+
+//        AsyncImage(
+//            model = "https://example.com/image.jpg",
+//            contentDescription = stringResource(id=R.string.app_name),
+//            modifier = Modifier.fillMaxSize()
+//        )
+
+        Image(
+            painter = painterResource(id = R.drawable.pompompurin),
+            contentDescription = null,
+            contentScale = ContentScale.FillBounds
         )
 
 
@@ -52,10 +67,10 @@ fun ProfileCircle (navController: NavController) {
 
 }
 
-@Preview
-@Composable
-fun PCircle(){
-    TFGTheme {
-        ProfileCircle(navController = rememberNavController())
-    }
-}
+//@Preview
+//@Composable
+//fun PCircle(){
+//    TFGTheme {
+//        ProfileCircle(navController = rememberNavController())
+//    }
+//}

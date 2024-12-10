@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
@@ -23,7 +24,7 @@ import com.example.tfg.navigation.AppScreens
 fun HomeButton(navController: NavController){
    //creamos una variable que recuerde el estado del botón.
     var buttonColor = remember { mutableStateOf(Color.Black) }
-    var containerColor = remember { mutableStateOf(Color.White) }
+    var containerColor = remember { mutableStateOf(Color.Transparent) }
 
         //cuando le damos al boton, tiene que navegar hasta Home.
         Button(onClick = {navController.navigate(AppScreens.MainListScreen.route)
@@ -36,7 +37,7 @@ fun HomeButton(navController: NavController){
             )) {
 
             Icon(painter = painterResource(id = R.drawable.home_black), contentDescription = "home_black")
-          // Text(text = "Home", color = buttonColor.value)
+           Text(text = "Home", color = buttonColor.value)
 
         }
 

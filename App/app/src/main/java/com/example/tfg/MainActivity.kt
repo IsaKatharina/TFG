@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
@@ -47,15 +48,36 @@ class MainActivity : ComponentActivity() {
         }
 
     }
+
+
+//    override fun onResume() {
+//        super.onResume()
 //
-//    override fun onStart() {
-//        super.onStart()
-//        val currentUser =auth.currentUser
+//        val currentUser =FirebaseAuth.getInstance().currentUser
 //
-//        if (currentUser!=null) {
+//        setContent {
+//            navController= rememberNavController()
 //
-//            navController.navigate(AppScreens.MainListScreen.route)
+//            TFGTheme {
+//                // A surface container using the 'background' color from the theme
+//                Surface(
+//                    modifier = Modifier
+//                        .fillMaxSize()
+//                        .background(backgroundLight)
+//                ) {
+//                    if (currentUser!=null) {
+//
+//                        navController.navigate(AppScreens.MainListScreen.route)
+//
+//                    } else {
+//                        navController.navigate(AppScreens.StartScreen.route)
+//                    }
+//
+//
+//                }
+//            }
 //        }
+//
 //    }
 }
 

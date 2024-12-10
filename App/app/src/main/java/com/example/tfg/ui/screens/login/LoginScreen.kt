@@ -39,9 +39,10 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 @Composable
-fun LoginScreen(modifier: Modifier, navController: NavController, vm: LoginVM) {
+fun LoginScreen(modifier: Modifier, navController: NavController) {
 
     var auth:FirebaseAuth=Firebase.auth
+    val vm= LoginVM()
 
     Box(modifier= Modifier.fillMaxSize()
         .background(Color.White)

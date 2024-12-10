@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
@@ -33,7 +34,7 @@ fun YouButton(navController: NavController){
                 contentColor=buttonColor.value
             )
         ) { Icon(painter = painterResource(id = R.drawable.person_black), contentDescription = "home_black")
-           // Text(text = "You", color = buttonColor.value)
+           Text(text = "You", color = buttonColor.value)
         }
 }
 

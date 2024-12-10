@@ -8,7 +8,6 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.example.tfg.ui.screens.profile.EditProfileScreen
 import com.example.tfg.ui.screens.list.MainListScreen
 import com.example.tfg.ui.screens.login.LoginScreen
 import com.example.tfg.ui.screens.login.NewUserScreen
@@ -17,31 +16,24 @@ import com.example.tfg.ui.screens.list.ProductDetailsScreen
 import com.example.tfg.ui.screens.profile.ProfileScreen
 import com.example.tfg.viewmodels.LoginVM
 import com.example.tfg.ui.screens.add_edit.EditProductScreen
-import com.example.tfg.ui.screens.list.FavsScreen
 import com.example.tfg.ui.screens.add_edit.NewProductScreen
 import com.example.tfg.ui.screens.login.ForgotPassword
 import com.example.tfg.ui.screens.login.ForgotPasswordScreen
-import com.example.tfg.ui.screens.login.ValidateEmailScreen
 import com.google.firebase.auth.FirebaseAuth
 
 //se encarga de gestionar la navegación entre pantallas.
 @Composable
 fun AppNavigation(navController: NavHostController) {
 
-    val vm= LoginVM() //instanciamos el vm del login
-
     NavHost(navController = navController, startDestination = AppScreens.StartScreen.route ) {
         composable(route = AppScreens.StartScreen.route) {
             StartScreen(modifier = Modifier, navController)
         }
         composable(route = AppScreens.LoginScreen.route) {
-            LoginScreen(modifier = Modifier, navController, vm)
+            LoginScreen(modifier = Modifier, navController)
         }
         composable(route = AppScreens.NewUserScreen.route) {
             NewUserScreen(navController)
-        }
-        composable(route = AppScreens.FavsScreen.route) {
-            FavsScreen(navController)
         }
         composable(route = AppScreens.ProfileScreen.route) {
             ProfileScreen(navController)
@@ -77,20 +69,10 @@ fun AppNavigation(navController: NavHostController) {
         composable(route = AppScreens.NewProductScreen.route) {
             NewProductScreen(navController)
         }
-        composable(route = AppScreens.EditProfileScreen.route) {
-            EditProfileScreen(navController)
-        }
-        composable(route = AppScreens.ValidateEmailScreen.route) {
-            ValidateEmailScreen(navController)
-        }
         composable(route = AppScreens.ForgotPasswordScreen.route) {
             ForgotPasswordScreen(navController)
         }
     }
-
-
-
-
 }
 
 
