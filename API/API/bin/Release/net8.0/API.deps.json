@@ -358,12 +358,18 @@
           "Microsoft.Data.SqlClient": "5.2.2"
         },
         "runtime": {
-          "DAL.dll": {}
+          "DAL.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Entidades/1.0.0": {
         "runtime": {
-          "Entidades.dll": {}
+          "Entidades.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

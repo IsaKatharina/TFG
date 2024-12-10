@@ -42,22 +42,22 @@ fun ProductCard(modifier: Modifier, product: Product, onProductClick:(Int) ->Uni
             .background(Color.White)
         ) {
 
-            Box(
-                modifier = Modifier.size(30.dp)
-                    .align(Alignment.TopEnd)
-                    .zIndex(1f)
-                    .padding(4.dp)
-
-            ) {
-                Icon(
-                    //TODO:hacerlo clickable
-                    modifier = Modifier.fillMaxSize(),
-                    painter = painterResource(id = R.drawable.favs_black),
-                    contentDescription = "heart_black",
-                    tint = Color(0xFFFF5290)
-                )
-
-            }
+//            Box(
+//                modifier = Modifier.size(30.dp)
+//                    .align(Alignment.TopEnd)
+//                    .zIndex(1f)
+//                    .padding(4.dp)
+//
+//            ) {
+//                Icon(
+//                    //TODO:hacerlo clickable
+//                    modifier = Modifier.fillMaxSize(),
+//                    painter = painterResource(id = R.drawable.favs_black),
+//                    contentDescription = "heart_black",
+//                    tint = Color(0xFFFF5290)
+//                )
+//
+//            }
 
             Box(
 
