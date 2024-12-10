@@ -115,5 +115,51 @@ namespace DAL.Listados
             return oUsuario;
 
         }
+
+        public static clsUsuario readDetailsUsuarioDAL(string email)
+        {
+
+            clsConnection conexion = new clsConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader reader;
+            clsUsuario oUsuario = new clsUsuario();
+
+            //Añadimos un parámetro que luego necesitaremos en el comando sql.
+            cmd.Parameters.Add("@email", System.Data.SqlDbType.VarChar).Value = email;
+
+            try
+            {
+                //abrimos la conexion y la guardamos en una variable
+                SqlConnection conexionAbierta = conexion.getConnection();
+
+                cmd.CommandText = "Select * from usuarios WHERE correo=@email";
+                cmd.Connection = conexionAbierta;
+
+                reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+
+                        oUsuario.IdUsuario = (int)reader["idUsuario"];
+                        oUsuario.NombreUsu = (string)reader["nombreUsu"];
+                        oUsuario.Correo = (string)reader["correo"];
+                        oUsuario.Foto = (string)reader["foto"];
+                    }
+                }
+                reader.Close();
+                //Cerramos la conexión
+                conexionAbierta.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return oUsuario;
+
+        }
     }
 }

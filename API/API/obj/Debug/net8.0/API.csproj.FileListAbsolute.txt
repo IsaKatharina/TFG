@@ -284,3 +284,7 @@ C:\Users\Isa K\Desktop\TFG\API\API\obj\Debug\net8.0\refint\API.dll
 C:\Users\Isa K\Desktop\TFG\API\API\obj\Debug\net8.0\API.pdb
 C:\Users\Isa K\Desktop\TFG\API\API\obj\Debug\net8.0\API.genruntimeconfig.cache
 C:\Users\Isa K\Desktop\TFG\API\API\obj\Debug\net8.0\ref\API.dll
+C:\Users\Isa K\Desktop\TFG\API\API\bin\Debug\net8.0\API.staticwebassets.endpoints.json
+C:\Users\Isa K\Desktop\TFG\API\API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Isa K\Desktop\TFG\API\API\obj\Debug\net8.0\staticwebassets\msbuild.API.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\Isa K\Desktop\TFG\API\API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

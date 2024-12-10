@@ -133,14 +133,14 @@
   {
     "ContainingType": "API.Controllers.UsuariosController",
     "Method": "Get",
-    "RelativePath": "api/Usuarios/{idUsuario}",
+    "RelativePath": "api/Usuarios/{email}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "idUsuario",
-        "Type": "System.Int32",
+        "Name": "email",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],

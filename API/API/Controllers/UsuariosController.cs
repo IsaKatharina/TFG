@@ -39,9 +39,40 @@ namespace API.Controllers
 
         }
 
+        //// GET api/<UsuariosController>/5
+        //[HttpGet("{idUsuario}")]
+        //public IActionResult Get(int idUsuario)
+        //{
+        //    IActionResult salida;
+        //    clsUsuario userById = new clsUsuario();
+
+
+        //    try
+        //    {
+        //        userById = clsListadoUsuariosDAL.readDetailsUsuarioDAL(idUsuario);
+
+        //        if (userById == null)
+        //        {
+        //            salida = NotFound(); //no se encuentra la persona
+
+        //        }
+        //        else
+        //        {
+        //            salida = Ok(userById); //hay que mandar la persona con el ActionResult.
+        //        }
+
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        salida = BadRequest(e);
+        //    }
+
+        //    return salida;
+        //}
+
         // GET api/<UsuariosController>/5
-        [HttpGet("{idUsuario}")]
-        public IActionResult Get(int idUsuario)
+        [HttpGet("{email}")]
+        public IActionResult Get(string email)
         {
             IActionResult salida;
             clsUsuario userById = new clsUsuario();
@@ -49,7 +80,7 @@ namespace API.Controllers
 
             try
             {
-                userById = clsListadoUsuariosDAL.readDetailsUsuarioDAL(idUsuario);
+                userById = clsListadoUsuariosDAL.readDetailsUsuarioDAL(email);
 
                 if (userById == null)
                 {
