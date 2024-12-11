@@ -39,36 +39,36 @@ namespace API.Controllers
 
         }
 
-        //// GET api/<UsuariosController>/5
-        //[HttpGet("{idUsuario}")]
-        //public IActionResult Get(int idUsuario)
-        //{
-        //    IActionResult salida;
-        //    clsUsuario userById = new clsUsuario();
+        // GET api/<UsuariosController>/5
+        [HttpGet("{idUsuario}")]
+        public IActionResult Get(int idUsuario)
+        {
+            IActionResult salida;
+            
+            List<clsProducto> productsByUser= new List<clsProducto>();
 
+            try
+            {
+                productsByUser = clsListadoProductosDAL.getListadoProductosbyUserDAL(idUsuario);
 
-        //    try
-        //    {
-        //        userById = clsListadoUsuariosDAL.readDetailsUsuarioDAL(idUsuario);
+                if (productsByUser.Count == 0)
+                {
+                    salida = NotFound(); 
 
-        //        if (userById == null)
-        //        {
-        //            salida = NotFound(); //no se encuentra la persona
+                }
+                else
+                {
+                    salida = Ok(productsByUser); //hay que mandar la persona con el ActionResult.
+                }
 
-        //        }
-        //        else
-        //        {
-        //            salida = Ok(userById); //hay que mandar la persona con el ActionResult.
-        //        }
+            }
+            catch (Exception e)
+            {
+                salida = BadRequest(e);
+            }
 
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        salida = BadRequest(e);
-        //    }
-
-        //    return salida;
-        //}
+            return salida;
+        }
 
         // GET api/<UsuariosController>/5
         [HttpGet("{email}")]

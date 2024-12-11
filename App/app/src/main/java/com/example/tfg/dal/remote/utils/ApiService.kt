@@ -62,8 +62,4 @@ interface ApiService {
     suspend fun deleteProduct(
         @Path("idProduct")idProduct: Int
     )
-
-
-
-
 }

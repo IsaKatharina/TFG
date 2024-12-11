@@ -1,69 +1,69 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\",
+  "WorkspaceRootPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7D363B04-55DB-452D-8C1E-27C61038CA9A}|Entidades\\Entidades.csproj|c:\\users\\isa k\\desktop\\tfg\\api\\entidades\\clsusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D363B04-55DB-452D-8C1E-27C61038CA9A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\clsusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|c:\\users\\isa k\\desktop\\tfg\\api\\api\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|c:\\users\\isak\\desktop\\tfg\\api\\api\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|solutionrelative:api\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|c:\\users\\isa k\\desktop\\tfg\\api\\dal\\handlers\\clshandlerusuariodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\handlers\\clshandlerusuariodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|c:\\users\\isa k\\desktop\\tfg\\api\\dal\\listados\\clslistadousuariosdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\listados\\clslistadousuariosdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|c:\\users\\isa k\\desktop\\tfg\\api\\dal\\handlers\\clshandlerproductoprueba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\handlers\\clshandlerproductoprueba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|c:\\users\\isa k\\desktop\\tfg\\api\\dal\\listados\\clslistadoproductosdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|c:\\users\\isak\\desktop\\tfg\\api\\dal\\listados\\clslistadoproductosdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\listados\\clslistadoproductosdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|c:\\users\\isa k\\desktop\\tfg\\api\\dal\\listados\\clslistadoproductoprueba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|c:\\users\\isak\\desktop\\tfg\\api\\dal\\listados\\clslistadousuariosdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\listados\\clslistadousuariosdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|c:\\users\\isak\\desktop\\tfg\\api\\dal\\handlers\\clshandlerusuariodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\handlers\\clshandlerusuariodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D363B04-55DB-452D-8C1E-27C61038CA9A}|Entidades\\Entidades.csproj|c:\\users\\isak\\desktop\\tfg\\api\\entidades\\clsusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D363B04-55DB-452D-8C1E-27C61038CA9A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\clsusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|c:\\users\\isak\\desktop\\tfg\\api\\dal\\handlers\\clshandlerproductoprueba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\handlers\\clshandlerproductoprueba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|c:\\users\\isak\\desktop\\tfg\\api\\dal\\listados\\clslistadoproductoprueba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\listados\\clslistadoproductoprueba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|c:\\users\\isa k\\desktop\\tfg\\api\\dal\\handlers\\clshandlerproductodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\handlers\\clshandlerproductodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|c:\\users\\isa k\\desktop\\tfg\\api\\api\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|c:\\users\\isak\\desktop\\tfg\\api\\api\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|solutionrelative:api\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|c:\\users\\isa k\\desktop\\tfg\\api\\dal\\connection\\clsconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\connection\\clsconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|c:\\users\\isak\\desktop\\tfg\\api\\dal\\handlers\\clshandlerproductodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\handlers\\clshandlerproductodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|c:\\users\\isa k\\desktop\\tfg\\api\\api\\controllers\\productospruebacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|solutionrelative:api\\controllers\\productospruebacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D363B04-55DB-452D-8C1E-27C61038CA9A}|Entidades\\Entidades.csproj|c:\\users\\isa k\\desktop\\tfg\\api\\entidades\\clsproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D363B04-55DB-452D-8C1E-27C61038CA9A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\clsproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|c:\\users\\isa k\\desktop\\tfg\\api\\api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|solutionrelative:api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|c:\\users\\isa k\\desktop\\tfg\\api\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|c:\\users\\isak\\desktop\\tfg\\api\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|solutionrelative:api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|c:\\users\\isa k\\desktop\\tfg\\api\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|c:\\users\\isak\\desktop\\tfg\\api\\dal\\connection\\clsconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\connection\\clsconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|c:\\users\\isak\\desktop\\tfg\\api\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|c:\\users\\isa k\\desktop\\tfg\\api\\dal\\dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|c:\\users\\isak\\desktop\\tfg\\api\\api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|solutionrelative:api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D363B04-55DB-452D-8C1E-27C61038CA9A}|Entidades\\Entidades.csproj|c:\\users\\isak\\desktop\\tfg\\api\\entidades\\clsproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D363B04-55DB-452D-8C1E-27C61038CA9A}|Entidades\\Entidades.csproj|solutionrelative:entidades\\clsproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|c:\\users\\isak\\desktop\\tfg\\api\\api\\controllers\\productospruebacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{365BD2CA-E24E-482F-BBA0-8C944468BA5F}|API\\API.csproj|solutionrelative:api\\controllers\\productospruebacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|c:\\users\\isak\\desktop\\tfg\\api\\dal\\dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{39331BB4-54A7-47C5-9B8F-42E5589573D6}|DAL\\DAL.csproj|solutionrelative:dal\\dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
@@ -74,15 +74,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "clsListadoUsuariosDAL.cs",
-              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\DAL\\Listados\\clsListadoUsuariosDAL.cs",
+              "DocumentMoniker": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\Listados\\clsListadoUsuariosDAL.cs",
               "RelativeDocumentMoniker": "DAL\\Listados\\clsListadoUsuariosDAL.cs",
-              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\DAL\\Listados\\clsListadoUsuariosDAL.cs",
+              "ToolTip": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\Listados\\clsListadoUsuariosDAL.cs",
               "RelativeToolTip": "DAL\\Listados\\clsListadoUsuariosDAL.cs",
               "ViewState": "AgIAAIYAAAAAAAAAAAAkwIoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -91,26 +91,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "clsHandlerProductoPrueba.cs",
-              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\DAL\\Handlers\\clsHandlerProductoPrueba.cs",
+              "DocumentMoniker": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\Handlers\\clsHandlerProductoPrueba.cs",
               "RelativeDocumentMoniker": "DAL\\Handlers\\clsHandlerProductoPrueba.cs",
-              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\DAL\\Handlers\\clsHandlerProductoPrueba.cs",
+              "ToolTip": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\Handlers\\clsHandlerProductoPrueba.cs",
               "RelativeToolTip": "DAL\\Handlers\\clsHandlerProductoPrueba.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T12:16:54.895Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-22T12:16:54.895Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "UsuariosController.cs",
-              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\API\\Controllers\\UsuariosController.cs",
+              "DocumentMoniker": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\API\\Controllers\\UsuariosController.cs",
               "RelativeDocumentMoniker": "API\\Controllers\\UsuariosController.cs",
-              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\API\\Controllers\\UsuariosController.cs",
+              "ToolTip": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\API\\Controllers\\UsuariosController.cs",
               "RelativeToolTip": "API\\Controllers\\UsuariosController.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAmwGUAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-22T12:16:55.003Z",
               "EditorCaption": ""
@@ -119,9 +118,9 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "clsListadoProductoPrueba.cs",
-              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\DAL\\Listados\\clsListadoProductoPrueba.cs",
+              "DocumentMoniker": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\Listados\\clsListadoProductoPrueba.cs",
               "RelativeDocumentMoniker": "DAL\\Listados\\clsListadoProductoPrueba.cs",
-              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\DAL\\Listados\\clsListadoProductoPrueba.cs",
+              "ToolTip": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\Listados\\clsListadoProductoPrueba.cs",
               "RelativeToolTip": "DAL\\Listados\\clsListadoProductoPrueba.cs",
               "ViewState": "AQIAAEwAAAAAAAAAAAAQwE4AAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -130,11 +129,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "ProductosController.cs",
-              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\API\\Controllers\\ProductosController.cs",
+              "DocumentMoniker": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\API\\Controllers\\ProductosController.cs",
               "RelativeDocumentMoniker": "API\\Controllers\\ProductosController.cs",
-              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\API\\Controllers\\ProductosController.cs",
+              "ToolTip": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\API\\Controllers\\ProductosController.cs",
               "RelativeToolTip": "API\\Controllers\\ProductosController.cs",
               "ViewState": "AgIAAEoAAAAAAAAAAAAmwFgAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -143,37 +142,37 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "clsUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\Entidades\\clsUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\Entidades\\clsUsuario.cs",
               "RelativeDocumentMoniker": "Entidades\\clsUsuario.cs",
-              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\Entidades\\clsUsuario.cs",
+              "ToolTip": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\Entidades\\clsUsuario.cs",
               "RelativeToolTip": "Entidades\\clsUsuario.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAADwvyYAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACYAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-22T12:16:54.953Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "clsListadoProductosDAL.cs",
-              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\DAL\\Listados\\clsListadoProductosDAL.cs",
+              "DocumentMoniker": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\Listados\\clsListadoProductosDAL.cs",
               "RelativeDocumentMoniker": "DAL\\Listados\\clsListadoProductosDAL.cs",
-              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\DAL\\Listados\\clsListadoProductosDAL.cs",
+              "ToolTip": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\Listados\\clsListadoProductosDAL.cs",
               "RelativeToolTip": "DAL\\Listados\\clsListadoProductosDAL.cs",
-              "ViewState": "AgIAAIQAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAowK0AAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-24T10:12:21.682Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "clsHandlerUsuarioDAL.cs",
-              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\DAL\\Handlers\\clsHandlerUsuarioDAL.cs",
+              "DocumentMoniker": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\Handlers\\clsHandlerUsuarioDAL.cs",
               "RelativeDocumentMoniker": "DAL\\Handlers\\clsHandlerUsuarioDAL.cs",
-              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\DAL\\Handlers\\clsHandlerUsuarioDAL.cs",
+              "ToolTip": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\Handlers\\clsHandlerUsuarioDAL.cs",
               "RelativeToolTip": "DAL\\Handlers\\clsHandlerUsuarioDAL.cs",
               "ViewState": "AgIAADoAAAAAAAAAAAAQwEwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -181,16 +180,12 @@
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "clsHandlerProductoDAL.cs",
-              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\DAL\\Handlers\\clsHandlerProductoDAL.cs",
+              "DocumentMoniker": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\Handlers\\clsHandlerProductoDAL.cs",
               "RelativeDocumentMoniker": "DAL\\Handlers\\clsHandlerProductoDAL.cs",
-              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\DAL\\Handlers\\clsHandlerProductoDAL.cs",
+              "ToolTip": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\Handlers\\clsHandlerProductoDAL.cs",
               "RelativeToolTip": "DAL\\Handlers\\clsHandlerProductoDAL.cs",
               "ViewState": "AgIAAHcAAAAAAAAAAAAAwH8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -199,11 +194,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 9,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\API\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\API\\appsettings.json",
               "RelativeDocumentMoniker": "API\\appsettings.json",
-              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\API\\appsettings.json",
+              "ToolTip": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\API\\appsettings.json",
               "RelativeToolTip": "API\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -211,11 +206,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "clsConnection.cs",
-              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\DAL\\Connection\\clsConnection.cs",
+              "DocumentMoniker": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\Connection\\clsConnection.cs",
               "RelativeDocumentMoniker": "DAL\\Connection\\clsConnection.cs",
-              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\DAL\\Connection\\clsConnection.cs",
+              "ToolTip": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\Connection\\clsConnection.cs",
               "RelativeToolTip": "DAL\\Connection\\clsConnection.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAA8wBYAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -223,11 +218,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 11,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\API\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\API\\Program.cs",
               "RelativeDocumentMoniker": "API\\Program.cs",
-              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\API\\Program.cs",
+              "ToolTip": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\API\\Program.cs",
               "RelativeToolTip": "API\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -237,9 +232,9 @@
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\API\\Properties\\launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\API\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "API\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\API\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\API\\Properties\\launchSettings.json",
               "RelativeToolTip": "API\\Properties\\launchSettings.json",
               "ViewState": "AQIAAAEAAAAAAAAAAAAAAAEAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -247,11 +242,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "clsProducto.cs",
-              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\Entidades\\clsProducto.cs",
+              "DocumentMoniker": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\Entidades\\clsProducto.cs",
               "RelativeDocumentMoniker": "Entidades\\clsProducto.cs",
-              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\Entidades\\clsProducto.cs",
+              "ToolTip": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\Entidades\\clsProducto.cs",
               "RelativeToolTip": "Entidades\\clsProducto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -259,11 +254,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "ProductosPruebaController.cs",
-              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\API\\Controllers\\ProductosPruebaController.cs",
+              "DocumentMoniker": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\API\\Controllers\\ProductosPruebaController.cs",
               "RelativeDocumentMoniker": "API\\Controllers\\ProductosPruebaController.cs",
-              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\API\\Controllers\\ProductosPruebaController.cs",
+              "ToolTip": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\API\\Controllers\\ProductosPruebaController.cs",
               "RelativeToolTip": "API\\Controllers\\ProductosPruebaController.cs",
               "ViewState": "AQIAACUAAAAAAAAAAAAQwBQAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -273,13 +268,17 @@
               "$type": "Document",
               "DocumentIndex": 15,
               "Title": "DAL.csproj",
-              "DocumentMoniker": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\DAL\\DAL.csproj",
+              "DocumentMoniker": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\DAL.csproj",
               "RelativeDocumentMoniker": "DAL\\DAL.csproj",
-              "ToolTip": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\DAL\\DAL.csproj",
+              "ToolTip": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\DAL.csproj",
               "RelativeToolTip": "DAL\\DAL.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-10-22T12:16:55.048Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }

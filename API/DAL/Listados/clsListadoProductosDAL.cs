@@ -154,6 +154,77 @@ namespace DAL.Listados
 
         }
 
+        public static List<clsProducto> getListadoProductosbyUserDAL(int idUsuario)
+        {
+
+            clsConnection conexion = new clsConnection();
+            List<clsProducto> listadoProductos = new List<clsProducto>();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader reader;
+            clsProducto oProducto;
+
+            //Añadimos un parámetro que luego necesitaremos en el comando sql.
+            cmd.Parameters.Add("@idUsuario", System.Data.SqlDbType.Int).Value = idUsuario;
+
+            try
+            {
+                //abrimos la conexion y la guardamos en una variable
+                SqlConnection conexionAbierta = conexion.getConnection();
+
+                cmd.CommandText = "Select * from productos where idUsuario=@idUsuario";
+                cmd.Connection = conexionAbierta;
+
+                reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        oProducto = new clsProducto();
+                        oProducto.IdProducto = (int)reader["idProducto"];
+                        oProducto.IdUsuario = (int)reader["idUsuario"];
+                        oProducto.Nombre = (string)reader["nombre"];
+                        oProducto.Marca = (string)reader["marca"];
+                        //en caso de que pueda ser null
+                        if (reader["nombreOG"] != System.DBNull.Value)
+                        {
+                            oProducto.NombreOG = (string)reader["nombreOG"];
+                        }
+                        if (reader["marcaOG"] != System.DBNull.Value)
+                        {
+                            oProducto.MarcaOG = (string)reader["marcaOG"];
+                        }
+
+                        oProducto.Original = (string)reader["original"];
+
+                        if (reader["comentario"] != System.DBNull.Value)
+                        {
+                            oProducto.Comentario = (string)reader["comentario"];
+                        }
+                        if (reader["imagen"] != System.DBNull.Value)
+                        {
+                            oProducto.Imagen = (string)reader["imagen"];
+                        }
+
+                        listadoProductos.Add(oProducto);
+
+                    }
+                }
+                reader.Close();
+                conexionAbierta.Close();
+
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+
+            return listadoProductos;
+
+        }
+
+
+
     }
 
 }

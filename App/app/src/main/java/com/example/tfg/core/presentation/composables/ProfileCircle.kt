@@ -56,13 +56,11 @@ fun ProfileCircle (navController: NavController, fotoUser:String) {
 //        )
 
         Image(
+
             painter = painterResource(id = R.drawable.pompompurin),
             contentDescription = null,
             contentScale = ContentScale.FillBounds
         )
-
-
-
     }
 
 }
