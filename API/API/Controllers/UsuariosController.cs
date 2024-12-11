@@ -40,7 +40,7 @@ namespace API.Controllers
         }
 
         // GET api/<UsuariosController>/5
-        [HttpGet("{idUsuario}")]
+        [HttpGet("{idUsuario}/productos")]
         public IActionResult Get(int idUsuario)
         {
             IActionResult salida;
