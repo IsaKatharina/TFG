@@ -1,10 +1,15 @@
 package com.example.tfg.ui.screens.add_edit
 
 import android.util.Log
+import androidx.activity.compose.ManagedActivityResultLauncher
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -12,7 +17,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -32,7 +40,9 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -40,17 +50,27 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import coil3.Uri
+import coil3.compose.AsyncImage
+import coil3.toCoilUri
+import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
+import com.bumptech.glide.integration.compose.GlideImage
 import com.example.tfg.R
+import com.example.tfg.core.models.User
 import com.example.tfg.core.presentation.buttons.BackButton
 import com.example.tfg.core.presentation.composables.BottomBar
 import com.example.tfg.navigation.AppScreens
 import com.example.tfg.ui.screens.login.Login
 import com.example.tfg.ui.theme.TFGTheme
 import com.example.tfg.viewmodels.NewProductVM
+import com.example.tfg.viewmodels.ProfileVM
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.launch
 
 @Composable
 fun NewProductScreen(navController: NavController) {
+
+
 
     val vm= NewProductVM()
 
@@ -59,9 +79,33 @@ fun NewProductScreen(navController: NavController) {
     val marca:String by vm.marca.observeAsState(initial="")
     val nombreOG:String by vm.nombreOG.observeAsState(initial = "")
     val marcaOG:String by vm.marcaOG.observeAsState(initial = "")
-    val imagen:String by vm.imagen.observeAsState(initial = "")
+    val imagen:String by vm.imagenString.observeAsState(initial = "")
     val ogBool by vm.ogBool.observeAsState(initial = false)
     val goClicked:Boolean by vm.goClicked.observeAsState(initial = false)
+
+    var picUri: Uri? by remember { mutableStateOf<Uri?>(null) }
+
+    val picker = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.PickVisualMedia(),
+        onResult = {uri ->
+            if (uri != null) {
+                picUri = uri.toCoilUri()
+            }
+        }
+    )
+
+    val vmUser= ProfileVM()
+    val userFound: User by vmUser.userFound.observeAsState(initial = User())
+
+    //Llamamos a una instancia de Firebase para que nos devuelva el correo del usuario
+    var userEmail= FirebaseAuth.getInstance().currentUser?.email
+
+    //Llamamos a la api para que nos traiga los datos del usuario en cuestión.
+    LaunchedEffect(userEmail) {
+        if (userEmail != null) {
+            vmUser.getUser(userEmail)
+        }
+    }
 
 
 
@@ -89,18 +133,19 @@ Column(modifier= Modifier
     ) {
 
         //foto del producto nuevo
-        NewProdPic(imagen) //{vm.createProduct(nombre,marca,nombreOG, marcaOG, it)}
+        NewProdPic(picUri, picker)
 
         //ponemos un espacio
         Spacer(modifier = Modifier.padding(16.dp))
         NewProdName(nombre) {
             vm.createProduct(
+                userFound,
                 it,
                 marca,
                 nombreOG,
                 marcaOG,
                 ogBool,
-                imagen,
+                picUri,
                 goClicked
             )
         }
@@ -109,12 +154,13 @@ Column(modifier= Modifier
         Spacer(modifier = Modifier.padding(16.dp))
         NewProdMarca(marca) {
             vm.createProduct(
+                userFound,
                 nombre,
                 it,
                 nombreOG,
                 marcaOG,
                 ogBool,
-                imagen,
+                picUri,
                 goClicked
             )
         }
@@ -123,12 +169,13 @@ Column(modifier= Modifier
         Spacer(modifier = Modifier.padding(16.dp))
         NewProdOgName(nombreOG) {
             vm.createProduct(
+                userFound,
                 nombre,
                 marca,
                 it,
                 marcaOG,
                 ogBool,
-                imagen,
+                picUri,
                 goClicked
             )
         }
@@ -137,12 +184,13 @@ Column(modifier= Modifier
         Spacer(modifier = Modifier.padding(16.dp))
         NewProdOgMarca(marcaOG) {
             vm.createProduct(
+                userFound,
                 nombre,
                 marca,
                 nombreOG,
                 it,
                 ogBool,
-                imagen,
+                picUri,
                 goClicked
             )
         }
@@ -151,12 +199,13 @@ Column(modifier= Modifier
         Spacer(modifier = Modifier.padding(16.dp))
         NewProdOg(ogBool) {
             vm.createProduct(
+                userFound,
                 nombre,
                 marca,
                 nombreOG,
                 marcaOG,
                 it,
-                imagen,
+                picUri,
                 goClicked
             )
         }
@@ -166,12 +215,13 @@ Column(modifier= Modifier
 
         GoButton(navController, goClicked) {
             vm.createProduct(
+                userFound,
                 nombre,
                 marca,
                 nombreOG,
                 marcaOG,
                 ogBool,
-                imagen,
+                picUri,
                 it
             )
         }
@@ -202,8 +252,9 @@ fun NewProdName(nombre:String, onTextFieldChanged: (String) -> Unit) {
 }
 
 //TODO:terminar esta parte
+@OptIn(ExperimentalGlideComposeApi::class)
 @Composable
-fun NewProdPic(imagen: String) {
+fun NewProdPic(picUri: Uri?, picker: ManagedActivityResultLauncher<PickVisualMediaRequest, android.net.Uri?>) {
     Row(modifier = Modifier.fillMaxWidth()
         .height(200.dp)
         .padding(15.dp,0.dp,15.dp,0.dp)
@@ -216,14 +267,33 @@ fun NewProdPic(imagen: String) {
 
 
     ) {
-        IconButton(onClick = {  }) {
-            Icon(
-                painterResource(id = R.drawable.camara_pink),
-                contentDescription = "camara_pink",
-                tint = Color(0xFFFF5290)
+        if (picUri == null) {
+
+            IconButton(onClick = {
+                picker.launch(
+                    PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
+                )
+
+            }) {
+                Icon(
+                    painterResource(id = R.drawable.camara_pink),
+                    contentDescription = "camara_pink",
+                    tint = Color(0xFFFF5290)
+                )
+            }
+
+        } else {
+
+            GlideImage(
+                model = picUri,
+                contentDescription = null,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.fillMaxSize()
             )
+
         }
     }
+
 }
 
 @Composable

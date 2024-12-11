@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
 import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
@@ -17,6 +18,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
@@ -42,20 +44,21 @@ import com.example.tfg.dal.remote.utils.ApiService
 import com.example.tfg.dal.remote.utils.getRetrofit
 import com.example.tfg.navigation.AppScreens
 import com.example.tfg.ui.theme.TFGTheme
-import com.example.tfg.viewmodels.MainListVM
 import com.example.tfg.viewmodels.ProfileVM
+import com.example.tfg.viewmodels.MainListVM
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
 @Composable
-fun ProductsGrid(modifier: Modifier, idUsuario:Int, onEditProductClick:(Int)->Unit){
+fun ProductsGrid(modifier: Modifier, idUsuario: Int, onEditProductClick:(Int)->Unit){
 
     val vm= ProfileVM()
-    //TODO:poner a true
-    val isLoading:Boolean by vm.isLoading.observeAsState(initial = true)
-    val products:List<Product> by vm.listadoProductosPorUsuario.observeAsState(initial = emptyList())
+    val vmList=MainListVM()
+
+    val isLoading:Boolean by vmList.isLoading.observeAsState(initial = true)
+    val products:List<Product> by vmList.listadoProductos.observeAsState(initial = emptyList())
 
     var context= LocalContext.current
     val connectivityObserver: ConnectivityObserver = NetworkConnectivityObserver(context)
@@ -89,11 +92,19 @@ fun ProductsGrid(modifier: Modifier, idUsuario:Int, onEditProductClick:(Int)->Un
 
     }else {
 
-        LaunchedEffect(idUsuario) {
-            vm.getListadoProductosPorUsuario(idUsuario)
+        LaunchedEffect(Unit) {
+            vmList.getListadoProductos()
         }
 
-        if (isLoading) {
+
+        val listaFiltrada = remember { mutableStateOf<List<Product>>(emptyList())}
+        //recorremos la lista y buscamos donde coincide el id del usuario.
+        listaFiltrada.value= products.filter {
+            it.idUsuario == idUsuario
+
+        }
+
+        if (isLoading&&listaFiltrada.value.isEmpty()) {
 
             Box(Modifier.fillMaxSize()) {
                 CircularProgressIndicator(
@@ -101,19 +112,31 @@ fun ProductsGrid(modifier: Modifier, idUsuario:Int, onEditProductClick:(Int)->Un
                     color = Color(0xFFFF5290)
                 )
             }
-        } else {
 
+        } else if (!isLoading&&listaFiltrada.value.isEmpty()){
+            Box(modifier=Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center){
+
+                Icon(
+                    painterResource(id = R.drawable.no_task),
+                    contentDescription = "empty_list",
+                    tint= Color(0xFFFF5290)
+                )
+
+            }
+
+        } else {
             LazyVerticalStaggeredGrid(
                 columns = StaggeredGridCells.Adaptive(150.dp),
                 verticalItemSpacing = 10.dp,
                 horizontalArrangement = Arrangement.spacedBy(7.dp),
                 content = {
-                    items(products) { product ->
+                    items(listaFiltrada.value) { product ->
 
                         EditProductCard(product, onEditProductClick)
 
                     }
-                }
+                }, modifier = Modifier.padding(5.dp)
             )
         }
     }

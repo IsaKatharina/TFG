@@ -1,10 +1,12 @@
 package com.example.tfg.ui.screens.login
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -30,6 +32,10 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import coil3.compose.AsyncImage
+import coil3.compose.SubcomposeAsyncImage
+import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
+import com.bumptech.glide.integration.compose.GlideImage
 import com.example.tfg.navigation.AppScreens
 import com.example.tfg.core.presentation.composables.HeaderImagen
 import com.example.tfg.core.presentation.composables.ProductCard
@@ -37,6 +43,7 @@ import com.example.tfg.ui.theme.TFGTheme
 import com.example.tfg.ui.theme.backgroundLight
 
 
+@OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun StartScreen(modifier: Modifier, navController: NavController) {
     Surface(modifier = Modifier.fillMaxSize()

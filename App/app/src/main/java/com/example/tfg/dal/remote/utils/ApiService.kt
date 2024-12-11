@@ -36,7 +36,7 @@ interface ApiService {
     @GET("productos/{idProduct}")
     suspend fun getProductById(@Path("idProduct")idProduct: Int):Product
 
-    @GET("productos/{idUsuario}")
+    @GET("usuarios/{idUsuario}/productos")
     suspend fun getProductsListByUser(@Path("idUsuario")idUsuario:Int):List<Product>
 
     @GET("usuarios/{correo}")

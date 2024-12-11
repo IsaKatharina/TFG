@@ -12,6 +12,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -22,7 +24,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -30,12 +34,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import coil3.compose.AsyncImage
+import coil3.toUri
+import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
+import com.bumptech.glide.integration.compose.GlideImage
 import com.example.tfg.R
 import com.example.tfg.core.models.Product
 import com.example.tfg.core.models.User
 import com.example.tfg.core.presentation.composables.BottomBar
 import com.example.tfg.core.presentation.composables.ProductsGrid
-import com.example.tfg.core.presentation.composables.ProfileCircle
 import com.example.tfg.navigation.AppScreens
 import com.example.tfg.ui.screens.list.MainListScreen
 import com.example.tfg.ui.theme.TFGTheme
@@ -44,17 +51,19 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.ktx.Firebase
 import kotlin.math.log
 
+@OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun ProfileScreen(navController: NavController) {
 
-    val vm=ProfileVM()
-    val userFound:User by vm.userFound.observeAsState(initial = User())
     //creamos una lambda para navegar a editar un producto
     val navigateToEdit:(Int) ->Unit= {idProduct ->
         navController.navigate(AppScreens.EditProductScreen.route+"/$idProduct")
 
         Log.i("nav", "navegando a la página editar el producto $idProduct")
     }
+
+    val vm=ProfileVM()
+    val userFound:User by vm.userFound.observeAsState(initial = User())
 
     //Llamamos a una instancia de Firebase para que nos devuelva el correo del usuario
     var userEmail= FirebaseAuth.getInstance().currentUser?.email
@@ -83,10 +92,19 @@ fun ProfileScreen(navController: NavController) {
             verticalAlignment = Alignment.CenterVertically
 
         ) {
-            Box(modifier = Modifier.size(50.dp)) {
-                ProfileCircle(navController, userFound.picture)
-            }
+            Box(modifier = Modifier.size(100.dp)) {
 
+                    AsyncImage(
+                        model = userFound.picture,
+                        contentDescription = null,
+                        contentScale = ContentScale.Crop,
+                        placeholder = (painterResource(R.drawable.home_pink)),
+                        modifier = Modifier.size(150.dp)
+                            .clip(CircleShape)
+                            .border(1.dp,Color(0xFFFF5290), CircleShape)
+                    )
+                Log.i("user", userFound.picture)
+            }
 
             Column (
                 modifier = Modifier.padding(10.dp)
@@ -127,7 +145,10 @@ fun ProfileScreen(navController: NavController) {
             .weight(1f)
             .padding(15.dp)
         ) {
-            ProductsGrid(modifier = Modifier, userFound.idUsuario, onEditProductClick=navigateToEdit)
+            if (userFound.idUsuario!=0) {
+                ProductsGrid(modifier = Modifier, userFound.idUsuario, onEditProductClick=navigateToEdit)
+
+            }
         }
 
         Row (

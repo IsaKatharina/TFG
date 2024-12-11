@@ -34,10 +34,13 @@ class ProfileVM:ViewModel() {
                 var response = getRetrofit().create(ApiService::class.java).getUserByMail(userMail)
 
                 if (response.correo==userMail) {
-
                     _userFound.postValue(response)
 
                     Log.i("sos", response.nombreUsu)
+
+                    if (response.idUsuario !=0) {
+
+                    }
 
                 } else {
 
@@ -54,7 +57,7 @@ class ProfileVM:ViewModel() {
     }
 
     //corrutina que llama a la api y carga el listado completo
-    suspend fun getListadoProductosPorUsuario(idUsuario: Int) {
+    private suspend fun getListadoProductosPorUsuario(idUsuario: Int) {
 
         viewModelScope.launch(Dispatchers.IO) {
 
@@ -71,6 +74,7 @@ class ProfileVM:ViewModel() {
                     Log.i("sos", "ha entrado bien en la corrutina")
 
                 } else {
+                    _isLoading.postValue(false)
                     _listadoProductosPorUsuario.postValue(emptyList())
                 }
 
@@ -81,6 +85,8 @@ class ProfileVM:ViewModel() {
 
                 Log.i("sos", "no ha entrado bien en la corrutina, $e")
             }
+
+
         }
     }
 

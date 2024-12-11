@@ -83,7 +83,16 @@ class MainListVM: ViewModel() {
     fun searchProduct(searchText: String, listadoProductos:List<Product>) {
         _searchText.value = searchText
             _listadoProductos.value=listadoProductos.filter {
-                it.nombre.contains(
+                it.nombreOG.contains(
+                    _searchText.value!!,
+                    ignoreCase = true
+                )||it.marcaOG.contains(
+                    _searchText.value!!,
+                    ignoreCase = true
+                )||it.marca.contains(
+                    _searchText.value!!,
+                    ignoreCase = true
+                )||it.nombre.contains(
                     _searchText.value!!,
                     ignoreCase = true
                 )

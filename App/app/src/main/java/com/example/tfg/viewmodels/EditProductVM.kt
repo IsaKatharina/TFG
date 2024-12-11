@@ -15,8 +15,9 @@ import kotlinx.coroutines.launch
 class EditProductVM:ViewModel() {
 
 
+
     //corrutina que edita un producto
-    fun editProduct(product:Product, nombre:String, marca:String, nombreOG:String, marcaOG:String, imagen:String) {
+    fun editProduct(product:Product, nombre:String, marca:String, nombreOG:String, marcaOG:String, og:Boolean, imagen:String) {
 
         //tenemos que detectar si los valores son distintos
         if (product.nombre!=nombre){
@@ -39,11 +40,12 @@ class EditProductVM:ViewModel() {
 
         }
 
-//        if (og) {
-//            _og.value="si"
-//        } else {
-//            _og.value="no"
-//        }
+        if (og) {
+            product.original="si"
+        } else {
+            product.original="no"
+        }
+
         if (product.imagen!=imagen){
             product.imagen =imagen
 

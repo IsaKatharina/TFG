@@ -9,5 +9,5 @@ data class NewProduct (
     @SerializedName("nombreOG") var nombreOG:String="",
     @SerializedName("marcaOG") var marcaOG:String="",
     @SerializedName("original") var original:String="",
-    @SerializedName("comentario") var comentario:String="",
+    @SerializedName("comentario") var comentario:String="no",
     @SerializedName("imagen") var imagen:String=""){}

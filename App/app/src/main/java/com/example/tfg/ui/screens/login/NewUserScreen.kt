@@ -3,7 +3,13 @@ package com.example.tfg.ui.screens.login
 import android.content.Context
 import android.util.Log
 import android.widget.Toast
+import androidx.activity.compose.ManagedActivityResultLauncher
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,7 +20,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
@@ -27,27 +35,31 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
+import coil3.Uri
+import coil3.compose.AsyncImage
+import coil3.toCoilUri
+import com.bumptech.glide.integration.compose.GlideImage
 import com.example.tfg.R
-import com.example.tfg.core.models.helloKittyImages
 import com.example.tfg.core.presentation.buttons.BackButton
 import com.example.tfg.core.presentation.composables.HeaderImagen
-import com.example.tfg.core.presentation.composables.ProfileCircle
 import com.example.tfg.dal.connectivity.ConnectivityObserver
 import com.example.tfg.dal.connectivity.NetworkConnectivityObserver
 import com.example.tfg.navigation.AppScreens
-import com.example.tfg.ui.theme.TFGTheme
 import com.example.tfg.viewmodels.NewUserVM
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
@@ -100,7 +112,19 @@ fun NewUserScreen(navController: NavController) {
         val email: String by vm.email.observeAsState(initial = "")
         val password: String by vm.password.observeAsState(initial = "")
         val nombreUsu: String by vm.nombreUsu.observeAsState(initial = "")
-        val picture: String by vm.pic.observeAsState("")
+        val picString: String by vm.picString.observeAsState("")
+
+        var picUri: Uri? by remember { mutableStateOf<Uri?>(null) }
+
+        val picker = rememberLauncherForActivityResult(
+            contract = ActivityResultContracts.PickVisualMedia(),
+            onResult = {uri ->
+                if (uri != null) {
+                    picUri = uri.toCoilUri()
+                }
+            }
+        )
+
 
         val newUserEnable: Boolean by vm.newUserEnable.observeAsState(initial = false)
         val welcomeClicked: Boolean by vm.welcomeClicked.observeAsState(initial = false)
@@ -119,19 +143,19 @@ fun NewUserScreen(navController: NavController) {
 
                 //ponemos un espacio
                 Spacer(modifier = Modifier.padding(16.dp))
-                NewUserName(nombreUsu) { vm.onNewUserChanged(email, it, picture, password) }
+                NewUserName(nombreUsu) { vm.onNewUserChanged(email, it, picUri, password) }
 
                 //otro espacio
                 Spacer(modifier = Modifier.padding(16.dp))
-                NewEmail(email) { vm.onNewUserChanged(it, nombreUsu, picture, password) }
+                NewEmail(email) { vm.onNewUserChanged(it, nombreUsu, picUri, password) }
 
                 //otro espacio
                 Spacer(modifier = Modifier.padding(16.dp))
-                NewPassword(password) { vm.onNewUserChanged(email, nombreUsu, picture, it) }
+                NewPassword(password) { vm.onNewUserChanged(email, nombreUsu, picUri, it) }
 
                 //otro espacio
                 Spacer(modifier = Modifier.padding(16.dp))
-                NewPic(navController, picture)
+                NewPic(navController, picUri, picker)
 
                 //otro espacio
                 Spacer(modifier = Modifier.padding(16.dp))
@@ -144,7 +168,7 @@ fun NewUserScreen(navController: NavController) {
                     email,
                     nombreUsu,
                     password,
-                    picture,
+                    picUri,
                     auth
                 )
 
@@ -163,7 +187,7 @@ fun WelcomeButton(
     email: String,
     nombreUsu: String,
     password:String,
-    picture: String,
+    picUri: Uri?,
     auth: FirebaseAuth
 ) {
 
@@ -175,7 +199,7 @@ fun WelcomeButton(
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener{ task ->
             if (task.isSuccessful){
                 //se crea el usuario en la badat
-                vm.createUser(email, nombreUsu, picture)
+                vm.createUser(email, nombreUsu, picUri)
                 navController.navigate(AppScreens.MainListScreen.route)
 
             } else if (task.exception is FirebaseAuthUserCollisionException) {
@@ -199,25 +223,43 @@ fun WelcomeButton(
     }
 }
 
-//TODO:terminar esto
+
 @Composable
-fun NewPic(navController:NavController,picture:String) {
+fun NewPic(
+    navController: NavController,
+    picUri: Uri?,
+    picker: ManagedActivityResultLauncher<PickVisualMediaRequest, android.net.Uri?>
+) {
     Row(modifier = Modifier.fillMaxWidth()
         .padding(10.dp,0.dp,0.dp,0.dp),
         horizontalArrangement = Arrangement.Center
 
-        //TODO:ponerlo en el centro
     ) {
-        //elegimos una imagen random.
-        val randomPic= remember { helloKittyImages.random() }
-        ProfileCircle(navController, randomPic)
 
-//        IconButton(onClick = {  }) {
-//            Icon(painterResource(id = R.drawable.camara_pink),
-//                contentDescription = "camara_pink",
-//                tint = Color(0xFFFF5290)
-//            )
-//        }
+        Box(modifier = Modifier.wrapContentSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            AsyncImage(
+                model = picUri,
+                contentDescription = null,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.size(150.dp)
+                    .clip(CircleShape)
+                    .border(1.dp,Color(0xFFFF5290), CircleShape)
+            )
+
+        }
+
+        IconButton(onClick = { picker.launch(
+            PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
+        )
+
+        }) {
+            Icon(painterResource(id = R.drawable.camara_pink),
+                contentDescription = "camara_pink",
+                tint = Color(0xFFFF5290)
+            )
+        }
     }
 }
 

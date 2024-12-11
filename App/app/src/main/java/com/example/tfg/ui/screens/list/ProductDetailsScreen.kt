@@ -35,12 +35,12 @@ import androidx.navigation.compose.rememberNavController
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
+import coil3.toUri
 import com.example.tfg.R
 import com.example.tfg.core.models.Product
 import com.example.tfg.core.presentation.buttons.BackButton
 import com.example.tfg.core.presentation.buttons.HeartButton
 import com.example.tfg.core.presentation.composables.BottomBar
-import com.example.tfg.core.presentation.composables.ProfileCircle
 import com.example.tfg.ui.theme.TFGTheme
 import com.example.tfg.viewmodels.MainListVM
 import com.example.tfg.viewmodels.ProductDetailsVM
@@ -111,12 +111,9 @@ fun ProductDetailsScreen(navController: NavController, idProduct: Int) {
 
                         //la imagen se cargará de forma asíncrona, viene de la api
                         AsyncImage(
-                            model = ImageRequest.Builder(LocalContext.current)
-                                .data(product.imagen)
-                                .crossfade(true)
-                                .build(),
-                            error = painterResource(id = R.drawable.home_pink),
+                            model = product.imagen.toUri(),
                             contentDescription = stringResource(id = R.string.app_name),
+                            placeholder = (painterResource(R.drawable.home_pink)),
                             modifier = Modifier.fillMaxSize(),
 
                         )
@@ -131,7 +128,7 @@ fun ProductDetailsScreen(navController: NavController, idProduct: Int) {
                     ) {
                         Text(product.nombre, fontWeight = FontWeight.Bold, fontSize = 26.sp)
                         Text(product.marca, fontSize = 20.sp)
-                        Spacer(modifier=Modifier.padding(5.dp))
+                        Spacer(modifier=Modifier.padding(15.dp))
 
                         if (product.original=="no"||product.original=="No"){
                             Text(product.nombreOG, fontWeight = FontWeight.Bold, fontSize = 26.sp)
@@ -139,7 +136,7 @@ fun ProductDetailsScreen(navController: NavController, idProduct: Int) {
                         }
 
                         Log.i("det","nombre ${product.nombre}")
-                        Spacer(modifier=Modifier.padding(5.dp))
+                        Spacer(modifier=Modifier.padding(25.dp))
 
 
                     }

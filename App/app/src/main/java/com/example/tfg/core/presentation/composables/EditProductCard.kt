@@ -30,11 +30,15 @@ import androidx.navigation.compose.rememberNavController
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
+import coil3.toUri
+import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
+import com.bumptech.glide.integration.compose.GlideImage
 import com.example.tfg.R
 import com.example.tfg.core.models.Product
 import com.example.tfg.core.presentation.buttons.EditButton
 import com.example.tfg.ui.theme.TFGTheme
 
+@OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun EditProductCard(product: Product, onEditProductClick:(Int)->Unit){
 
@@ -51,18 +55,14 @@ fun EditProductCard(product: Product, onEditProductClick:(Int)->Unit){
             .background(Color.White)
         ) {
 
-
             Box(
 
             ) {
                 //la imagen se cargará de forma asíncrona, viene de la api
                 AsyncImage(
-                    model= ImageRequest.Builder(LocalContext.current)
-                        .data("whatever")
-                        .crossfade(true)
-                        .build(),
-                    placeholder = painterResource(id = R.drawable.home_pink),
+                    model= product.imagen.toUri(),
                     contentDescription = stringResource(id= R.string.app_name),
+                    placeholder = (painterResource(R.drawable.home_pink)),
                     modifier = Modifier.fillMaxSize()
                 )
                 //Log.i("pic","${product.imagen}")

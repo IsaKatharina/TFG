@@ -3,9 +3,14 @@ package com.example.tfg.ui.screens.add_edit
 import android.content.Context
 import android.util.Log
 import android.widget.Toast
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.core.exponentialDecay
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.gestures.rememberScrollableState
+import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -16,7 +21,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -39,6 +46,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -46,6 +54,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import coil3.compose.AsyncImage
+import coil3.toCoilUri
+import coil3.toUri
+import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
+import com.bumptech.glide.integration.compose.GlideImage
 import com.example.tfg.R
 import com.example.tfg.core.models.Product
 import com.example.tfg.core.presentation.buttons.BackButton
@@ -55,25 +68,37 @@ import com.example.tfg.viewmodels.DeleteVM
 import com.example.tfg.viewmodels.EditProductVM
 import com.example.tfg.viewmodels.ProductDetailsVM
 
+@OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun EditProductScreen(navController: NavController, idProduct: Int) {
 
     val vmGetProduct = ProductDetailsVM()
     val vmEditProduct = EditProductVM()
 
-    //TODO:poner a true
-    val isLoading: Boolean by vmGetProduct.isLoading.observeAsState(initial = false)
+    val isLoading: Boolean by vmGetProduct.isLoading.observeAsState(initial = true)
 
     //buscamos el producto correspondiente
     val product: Product by vmGetProduct.productFound.observeAsState(initial = Product())
+
+
 
     //variable local del producto
     var nombre by remember { mutableStateOf(product.nombre) }
     var marca by remember { mutableStateOf(product.marca) }
     var nombreOG by remember { mutableStateOf(product.nombreOG) }
     var marcaOG by remember { mutableStateOf(product.marcaOG) }
+    var ogString by remember { mutableStateOf(product.original) }
+    var og:Boolean by remember { mutableStateOf<Boolean>(false) }
+    var imagen by remember { mutableStateOf(product.imagen.toUri()) }
 
-    var imagen by remember { mutableStateOf(product.imagen) }
+    val picker = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.PickVisualMedia(),
+        onResult = {uri ->
+            if (uri != null) {
+                imagen = uri.toCoilUri()
+            }
+        }
+    )
 
     LaunchedEffect(idProduct) {
         vmGetProduct.getProduct(idProduct)
@@ -89,23 +114,36 @@ fun EditProductScreen(navController: NavController, idProduct: Int) {
         //en caso de que el idProducto sea distinto de 0
         if (product.idProduct != 0) {
 
+            var productOG: Product = product
+            Row(
+                modifier = Modifier
+            ) {
+                BackButton(
+                    navController = navController,
+                    modifier = Modifier
+                )
+            }
             Column(
                 modifier = Modifier.fillMaxSize()
-                    .background(Color.White)
+                    .background(Color.White).verticalScroll(rememberScrollState(),true)
             ) {
-                Row(
-                    modifier = Modifier
-                ) {
-                    BackButton(
-                        navController = navController,
-                        modifier = Modifier
-                    )
-                }
 
                 Row(
                     modifier = Modifier.align(Alignment.End)
                 ) {
-                    DeleteButton(navController, product.idProduct)
+                    IconButton(onClick = {
+                        picker.launch(
+                            PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
+                        )
+
+                    }) {
+                        Icon(
+                            painterResource(id = R.drawable.camara_pink),
+                            contentDescription = "camara_pink",
+                            tint = Color(0xFFFF5290)
+                        )
+                    }
+                    DeleteButton(navController, idProduct)
                 }
 
                 //foto del producto nuevo
@@ -123,13 +161,14 @@ fun EditProductScreen(navController: NavController, idProduct: Int) {
 
 
                 ) {
-                    IconButton(onClick = { }) {
-                        Icon(
-                            painterResource(id = R.drawable.camara_pink),
-                            contentDescription = "camara_pink",
-                            tint = Color(0xFFFF5290)
-                        )
-                    }
+
+                    AsyncImage(
+                        model = imagen,
+                        contentDescription = null,
+                        placeholder = (painterResource(R.drawable.home_pink)),
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier.fillMaxSize()
+                    )
                 }
 
                 //ponemos un espacio
@@ -195,30 +234,34 @@ fun EditProductScreen(navController: NavController, idProduct: Int) {
 
 
                 //otro espacio
-                //TODO:esto hay que modificarlo
                  Spacer(modifier = Modifier.padding(16.dp))
 
 
 
-                //otro espacio
-//                Spacer(modifier = Modifier.padding(16.dp))
-//                Row(
-//                    modifier = Modifier.padding(10.dp),
-//                    horizontalArrangement = Arrangement.Center
-//                ) {
-//                    Text("¿Es el original?")
-//
-//                    Checkbox(
-//                        checked = productEditado.ogBool,
-//                        onCheckedChange = { onTextFieldChanged(it) },
-//                        colors = CheckboxDefaults.colors(
-//                            checkedColor = Color(0xFFFF5290)
-//                        )
-//                    )
-//                }
+               //otro espacio
+                Spacer(modifier = Modifier.padding(16.dp))
+                Row(
+                    modifier = Modifier.padding(10.dp),
+                    horizontalArrangement = Arrangement.Center
+                ) {
+                    Text("¿Es el original?")
+
+                    if (ogString.equals("no")) {
+                        og=false
+                    } else {
+                        og=true
+                    }
+                    Checkbox(
+                        checked = og,
+                        onCheckedChange = { og=it },
+                        colors = CheckboxDefaults.colors(
+                            checkedColor = Color(0xFFFF5290)
+                        )
+                    )
+                }
 
                 Button(
-                    onClick = {vmEditProduct.editProduct(product, nombre, marca, nombreOG, marcaOG,  imagen)
+                    onClick = {vmEditProduct.editProduct(productOG, nombre, marca, nombreOG, marcaOG, og,  imagen.toString())
 
                         navController.navigate(AppScreens.MainListScreen.route)
                     },
@@ -251,8 +294,8 @@ fun EditProductScreen(navController: NavController, idProduct: Int) {
 fun DeleteButton(navController: NavController, idProduct: Int) {
     // Se debe manejar el estado del dialogo
     var showDialog = remember { mutableStateOf(false) }
-    val deleteVM =DeleteVM()
-    val context= LocalContext.current
+    val deleteVM = DeleteVM()
+    val context = LocalContext.current
 
 
     // El IconButton abre el dialogo
@@ -269,7 +312,7 @@ fun DeleteButton(navController: NavController, idProduct: Int) {
     if (showDialog.value) {
 
         //creamos una ventana emergente
-        Dialog(onDismissRequest = {showDialog.value=false}) {
+        Dialog(onDismissRequest = { showDialog.value = false }) {
             Card(
                 modifier = Modifier.fillMaxWidth()
                     .height(375.dp)
@@ -280,16 +323,18 @@ fun DeleteButton(navController: NavController, idProduct: Int) {
                     modifier = Modifier.fillMaxSize(),
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
-                ){
-                    Text("¿Seguro que quieres eliminar este producto?",
-                        modifier = Modifier.padding(16.dp))
-                    Row (
+                ) {
+                    Text(
+                        "¿Seguro que quieres eliminar este producto?",
+                        modifier = Modifier.padding(16.dp)
+                    )
+                    Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.Center
                     ) {
 
                         TextButton(
-                            onClick = { showDialog.value=false },
+                            onClick = { showDialog.value = false },
                             modifier = Modifier.padding(8.dp)
                         ) {
                             Text("No")
@@ -303,7 +348,11 @@ fun DeleteButton(navController: NavController, idProduct: Int) {
                                 //TODO: si el producto se ha eliminado bien, pues mandamos un toast y vamos para atrás
                                 navController.navigate(AppScreens.ProfileScreen.route)
 
-                                Toast.makeText(context, "Se ha eliminado un producto", Toast.LENGTH_SHORT)
+                                Toast.makeText(
+                                    context,
+                                    "Se ha eliminado un producto",
+                                    Toast.LENGTH_SHORT
+                                )
                                     .show()
 
                             },
@@ -321,10 +370,10 @@ fun DeleteButton(navController: NavController, idProduct: Int) {
 }
 
 
-@Preview(showSystemUi = true)
-@Composable
-fun PCEditPr(){
-    TFGTheme {
-        EditProductScreen(navController = rememberNavController(), idProduct = 1)
-    }
-}
+//@Preview(showSystemUi = true)
+//@Composable
+//fun PCEditPr(){
+//    TFGTheme {
+//        EditProductScreen(navController = rememberNavController(), idProduct = 1)
+//    }
+//}

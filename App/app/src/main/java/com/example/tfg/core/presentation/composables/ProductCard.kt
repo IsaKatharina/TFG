@@ -23,10 +23,14 @@ import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
+import coil3.toUri
+import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
+import com.bumptech.glide.integration.compose.GlideImage
 import com.example.tfg.R
 import com.example.tfg.core.models.Product
 import com.example.tfg.navigation.AppScreens
 
+@OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun ProductCard(modifier: Modifier, product: Product, onProductClick:(Int) ->Unit){
     FloatingActionButton(
@@ -41,35 +45,12 @@ fun ProductCard(modifier: Modifier, product: Product, onProductClick:(Int) ->Uni
         Box(modifier = Modifier.fillMaxSize()
             .background(Color.White)
         ) {
-
-//            Box(
-//                modifier = Modifier.size(30.dp)
-//                    .align(Alignment.TopEnd)
-//                    .zIndex(1f)
-//                    .padding(4.dp)
-//
-//            ) {
-//                Icon(
-//                    //TODO:hacerlo clickable
-//                    modifier = Modifier.fillMaxSize(),
-//                    painter = painterResource(id = R.drawable.favs_black),
-//                    contentDescription = "heart_black",
-//                    tint = Color(0xFFFF5290)
-//                )
-//
-//            }
-
-            Box(
-
-            ) {
+            Box() {
                 //la imagen se cargará de forma asíncrona, viene de la api
-                AsyncImage(
-                    model= ImageRequest.Builder(LocalContext.current)
-                        .data(product.imagen)
-                        .crossfade(true)
-                        .build(),
-                    placeholder = painterResource(id = R.drawable.home_pink),
+                GlideImage(
+                    model= product.imagen.toUri(),
                     contentDescription = stringResource(id=R.string.app_name),
+                   // placeholder = (painterResource(R.drawable.home_pink)),
                     modifier = Modifier.fillMaxSize()
                 )
                 Log.i("pic","${product.imagen}")

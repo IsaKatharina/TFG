@@ -187,7 +187,7 @@ fun ProductsGrid (modifier: Modifier, isLoading:Boolean, products: List<Product>
                         ProductCard(modifier, product, onProductClick)
 
                     }
-                }
+                }, modifier = Modifier.padding(5.dp)
             )
         }
 

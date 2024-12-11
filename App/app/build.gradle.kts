@@ -77,6 +77,7 @@ dependencies {
 
     //Firebase
     implementation("com.google.firebase:firebase-auth:23.0.0")
+
     //noinspection BomWithoutPlatform
     implementation("com.google.firebase:firebase-bom:33.6.0")
 
@@ -96,6 +97,9 @@ dependencies {
     //Picasso, para transformar url a img
     implementation("com.squareup.picasso:picasso:2.71828")
 
+    //Glide
+    implementation ("com.github.bumptech.glide:compose:1.0.0-beta01")
+
     // Coil
     implementation("io.coil-kt.coil3:coil-compose:3.0.0-rc02")
 
@@ -107,6 +111,7 @@ dependencies {
    //77 annotationProcessor ("androidx.room:room-compiler:2.6.1")
   //  implementation ("androidx.room:room-paging:2.6.1")
  //7   ksp ("androidx.room:room-compiler:2.6.1")
+    implementation(kotlin("script-runtime"))
 }
 kapt {
     correctErrorTypes = true

@@ -6,8 +6,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import coil3.Uri
 import com.example.tfg.core.models.NewProduct
 import com.example.tfg.core.models.Product
+import com.example.tfg.core.models.User
 import com.example.tfg.dal.remote.utils.ApiService
 import com.example.tfg.dal.remote.utils.getRetrofit
 import kotlinx.coroutines.Dispatchers
@@ -36,14 +38,19 @@ class NewProductVM:ViewModel() {
     private val _ogBool=MutableLiveData<Boolean>()
     val ogBool:LiveData<Boolean> =_ogBool
 
-    private val _imagen=MutableLiveData<String>()
-    val imagen:LiveData<String> =_imagen
+    private val _imagen=MutableLiveData<Uri>()
+    val imagen:LiveData<Uri> =_imagen
+
+    private val _imagenString=MutableLiveData<String>()
+    val imagenString:LiveData<String> =_imagenString
 
     private val _addEnable=MutableLiveData<Boolean>()
     val addEnable:LiveData<Boolean> =_addEnable
 
     private val _goClicked=MutableLiveData<Boolean>()
     val goClicked:LiveData<Boolean> =_goClicked
+
+
 
 //    fun setNombre(value: String) {
 //        _nombre.value = value
@@ -62,10 +69,9 @@ class NewProductVM:ViewModel() {
 //    }
 //
 
+    fun createProduct(user:User, nombre: String, marca: String, nombreOG: String, marcaOG: String, ogBool:Boolean, imagen: Uri?, goClicked:Boolean) {
 
-    fun createProduct(nombre: String, marca: String,nombreOG: String, marcaOG: String, ogBool:Boolean, imagen: String, goClicked:Boolean) {
-
-        var idUsuario = 2
+        var comentario="nada"
 
         _nombre.value = nombre
         _marca.value = marca
@@ -78,13 +84,13 @@ class NewProductVM:ViewModel() {
         } else {
             _og.value="no"
         }
-        _imagen.value = imagen
+        _imagenString.value = imagen.toString()
 
         if (goClicked) {
             //creamos el producto.
             var newProduct = NewProduct(
-                idUsuario, _nombre.value!!,
-                _marca.value!!, _nombreOG.value!!, _marcaOG.value!!, _og.value!!, _imagen.value!!
+                user.idUsuario, _nombre.value!!,
+                _marca.value!!, _nombreOG.value!!, _marcaOG.value!!, _og.value!!,comentario, _imagenString.value!!
             )
 
             //enviamos el producto a la api

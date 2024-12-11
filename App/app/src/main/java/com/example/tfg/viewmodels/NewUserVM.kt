@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import coil3.Uri
 import com.example.tfg.core.models.NewProduct
 import com.example.tfg.core.models.NewUser
 import com.example.tfg.dal.remote.utils.ApiService
@@ -24,8 +25,11 @@ class NewUserVM:ViewModel() {
     private val _nombreUsu= MutableLiveData<String>()
     val nombreUsu:LiveData<String> =_nombreUsu
 
-    private val _pic=MutableLiveData<String>()
-    val pic:LiveData<String> = _pic
+    private val _picUri=MutableLiveData<Uri>()
+    val picUri:LiveData<Uri> = _picUri
+
+    private val _picString=MutableLiveData<String>()
+    val picString:LiveData<String> =_picString
 
     private val _password= MutableLiveData<String>()
     val password: LiveData<String> =_password
@@ -33,7 +37,6 @@ class NewUserVM:ViewModel() {
     private val _newUserEnable= MutableLiveData<Boolean>()
     val newUserEnable: LiveData<Boolean> =_newUserEnable
 
-    private val auth: FirebaseAuth = Firebase.auth
 
     private val _welcomeClicked =MutableLiveData<Boolean>()
     val welcomeClicked: LiveData<Boolean> = _welcomeClicked
@@ -68,11 +71,13 @@ class NewUserVM:ViewModel() {
         return validNombreUsu
     }
 
-    fun onNewUserChanged(email:String, nombreUsu: String, pic: String, password: String) {
+    fun onNewUserChanged(email:String, nombreUsu: String, pic: Uri?, password: String) {
         _email.value=email
         _password.value=password
         _nombreUsu.value=nombreUsu
-        _pic.value=pic
+
+
+        _picString.value=pic.toString()
 
         _newUserEnable.value=isValidEmail(email)&&isValidPassword(password)&&isValidNombreUsu(nombreUsu)
 
@@ -80,16 +85,16 @@ class NewUserVM:ViewModel() {
     }
 
     //esta función es la que crea el usuario en la base de datos
-    fun createUser (email:String, nombreUsu:String, pic:String) {
+    fun createUser (email:String, nombreUsu:String, pic:Uri?) {
 
         _email.value = email
         _nombreUsu.value = nombreUsu
-        _pic.value = pic
+        _picString.value = pic.toString()
 
         //creamos el producto.
         var newUser = NewUser(
             _nombreUsu.value!!,
-            _email.value!!, _pic.value!!
+            _email.value!!, _picString.value!!
         )
 
         //enviamos el producto a la api
