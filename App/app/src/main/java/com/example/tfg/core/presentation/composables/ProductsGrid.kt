@@ -54,11 +54,18 @@ import kotlinx.coroutines.launch
 @Composable
 fun ProductsGrid(modifier: Modifier, idUsuario: Int, onEditProductClick:(Int)->Unit){
 
-    val vm= ProfileVM()
-    val vmList=MainListVM()
+    //creamos una lambda para navegar a editar un producto
+//    val onEditProductClick:() ->Unit= {idProduct ->
+//        navController.navigate(AppScreens.EditProductScreen.route+"/$idProduct")
+//
+//        Log.i("nav", "navegando a la página editar el producto $idProduct")
+//    }
 
-    val isLoading:Boolean by vmList.isLoading.observeAsState(initial = true)
-    val products:List<Product> by vmList.listadoProductos.observeAsState(initial = emptyList())
+    val vm= ProfileVM()
+    //val vmList=MainListVM()
+
+    val isLoading:Boolean by vm.isLoading.observeAsState(initial = true)
+    val products:List<Product> by vm.listadoProductosPorUsuario.observeAsState(initial = emptyList())
 
     var context= LocalContext.current
     val connectivityObserver: ConnectivityObserver = NetworkConnectivityObserver(context)
@@ -92,19 +99,20 @@ fun ProductsGrid(modifier: Modifier, idUsuario: Int, onEditProductClick:(Int)->U
 
     }else {
 
-        LaunchedEffect(Unit) {
-            vmList.getListadoProductos()
+        LaunchedEffect(idUsuario) {
+            vm.getListadoProductosPorUsuario(idUsuario)
         }
 
 
-        val listaFiltrada = remember { mutableStateOf<List<Product>>(emptyList())}
-        //recorremos la lista y buscamos donde coincide el id del usuario.
-        listaFiltrada.value= products.filter {
-            it.idUsuario == idUsuario
+        //forma alternativa de encontrar la lista
+//        val listaFiltrada = remember { mutableStateOf<List<Product>>(emptyList())}
+//        //recorremos la lista y buscamos donde coincide el id del usuario.
+//        listaFiltrada.value= products.filter {
+//            it.idUsuario == idUsuario
+//
+//        }
 
-        }
-
-        if (isLoading&&listaFiltrada.value.isEmpty()) {
+        if (isLoading&&products.isEmpty()) {
 
             Box(Modifier.fillMaxSize()) {
                 CircularProgressIndicator(
@@ -113,7 +121,7 @@ fun ProductsGrid(modifier: Modifier, idUsuario: Int, onEditProductClick:(Int)->U
                 )
             }
 
-        } else if (!isLoading&&listaFiltrada.value.isEmpty()){
+        } else if (!isLoading&&products.isEmpty()){
             Box(modifier=Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center){
 
@@ -131,7 +139,7 @@ fun ProductsGrid(modifier: Modifier, idUsuario: Int, onEditProductClick:(Int)->U
                 verticalItemSpacing = 10.dp,
                 horizontalArrangement = Arrangement.spacedBy(7.dp),
                 content = {
-                    items(listaFiltrada.value) { product ->
+                    items(products) { product ->
 
                         EditProductCard(product, onEditProductClick)
 

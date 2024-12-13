@@ -1,9 +1,11 @@
 package com.example.tfg.core.presentation.composables
 
 import android.util.Log
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -41,20 +43,40 @@ fun ProductCard(modifier: Modifier, product: Product, onProductClick:(Int) ->Uni
         onClick = {onProductClick(product.idProduct)}
 
     ) {
-
         Box(modifier = Modifier.fillMaxSize()
             .background(Color.White)
         ) {
-            Box() {
-                //la imagen se cargará de forma asíncrona, viene de la api
-                GlideImage(
-                    model= product.imagen.toUri(),
-                    contentDescription = stringResource(id=R.string.app_name),
-                   // placeholder = (painterResource(R.drawable.home_pink)),
+            Box(modifier = Modifier
+            .size(width = 100.dp, height = 100.dp).align(Alignment.Center),
+        ) {
+
+            if (product.idProduct == 34) {
+                Image(
+                    painterResource(id = R.drawable.wha_a_tint),
+                    contentDescription = "hardcoded",
                     modifier = Modifier.fillMaxSize()
                 )
-                Log.i("pic","${product.imagen}")
+            } else if (product.idProduct == 35) {
+                Image(
+                    painterResource(id = R.drawable.benetint),
+                    contentDescription = "hardcoded",
+                    modifier = Modifier.fillMaxSize()
+                )
+            } else {
+                //la imagen se cargará de forma asíncrona, viene de la api
+                AsyncImage(
+                    model = product.imagen.toUri(),
+                    contentDescription = stringResource(id = R.string.app_name),
+                    placeholder = (painterResource(R.drawable.home_pink)),
+                    modifier = Modifier.fillMaxSize()
+                )
+
             }
+        }
+
+                Log.i("pic","${product.imagen}")
+
+            //Spacer(modifier = Modifier.padding(5.dp))
 
             Row(modifier=Modifier.align(Alignment.BottomCenter)) {
                 Text(

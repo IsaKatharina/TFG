@@ -275,7 +275,7 @@ fun NewPassword(password:String, onTextFieldChanged:(String)->Unit) {
         maxLines = 1,
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
         visualTransformation = PasswordVisualTransformation(),
-        placeholder = { Text(text = "Password") }
+        placeholder = { Text(text = "1234567") }
     )
 }
 
@@ -289,7 +289,7 @@ fun NewEmail(email: String, onTextFieldChanged:(String)->Unit) {
             .padding(15.dp, 0.dp, 15.dp, 0.dp),
         singleLine = true,
         maxLines = 1,
-        placeholder = { Text(text = "Email") }
+        placeholder = { Text(text = "janedoe@mail.com") }
     )
 }
 
@@ -303,7 +303,7 @@ fun NewUserName(nombreUsu: String, onTextFieldChanged:(String)->Unit) {
             .padding(15.dp, 0.dp, 15.dp, 0.dp),
         singleLine = true,
         maxLines = 1,
-        placeholder = { Text(text = "Username") }
+        placeholder = { Text(text = "Jane Doe") }
     )
 }
 

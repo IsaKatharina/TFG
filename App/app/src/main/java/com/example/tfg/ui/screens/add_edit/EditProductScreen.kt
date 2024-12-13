@@ -1,12 +1,15 @@
 package com.example.tfg.ui.screens.add_edit
 
 import android.content.Context
+import android.graphics.Paint.Align
 import android.util.Log
+import android.widget.Space
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.core.exponentialDecay
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.gestures.rememberScrollableState
@@ -21,9 +24,11 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -49,6 +54,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
@@ -79,8 +85,6 @@ fun EditProductScreen(navController: NavController, idProduct: Int) {
 
     //buscamos el producto correspondiente
     val product: Product by vmGetProduct.productFound.observeAsState(initial = Product())
-
-
 
     //variable local del producto
     var nombre by remember { mutableStateOf(product.nombre) }
@@ -114,161 +118,228 @@ fun EditProductScreen(navController: NavController, idProduct: Int) {
         //en caso de que el idProducto sea distinto de 0
         if (product.idProduct != 0) {
 
+            var isChecked = remember { mutableStateOf(og) }
+            //hacemos una copia del producto que nos ha llegado por la api
             var productOG: Product = product
-            Row(
-                modifier = Modifier
-            ) {
-                BackButton(
-                    navController = navController,
-                    modifier = Modifier
-                )
-            }
-            Column(
-                modifier = Modifier.fillMaxSize()
-                    .background(Color.White).verticalScroll(rememberScrollState(),true)
-            ) {
 
+            Column (
+                modifier= Modifier
+                    .fillMaxSize()
+                    .background(Color.White)
+            )
+            {
                 Row(
-                    modifier = Modifier.align(Alignment.End)
+                    modifier = Modifier
                 ) {
-                    IconButton(onClick = {
-                        picker.launch(
-                            PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
-                        )
+                    BackButton(
+                        navController = navController,
+                        modifier = Modifier
+                    )
+                }
 
-                    }) {
-                        Icon(
-                            painterResource(id = R.drawable.camara_pink),
-                            contentDescription = "camara_pink",
-                            tint = Color(0xFFFF5290)
-                        )
-                    }
+                Row (modifier = Modifier.align(Alignment.End)){
+
                     DeleteButton(navController, idProduct)
                 }
 
-                //foto del producto nuevo
-                //TODO:terminar esto
-                Row(
-                    modifier = Modifier.fillMaxWidth()
-                        .height(200.dp)
-                        .padding(15.dp, 0.dp, 15.dp, 0.dp)
-                        .border(
-                            width = 1.dp,
-                            color = Color.Gray
-                        ),
-                    horizontalArrangement = Arrangement.Center,
-                    verticalAlignment = Alignment.CenterVertically
 
-
+                Column(
+                    modifier = Modifier.fillMaxWidth().weight(1f).padding(10.dp)
+                        .verticalScroll(state = rememberScrollState(), enabled = true)
                 ) {
+                    //foto del producto nuevo
+                    //TODO:terminar esto
+                    Row(
+                        modifier = Modifier.fillMaxWidth()
+                            .height(200.dp)
+                            .padding(15.dp, 0.dp, 15.dp, 0.dp)
+                            .border(
+                                width = 1.dp,
+                                color = Color.Gray
+                            ),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
 
-                    AsyncImage(
-                        model = imagen,
-                        contentDescription = null,
-                        placeholder = (painterResource(R.drawable.home_pink)),
-                        contentScale = ContentScale.Crop,
-                        modifier = Modifier.fillMaxSize()
-                    )
-                }
-
-                //ponemos un espacio
-                Spacer(modifier = Modifier.padding(16.dp))
-
-                //nombre del producto
-                TextField(
-                    value = nombre,
-                    onValueChange = {nombre=it },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(15.dp, 0.dp, 15.dp, 0.dp),
-                    singleLine = true,
-                    maxLines = 1,
-                    placeholder = { Text(text = product.nombre) }
-                )
-
-                //otro espacio
-                Spacer(modifier = Modifier.padding(16.dp))
-
-                //nombre de la marca
-                TextField(
-                    value = marca,
-                    onValueChange = { marca=it },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(15.dp, 0.dp, 15.dp, 0.dp),
-                    singleLine = true,
-                    maxLines = 1,
-                    placeholder = { Text(text = product.marca) }
-                )
-
-                //otro espacio
-                Spacer(modifier = Modifier.padding(16.dp))
-
-                //nombbre del producto original
-                TextField(
-                    value = nombreOG,
-                    onValueChange = { nombreOG=it },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(15.dp, 0.dp, 15.dp, 0.dp),
-                    singleLine = true,
-                    maxLines = 1,
-                    placeholder = { Text(text = product.nombreOG) }
-                )
-
-
-                //otro espacio
-                Spacer(modifier = Modifier.padding(16.dp))
-
-                //nombre de la marca original
-                TextField(
-                    value = marcaOG,
-                    onValueChange = { marcaOG=it },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(15.dp, 0.dp, 15.dp, 0.dp),
-                    singleLine = true,
-                    maxLines = 1,
-                    placeholder = { Text(text = product.marcaOG) }
-                )
-
-
-                //otro espacio
-                 Spacer(modifier = Modifier.padding(16.dp))
-
-
-
-               //otro espacio
-                Spacer(modifier = Modifier.padding(16.dp))
-                Row(
-                    modifier = Modifier.padding(10.dp),
-                    horizontalArrangement = Arrangement.Center
-                ) {
-                    Text("¿Es el original?")
-
-                    if (ogString.equals("no")) {
-                        og=false
-                    } else {
-                        og=true
+                    ) {
+                        if (product.idProduct == 34) {
+                            Image(
+                                painterResource(id = R.drawable.wha_a_tint),
+                                contentDescription = "hardcoded",
+                                modifier = Modifier.fillMaxSize()
+                            )
+                        } else if (product.idProduct == 35) {
+                            Image(
+                                painterResource(id = R.drawable.benetint),
+                                contentDescription = "hardcoded",
+                                modifier = Modifier.fillMaxSize()
+                            )
+                        } else {
+                            //la imagen se cargará de forma asíncrona, viene de la api
+                            AsyncImage(
+                                model = imagen,
+                                contentDescription = null,
+                                placeholder = (painterResource(R.drawable.home_pink)),
+                                contentScale = ContentScale.Crop,
+                                modifier = Modifier.fillMaxSize()
+                            )
+                        }
                     }
-                    Checkbox(
-                        checked = og,
-                        onCheckedChange = { og=it },
-                        colors = CheckboxDefaults.colors(
-                            checkedColor = Color(0xFFFF5290)
-                        )
+                    Spacer(modifier = Modifier.padding(6.dp))
+                    Row (modifier = Modifier.align(Alignment.CenterHorizontally)){
+
+                        IconButton(onClick = {
+                            picker.launch(
+                                PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
+                            )
+
+                        }) {
+                            Icon(
+                                painterResource(id = R.drawable.camara_pink),
+                                contentDescription = "camara_pink",
+                                tint = Color(0xFFFF5290),
+                                modifier = Modifier.size(35.dp)
+                            )
+                        }
+                    }
+
+
+                    //ponemos un espacio
+                    Spacer(modifier = Modifier.padding(16.dp))
+
+                    //nombre del producto
+                    if (nombre==""){
+                        nombre=product.nombre
+                    }
+                    TextField(
+                        value = nombre,
+                        onValueChange = { nombre = it},
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(15.dp, 0.dp, 15.dp, 0.dp),
+                        singleLine = true,
+                        maxLines = 1,
+                        placeholder = { Text(text = product.nombre) }
                     )
+
+                    //otro espacio
+                    Spacer(modifier = Modifier.padding(16.dp))
+
+                    if (marca==""){
+                        marca=product.marca
+                    }
+                    //nombre de la marca
+                    TextField(
+                        value = marca,
+                        onValueChange = { marca = it
+                                      },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(15.dp, 0.dp, 15.dp, 0.dp),
+                        singleLine = true,
+                        maxLines = 1,
+                        placeholder = { Text(text = product.marca) }
+                    )
+
+                    //otro espacio
+                    Spacer(modifier = Modifier.padding(16.dp))
+
+                    if (nombreOG==""){
+                        nombreOG=product.nombreOG
+                    }
+                    //nombbre del producto original
+                    TextField(
+                        value = nombreOG,
+                        onValueChange = { nombreOG = it
+                            },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(15.dp, 0.dp, 15.dp, 0.dp),
+                        singleLine = true,
+                        maxLines = 1,
+                        enabled = !isChecked.value,
+                        placeholder = { Text(text = product.nombreOG) }
+                    )
+
+
+                    //otro espacio
+                    Spacer(modifier = Modifier.padding(16.dp))
+
+                    if (marcaOG==""){
+                        marcaOG=product.marcaOG
+                    }
+                    //nombre de la marca original
+                    TextField(
+                        value = marcaOG,
+                        onValueChange = { marcaOG = it
+                            },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(15.dp, 0.dp, 15.dp, 0.dp),
+                        singleLine = true,
+                        maxLines = 1,
+                        enabled = !isChecked.value,
+                        placeholder = { Text(text = product.marcaOG) }
+                    )
+
+
+                    //otro espacio
+                    Spacer(modifier = Modifier.padding(16.dp))
+
+                    //parseamos de string a bool
+                    if (ogString.equals("no")) {
+                        og = false
+
+                    } else {
+                        og = true
+
+                    }
+                    Row(
+                        modifier = Modifier.padding(10.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text("¿Es el original?")
+                        isChecked.value=og
+
+                        Log.i("checkbox","${isChecked.value}")
+
+                        Checkbox(
+                            checked = og,
+                            onCheckedChange = { isChecked.value=it
+
+                                //parseamos de bool a string
+                                if (isChecked.value) {
+                                    ogString="si"
+
+                                } else {
+                                    ogString="no"
+                                }
+
+                            },
+                            colors = CheckboxDefaults.colors(
+                                checkedColor = Color(0xFFFF5290)
+                            )
+                        )
+                    }
                 }
 
                 Button(
-                    onClick = {vmEditProduct.editProduct(productOG, nombre, marca, nombreOG, marcaOG, og,  imagen.toString())
+                    onClick = {
+                        vmEditProduct.editProduct(
+                            productOG,
+                            nombre,
+                            marca,
+                            nombreOG,
+                            marcaOG,
+                            ogString,
+                            imagen.toString()
+                        )
 
                         navController.navigate(AppScreens.MainListScreen.route)
                     },
 
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(15.dp, 0.dp, 15.dp, 0.dp)
+                        .padding(15.dp, 0.dp, 15.dp, 5.dp)
                         .height(48.dp),
                     colors = ButtonDefaults.buttonColors(
                         containerColor = Color(0xFFFF5290)
@@ -278,16 +349,19 @@ fun EditProductScreen(navController: NavController, idProduct: Int) {
 
                 }
 
+
             }
 
-            //TODO:ponemos un mensaje de error.
-        } else {
+            //ponemos un mensaje de error.
+        }
+        else {
 
             Text("No ha salido bien")
             Log.i("det", "no ha salido bien")
 
         }
     }
+
 }
 
 @Composable
@@ -370,10 +444,10 @@ fun DeleteButton(navController: NavController, idProduct: Int) {
 }
 
 
-//@Preview(showSystemUi = true)
-//@Composable
-//fun PCEditPr(){
-//    TFGTheme {
-//        EditProductScreen(navController = rememberNavController(), idProduct = 1)
-//    }
-//}
+@Preview(showSystemUi = true)
+@Composable
+fun PCEditPr(){
+    TFGTheme {
+        EditProductScreen(navController = rememberNavController(), idProduct = 1)
+    }
+}

@@ -1,6 +1,7 @@
 package com.example.tfg.ui.screens.list
 
 import android.util.Log
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -105,18 +106,31 @@ fun ProductDetailsScreen(navController: NavController, idProduct: Int) {
                     //Imagen del producto
                     Box(
                         modifier = Modifier.fillMaxWidth()
-                            .weight(1f),
+                            .weight(1f).padding(15.dp),
                         contentAlignment = Alignment.Center,
                         ) {
+                        if(product.idProduct==34){
+                            Image(
+                                painterResource(id=R.drawable.wha_a_tint),
+                                contentDescription = "hardcoded",
+                                modifier=Modifier.fillMaxSize()
+                            )
+                        } else if (product.idProduct==35) {
+                            Image(
+                                painterResource(id=R.drawable.benetint),
+                                contentDescription = "hardcoded",
+                                modifier=Modifier.fillMaxSize()
+                            )
+                        } else {
+                            //la imagen se cargará de forma asíncrona, viene de la api
+                            AsyncImage(
+                                model= product.imagen.toUri(),
+                                contentDescription = stringResource(id=R.string.app_name),
+                                placeholder = (painterResource(R.drawable.home_pink)),
+                                modifier = Modifier.fillMaxSize()
+                            )
 
-                        //la imagen se cargará de forma asíncrona, viene de la api
-                        AsyncImage(
-                            model = product.imagen.toUri(),
-                            contentDescription = stringResource(id = R.string.app_name),
-                            placeholder = (painterResource(R.drawable.home_pink)),
-                            modifier = Modifier.fillMaxSize(),
-
-                        )
+                        }
                     }
 
                     //nombre del producto

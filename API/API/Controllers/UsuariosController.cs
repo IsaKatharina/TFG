@@ -58,7 +58,7 @@ namespace API.Controllers
                 }
                 else
                 {
-                    salida = Ok(productsByUser); //hay que mandar la persona con el ActionResult.
+                    salida = Ok(productsByUser); 
                 }
 
             }

@@ -57,7 +57,7 @@ class ProfileVM:ViewModel() {
     }
 
     //corrutina que llama a la api y carga el listado completo
-    private suspend fun getListadoProductosPorUsuario(idUsuario: Int) {
+    suspend fun getListadoProductosPorUsuario(idUsuario: Int) {
 
         viewModelScope.launch(Dispatchers.IO) {
 
@@ -85,8 +85,6 @@ class ProfileVM:ViewModel() {
 
                 Log.i("sos", "no ha entrado bien en la corrutina, $e")
             }
-
-
         }
     }
 

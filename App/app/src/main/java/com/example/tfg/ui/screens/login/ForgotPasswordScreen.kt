@@ -57,17 +57,16 @@ fun ForgotPasswordScreen(navController: NavController) {
     var auth: FirebaseAuth =Firebase.auth
 
     Column (modifier = Modifier.fillMaxSize()
-        .background(Color.White),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.SpaceEvenly
+        .background(Color.White)
 
     ) {
         BackButton(
             navController = navController,
             modifier = Modifier.align(Alignment.Start)
         )
+        Spacer(modifier = Modifier.padding(55.dp))
         HeaderImagen(modifier=Modifier,navController)
-
+        Spacer(modifier = Modifier.padding(55.dp))
 
         Column (horizontalAlignment = Alignment.CenterHorizontally) {
                 TextField(
@@ -82,7 +81,7 @@ fun ForgotPasswordScreen(navController: NavController) {
                 )
 
         }
-
+        Spacer(modifier = Modifier.padding(65.dp))
         Button(onClick = {
                 if(email.value.isEmpty()&&!Patterns.EMAIL_ADDRESS.matcher(email.value).matches()){
                     Toast.makeText(context, "El correo no es válido", Toast.LENGTH_SHORT).show()

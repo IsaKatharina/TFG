@@ -1722,23 +1722,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Isa K\\.nuget\\packages\\": {},
+    "C:\\Users\\IsaK\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\Isa K\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\API\\obj\\",
+      "projectPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\IsaK\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Isa K\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\IsaK\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1747,18 +1747,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Isa K\\Desktop\\TFG\\API\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\DAL\\DAL.csproj"
+            "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\DAL\\DAL.csproj"
             },
-            "C:\\Users\\Isa K\\Desktop\\TFG\\API\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\Isa K\\Desktop\\TFG\\API\\Entidades\\Entidades.csproj"
+            "C:\\Users\\IsaK\\Desktop\\TFG\\API\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\IsaK\\Desktop\\TFG\\API\\Entidades\\Entidades.csproj"
             }
           }
         }

@@ -32,6 +32,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
@@ -70,8 +71,6 @@ import kotlinx.coroutines.launch
 @Composable
 fun NewProductScreen(navController: NavController) {
 
-
-
     val vm= NewProductVM()
 
     //declaramos las variables que necesita la vista
@@ -96,6 +95,8 @@ fun NewProductScreen(navController: NavController) {
 
     val vmUser= ProfileVM()
     val userFound: User by vmUser.userFound.observeAsState(initial = User())
+
+    var isChecked = remember { mutableStateOf(false) }
 
     //Llamamos a una instancia de Firebase para que nos devuelva el correo del usuario
     var userEmail= FirebaseAuth.getInstance().currentUser?.email
@@ -167,7 +168,7 @@ Column(modifier= Modifier
 
         //otro espacio
         Spacer(modifier = Modifier.padding(16.dp))
-        NewProdOgName(nombreOG) {
+        NewProdOgName(isChecked, nombreOG) {
             vm.createProduct(
                 userFound,
                 nombre,
@@ -182,7 +183,7 @@ Column(modifier= Modifier
 
         //otro espacio
         Spacer(modifier = Modifier.padding(16.dp))
-        NewProdOgMarca(marcaOG) {
+        NewProdOgMarca(isChecked, marcaOG) {
             vm.createProduct(
                 userFound,
                 nombre,
@@ -197,7 +198,7 @@ Column(modifier= Modifier
 
         //otro espacio
         Spacer(modifier = Modifier.padding(16.dp))
-        NewProdOg(ogBool) {
+        NewProdOg(ogBool, isChecked) {
             vm.createProduct(
                 userFound,
                 nombre,
@@ -211,7 +212,6 @@ Column(modifier= Modifier
         }
         //otro espacio
         Spacer(modifier = Modifier.padding(16.dp))
-
 
         GoButton(navController, goClicked) {
             vm.createProduct(
@@ -251,7 +251,6 @@ fun NewProdName(nombre:String, onTextFieldChanged: (String) -> Unit) {
     )
 }
 
-//TODO:terminar esta parte
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun NewProdPic(picUri: Uri?, picker: ManagedActivityResultLauncher<PickVisualMediaRequest, android.net.Uri?>) {
@@ -264,16 +263,12 @@ fun NewProdPic(picUri: Uri?, picker: ManagedActivityResultLauncher<PickVisualMed
         ),
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically
-
-
     ) {
         if (picUri == null) {
-
             IconButton(onClick = {
                 picker.launch(
                     PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
                 )
-
             }) {
                 Icon(
                     painterResource(id = R.drawable.camara_pink),
@@ -311,7 +306,7 @@ fun NewProdMarca(marca:String, onTextFieldChanged: (String) -> Unit ) {
 }
 
 @Composable
-fun NewProdOgName(nombreOG:String, onTextFieldChanged: (String) -> Unit ) {
+fun NewProdOgName(isChecked: MutableState<Boolean>,nombreOG:String, onTextFieldChanged: (String) -> Unit ) {
     TextField(
         value = nombreOG,
         onValueChange = {onTextFieldChanged(it)},
@@ -320,12 +315,13 @@ fun NewProdOgName(nombreOG:String, onTextFieldChanged: (String) -> Unit ) {
             .padding(15.dp, 0.dp, 15.dp, 0.dp),
         singleLine = true,
         maxLines = 1,
+        enabled = !isChecked.value,
         placeholder = { Text(text = "Nombre del producto original") }
     )
 }
 
 @Composable
-fun NewProdOgMarca(marcaOG:String, onTextFieldChanged: (String) -> Unit ) {
+fun NewProdOgMarca(isChecked: MutableState<Boolean>,marcaOG:String, onTextFieldChanged: (String) -> Unit ) {
     TextField(
         value = marcaOG,
         onValueChange = {onTextFieldChanged(it)},
@@ -334,13 +330,14 @@ fun NewProdOgMarca(marcaOG:String, onTextFieldChanged: (String) -> Unit ) {
             .padding(15.dp, 0.dp, 15.dp, 0.dp),
         singleLine = true,
         maxLines = 1,
+        enabled = !isChecked.value,
         placeholder = { Text(text = "Marca del producto original") }
     )
 }
 
 @Composable
-fun NewProdOg(ogBool:Boolean, onTextFieldChanged: (Boolean) -> Unit) {
-    var isChecked = remember { mutableStateOf(false) }
+fun NewProdOg(ogBoolean: Boolean, isChecked:MutableState<Boolean>, onTextFieldChanged: (Boolean) -> Unit) {
+
     val ogFalse =false
     val ogTrue=true
    Row (

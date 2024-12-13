@@ -94,11 +94,11 @@ fun ProfileScreen(navController: NavController) {
         ) {
             Box(modifier = Modifier.size(100.dp)) {
 
-                    AsyncImage(
+                    GlideImage(
                         model = userFound.picture,
                         contentDescription = null,
                         contentScale = ContentScale.Crop,
-                        placeholder = (painterResource(R.drawable.home_pink)),
+                        //placeholder = (painterResource(R.drawable.home_pink)),
                         modifier = Modifier.size(150.dp)
                             .clip(CircleShape)
                             .border(1.dp,Color(0xFFFF5290), CircleShape)

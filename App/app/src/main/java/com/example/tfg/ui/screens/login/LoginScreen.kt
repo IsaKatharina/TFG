@@ -37,6 +37,7 @@ import com.example.tfg.viewmodels.LoginVM
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.delay
 
 @Composable
 fun LoginScreen(modifier: Modifier, navController: NavController) {
@@ -44,11 +45,15 @@ fun LoginScreen(modifier: Modifier, navController: NavController) {
     var auth:FirebaseAuth=Firebase.auth
     val vm= LoginVM()
 
-    Box(modifier= Modifier.fillMaxSize()
-        .background(Color.White)
-    ) {
-     Login(Modifier.align(Alignment.Center), navController, vm, auth)
-    }
+
+
+        Box(
+            modifier = Modifier.fillMaxSize()
+                .background(Color.White)
+        ) {
+            Login(Modifier.align(Alignment.Center), navController, vm, auth)
+        }
+
 
 }
 
@@ -59,45 +64,8 @@ fun Login(modifier: Modifier, navController: NavController, vm: LoginVM, auth: F
     val email:String by vm.email.observeAsState(initial="")
     val password:String by vm.password.observeAsState(initial="")
     val loginEnable:Boolean by vm.loginEnable.observeAsState(initial=false)
-    val context= LocalContext.current
-    val connectivityObserver: ConnectivityObserver = NetworkConnectivityObserver(context)
-    val status by connectivityObserver.observe().collectAsState(initial = ConnectivityObserver.Status.Unavailable)
 
-    //chequea si hay conexión, si no hay, no se puede seguir con la app.
-    if (status.name!="Available") {
-
-        Log.i("sos", "$status.name")
-
-//        //TODO:poner imagen de que no hay internet
-//        Toast.makeText(
-//            LocalContext.current, // Obtenemos el contexto actual
-//            "No hay conexión a internet, no puede iniciar sesión",
-//            Toast.LENGTH_SHORT
-//        ).show()
-
-        Column {
-
-            //aquí simplemente ponemos los nombre de los composables
-            BackButton(
-                navController = navController,
-                modifier = Modifier.align(Alignment.Start)
-            )
-            Box(
-                modifier = modifier.fillMaxSize(),
-                contentAlignment = Alignment.Center
-            ) {
-                Icon(
-                    painterResource(id = R.drawable.nowifi),
-                    contentDescription = "no wifi available",
-                    tint = Color(0xFFFF5290),
-                    modifier = Modifier.size(100.dp)
-                )
-            }
-        }
-
-    }else {
-
-        Column(modifier = modifier.fillMaxSize()) {
+    Column(modifier = modifier.fillMaxSize()) {
             //aquí simplemente ponemos los nombre de los composables
             // (sus funciones), no los "pintamos"
             BackButton(
@@ -121,7 +89,7 @@ fun Login(modifier: Modifier, navController: NavController, vm: LoginVM, auth: F
             Spacer(modifier = Modifier.padding(35.dp))
             LoginButton(loginEnable, navController, auth, email, password)
         }
-    }
+
 
 }
 
@@ -200,7 +168,7 @@ fun PasswordField(password: String, onTextFieldChanged: (String) -> Unit) {
         visualTransformation = PasswordVisualTransformation(),
         singleLine = true,
         maxLines = 1,
-        placeholder = { Text(text = "Password")}
+        placeholder = { Text(text = "1234567")}
     )
 }
 
@@ -216,7 +184,7 @@ fun EmailField(email: String, onTextFieldChanged: (String) -> Unit) {
         //TODO:Falta el onTextFieldChange()
         singleLine = true,
         maxLines = 1,
-        placeholder = { Text(text = "Email") },
+        placeholder = { Text(text = "janedoe@mail.com") },
 
     )
 }

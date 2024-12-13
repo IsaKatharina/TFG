@@ -1,5 +1,6 @@
 package com.example.tfg.core.presentation.composables
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -55,16 +56,32 @@ fun EditProductCard(product: Product, onEditProductClick:(Int)->Unit){
             .background(Color.White)
         ) {
 
-            Box(
+            Box(modifier = Modifier
+                .size(width = 100.dp, height = 100.dp).align(Alignment.Center),
 
             ) {
-                //la imagen se cargará de forma asíncrona, viene de la api
-                AsyncImage(
-                    model= product.imagen.toUri(),
-                    contentDescription = stringResource(id= R.string.app_name),
-                    placeholder = (painterResource(R.drawable.home_pink)),
-                    modifier = Modifier.fillMaxSize()
-                )
+                if(product.idProduct==34){
+                    Image(
+                        painterResource(id=R.drawable.wha_a_tint),
+                        contentDescription = "hardcoded",
+                        modifier=Modifier.fillMaxSize()
+                    )
+                } else if (product.idProduct==35) {
+                    Image(
+                        painterResource(id=R.drawable.benetint),
+                        contentDescription = "hardcoded",
+                        modifier=Modifier.fillMaxSize()
+                    )
+                } else {
+                    //la imagen se cargará de forma asíncrona, viene de la api
+                    AsyncImage(
+                        model= product.imagen.toUri(),
+                        contentDescription = stringResource(id=R.string.app_name),
+                        placeholder = (painterResource(R.drawable.home_pink)),
+                        modifier = Modifier.fillMaxSize()
+                    )
+
+                }
                 //Log.i("pic","${product.imagen}")
             }
 
